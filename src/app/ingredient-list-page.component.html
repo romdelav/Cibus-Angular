@@ -1,0 +1,21 @@
+<section>
+    <div class="container">
+        <br/><br/>
+        <h1 style="padding-left:32%">Ingredient List</h1>
+        <br/><br/><br/><br/><br/><br/><br/><br/>
+        <a class="addButton" [routerLink]="['/add-ingredient']">Add a new ingredient</a>
+        <br/><br/><br/>
+        <div class="row">
+            <div *ngFor="let ingredient of ingredients" style="padding: 2%">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="../assets/placeholder.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ingredient.Ingredient_Name}}</h5>
+                        <a [routerLink]="['/ingredients', ingredient.Ingredient_ID]" class="btn buttonStyle">Details</a>
+                    </div>
+                </div>
+                <br/><br/>
+            </div>
+        </div>
+    </div>
+</section>

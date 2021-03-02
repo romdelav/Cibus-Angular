@@ -1,0 +1,22 @@
+h5 {
+    font-weight: normal;
+}
+
+.buttonStyle {
+    text-decoration: none;
+    background-color: #FFC11E;
+    border-radius: 5px;
+    color: black;
+    font-size: 0.7em;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.buttonStyle:hover {
+    background-color: #ffdb81;
+}
+
+a {
+    color: #e9a700
+}

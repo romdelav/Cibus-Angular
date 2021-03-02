@@ -1,0 +1,210 @@
+var express = require('express');
+var path = require('path');
+var app = express();
+var cors = require('cors');
+var bodyParser = require("body-parser");
+
+var dbConnection = path.join(__dirname + '/CibusLLC.db');
+console.log(dbConnection);
+const db = require('better-sqlite3')(dbConnection, { verbose: console.log });
+
+var port = process.env.PORT || 3000;
+
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.listen(port, () => {
+    console.log('App initalized on port ' + port);
+});
+
+app.route('/recipes')
+    .get((req, res) =>
+        res.send(JSON.stringify(getAllRecipes(), null, 2)));
+
+app.route('/recipes/:Recipe_ID')
+    .get((req, res) =>
+        res.send(JSON.stringify(getRecipe(req.params.Recipe_ID), null, 2)));
+
+app.route('/add-recipe')
+    .post((req, res) => {
+        console.log(req.body)
+
+        var Recipe_Name = req.body.Recipe_Name;
+        var Servings = req.body.Servings;
+        var Cooking_Instructions = req.body.Cooking_Instructions;
+        var Description = req.body.Description;
+
+        var Ingredient_ID1 = req.body.Ingredient_ID1;
+        var Measurement_ID1 = req.body.Measurement_ID1;
+
+        var Ingredient_ID2 = req.body.Ingredient_ID2;
+        var Measurement_ID2 = req.body.Measurement_ID2;
+
+        var stmt1 = db.prepare('INSERT INTO Recipe (Recipe_Name, Servings, Cooking_Instructions, Description) VALUES (?, ?, ?, ?)');
+        stmt1.run(Recipe_Name, Servings, Cooking_Instructions, Description);
+
+        var stmt2 = db.prepare('INSERT INTO Recipe_Ingredient (Recipe_ID, Ingredient_ID, Measurement_ID) VALUES ((SELECT Recipe_ID FROM Recipe WHERE Recipe_Name = ?), ?, ?)');
+        stmt2.run(Recipe_Name, Ingredient_ID1, Measurement_ID1);
+
+        var stmt3 = db.prepare('INSERT INTO Recipe_Ingredient (Recipe_ID, Ingredient_ID, Measurement_ID) VALUES ((SELECT Recipe_ID FROM Recipe WHERE Recipe_Name = ?), ?, ?)');
+        stmt3.run(Recipe_Name, Ingredient_ID2, Measurement_ID2);
+    });
+
+app.route('/update-recipe/:Recipe_ID')
+    .put((req, res) => {
+        console.log(req.body)
+
+        var Recipe_ID = req.params.Recipe_ID;
+        var Recipe_Name = req.body.Recipe_Name;
+        var Servings = req.body.Servings;
+        var Cooking_Instructions = req.body.Cooking_Instructions;
+        var Description = req.body.Description;
+        var Ingredient_ID1 = req.body.Ingredient_ID1;
+        var Measurement_ID1 = req.body.Measurement_ID1;
+        var Ingredient_ID2 = req.body.Ingredient_ID2;
+        var Measurement_ID2 = req.body.Measurement_ID2;
+
+        var stmt1 = db.prepare('DELETE FROM Recipe_Ingredient WHERE Recipe_ID = ? ');
+        stmt1.run(Recipe_ID);
+
+        var stmt2 = db.prepare('DELETE FROM Recipe_Category WHERE Recipe_ID = ? ');
+        stmt2.run(Recipe_ID);
+
+        var stmt3 = db.prepare('DELETE FROM Recipe WHERE Recipe_ID = ? ');
+        stmt3.run(Recipe_ID);
+
+        var stmt4 = db.prepare('INSERT INTO Recipe (Recipe_Name, Servings, Cooking_Instructions, Description) VALUES (?, ?, ?, ?)');
+        stmt4.run(Recipe_Name, Servings, Cooking_Instructions, Description);
+
+        var stmt5 = db.prepare('INSERT INTO Recipe_Ingredient (Recipe_ID, Ingredient_ID, Measurement_ID) VALUES ((SELECT Recipe_ID FROM Recipe WHERE Recipe_Name = ?), ?, ?)');
+        stmt5.run(Recipe_Name, Ingredient_ID1, Measurement_ID1);
+
+        var stmt6 = db.prepare('INSERT INTO Recipe_Ingredient (Recipe_ID, Ingredient_ID, Measurement_ID) VALUES ((SELECT Recipe_ID FROM Recipe WHERE Recipe_Name = ?), ?, ?)');
+        stmt6.run(Recipe_Name, Ingredient_ID2, Measurement_ID2);
+
+
+    })
+
+app.route('/ingredients')
+    .get((req, res) =>
+        res.send(JSON.stringify(getAllIngredients(), null, 2)));
+
+app.route('/ingredients/:Ingredient_ID')
+    .get((req, res) =>
+        res.send(JSON.stringify(getIngredient(req.params.Ingredient_ID), null, 2)));
+
+app.route('/add-ingredient')
+    .post((req, res) => {
+
+        var Ingredient_Name = req.body.Ingredient_Name;
+        var Protein = req.body.Protein;
+        var Carbohydrate = req.body.Carbohydrate;
+        var Sugar = req.body.Sugar;
+        var Fat = req.body.Fat;
+        var Sodium = req.body.Sodium;
+        var Calories = req.body.Calories;
+        console.log(req.body)
+
+        var stmt = db.prepare('INSERT INTO Ingredient (Ingredient_Name, Protein, Carbohydrate, Sugar, Fat, Sodium, Calories) VALUES (?, ?, ?, ?, ?, ?, ?)');
+        stmt.run(Ingredient_Name, Protein, Carbohydrate, Sugar, Fat, Sodium, Calories);
+    });
+
+app.route('/update-ingredient/:Ingredient_ID')
+    .put((req, res) => {
+        console.log(req.body)
+
+        var Ingredient_Name = req.body.Ingredient_Name;
+        var Protein = req.body.Protein;
+        var Carbohydrate = req.body.Carbohydrate;
+        var Sugar = req.body.Sugar;
+        var Fat = req.body.Fat;
+        var Sodium = req.body.Sodium;
+        var Calories = req.body.Calories;
+        var Ingredient_ID = req.params.Ingredient_ID;
+
+        var stmt = db.prepare('UPDATE Ingredient SET Ingredient_Name = ?, Protein = ?, Carbohydrate = ?, Sugar = ?, Fat = ?, Sodium = ?, Calories = ? WHERE Ingredient_ID = ?');
+        stmt.run(Ingredient_Name, Protein, Carbohydrate, Sugar, Fat, Sodium, Calories, Ingredient_ID);
+    });
+
+app.route('/measurements')
+    .get((req, res) =>
+        res.send(JSON.stringify(getAllMeasurements(), null, 2))
+    );
+
+app.route('/measurements/:Measurement_ID')
+    .get((req, res) =>
+        res.send(JSON.stringify(getMeasurementByID(req.params.Measurement_ID)))
+    );
+
+function getAllRecipes() {
+    const recipes = db.prepare('SELECT * FROM Recipe').all();
+    return recipes;
+};
+
+function getRecipe(Recipe_ID) {
+    var recipe = { Recipe_ID: 0, User_ID: 0, Recipe_Name: "Template", Cooking_Instructions: "", Servings: 0, Description: "", Image_URL: "", MeasurementIngredient: [], Categories: [] };
+
+    const row = db.prepare('SELECT * FROM Recipe WHERE Recipe_ID = ' + Recipe_ID).get();
+    recipe.Recipe_ID = row.Recipe_ID;
+    recipe.User_ID = row.User_ID;
+    recipe.Recipe_Name = row.Recipe_Name;
+    recipe.Servings = row.Servings;
+    recipe.Cooking_Instructions = row.Cooking_Instructions;
+    recipe.Description = row.Description;
+    recipe.Image_URL = row.Image_URL;
+
+    const categoriesDB = db.prepare('SELECT Recipe_Category.Recipe_ID, Category_Name FROM Category JOIN Recipe_Category ON Category.Category_ID = Recipe_Category.Category_ID WHERE Recipe_ID =' + Recipe_ID).all();
+    var categories = categoriesDB;
+    recipe.Categories = categories;
+
+    const measurementIngredientDB = db.prepare('SELECT Amount, Measurement_Type, Ingredient_Name FROM Recipe_Ingredient JOIN Measurement ON Recipe_Ingredient.Measurement_ID = Measurement.Measurement_ID JOIN Ingredient ON Recipe_Ingredient.Ingredient_ID = Ingredient.Ingredient_ID JOIN Recipe ON Recipe_Ingredient.Recipe_ID = Recipe.Recipe_ID WHERE Recipe.Recipe_ID =' + Recipe_ID).all();
+    var measurementsIngredients = measurementIngredientDB;
+    recipe.MeasurementIngredient = measurementsIngredients;
+
+    return recipe;
+}
+
+function getAllIngredients() {
+    const ingredients = db.prepare('SELECT * FROM Ingredient').all();
+    return ingredients;
+}
+
+function getIngredient(Ingredient_ID) {
+    var ingredient = { Ingredient_ID: 0, User_ID: 0, Ingredient_Name: "Template", Protein: 0, Carbohydrate: 0, Sugar: 0, Fat: 0, Sodium: 0, Calories: 0, Image_URL: "", Categories: [] };
+
+    const row = db.prepare('SELECT * FROM Ingredient WHERE Ingredient_ID =' + Ingredient_ID).get();
+    ingredient.Ingredient_ID = row.Ingredient_ID;
+    ingredient.User_ID = row.User_ID;
+    ingredient.Ingredient_Name = row.Ingredient_Name;
+    ingredient.Protein = row.Protein;
+    ingredient.Carbohydrate = row.Carbohydrate;
+    ingredient.Sugar = row.Sugar;
+    ingredient.Fat = row.Fat;
+    ingredient.Sodium = row.Sodium;
+    ingredient.Calories = row.Calories;
+    ingredient.Image_URL = row.Image_URL;
+
+    const categoriesDB = db.prepare('SELECT Ingredient_Category.Ingredient_ID, Category_Name FROM Category JOIN Ingredient_Category ON Category.Category_ID = Ingredient_Category.Category_ID WHERE Ingredient_ID =' + Ingredient_ID).all();
+    var categories = categoriesDB;
+    ingredient.Categories = categories;
+
+    return ingredient;
+}
+
+function getAllMeasurements() {
+    const row = db.prepare('SELECT * FROM Measurement ORDER BY Measurement_Type, Amount').all();
+    return row;
+}
+
+function getMeasurementByID(Measurement_ID) {
+    var measurement = { Measurement_ID: 0, Measurement_Type: "", Amount: 0, };
+
+    const row = db.prepare(`SELECT * FROM Measurement WHERE Measurement_ID = ${Measurement_ID}`).get();
+    measurement.Measurement_ID = row.Measurement_ID;
+    measurement.Measurement_Type = row.Measurement_Type;
+    measurement.Amount = row.Amount;
+
+    return measurement;
+
+}

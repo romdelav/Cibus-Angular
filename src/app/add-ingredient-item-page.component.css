@@ -1,0 +1,25 @@
+h1{
+    text-align: center;
+}
+label{
+    width: 150px;
+    line-height: 26px;
+    margin-bottom: 10px;
+}
+
+input {
+    height: 26px;
+  }
+  button{
+    position: relative;
+    background-color: #fdd625d7;
+    border: none;
+    color: rgb(82, 78, 78);
+    padding: 10px 40px;
+    font-weight: 700;
+  }
+  form{
+      border: 1px solid black;
+      padding: 40px;
+      margin: 30px;   
+  }

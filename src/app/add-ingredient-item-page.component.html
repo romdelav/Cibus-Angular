@@ -1,0 +1,44 @@
+<header>
+    <h1>Add a New Ingredient</h1>
+</header>
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <div class="form-group">
+            <label for="Ingredient_Name">Ingredient Name</label>
+            <input type="text" name="Ingredient_Name" id="Ingredient_Name" formControlName="Ingredient_Name">
+            <div *ngIf="form.get('Ingredient_Name').hasError('pattern')" class="error">
+                Ingredient Name has invalid characters
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Protein">Protein (g)</label>
+            <input type="number" name="Protein" id="Protein" formControlName="Protein">
+        </div>
+        <div class="form-group">
+            <label for="Carbohydrate">Carbohydrate (g)</label>
+            <input type="number" name="Carbohydrate" id="Carbohydrate" formControlName="Carbohydrate">
+        </div>
+        <div class="form-group">
+            <label for="Sugar">Sugar (g)</label>
+            <input type="number" name="Sugar" id="Sugar" formControlName="Sugar">
+        </div>
+        <div class="form-group">
+            <label for="Fat">Fat (g)</label>
+            <input type="number" name="Fat" id="Fat" formControlName="Fat">
+        </div>
+        <div class="form-group">
+            <label for="Sodium">Sodium (mg)</label>
+            <input type="number" name="Sodium" id="Sodium" formControlName="Sodium">
+        </div>
+        <div class="form-group">
+            <label for="Calories">Calories (Kcal)</label>
+            <input type="number" name="Calories" id="Calories" formControlName="Calories">
+        </div>
+        <div class="text-center">
+        <button type="submit" [disabled]="!form.valid">Save</button>
+        <div *ngIf="isShown">Ingredient successfully created!</div>
+        </div>
+</form>
+</div>
+</div>

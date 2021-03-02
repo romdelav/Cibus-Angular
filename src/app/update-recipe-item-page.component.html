@@ -1,0 +1,76 @@
+<section>
+    <h1>Update Recipe</h1>
+</section>
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+        <div class="form-group">
+            <label for="Recipe_Name">Recipe Name</label>
+            <input type="text" name="Recipe_Name" id="Recipe_Name" formControlName="Recipe_Name" [ngModel]="recipe.Recipe_Name">
+            <div *ngIf="form.get('Recipe_Name').hasError('pattern')" class="error">
+                Recipe name has invalid characters
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Description">Description</label>
+            <input type="text" name="Description" id="Description" formControlName="Description" [ngModel]="recipe.Description">
+            <div *ngIf="form.get('Description').hasError('pattern')" class="error">
+                Description has invalid characters
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Servings">Servings</label>
+            <input type="text" name="Servings" id="Servings" formControlName="Servings" [ngModel]="recipe.Servings">
+        </div>
+        <div class="form-group">
+            <label for="Cooking_Instructions">Cooking Instructions</label>
+            <input type="text" name="Cooking_Instructions" id="Cooking_Instructions" formControlName="Cooking_Instructions" [ngModel]="recipe.Cooking_Instructions">
+            <div *ngIf="form.get('Cooking_Instructions').hasError('pattern')" class="error">
+                Instructions have invalid characters
+            </div>
+        </div>
+        <div class="form-group">
+        <h6>Ingredient 1:</h6>
+        
+                <label for="Ingredient_ID1">Name</label>
+                <select name="Ingredient_ID1" id="Ingredient_ID1" formControlName="Ingredient_ID1">
+                    <option>--Select--</option>
+                    <option *ngFor="let ingredient of ingredients" [value]="ingredient.Ingredient_ID">
+                        {{ingredient.Ingredient_Name}}
+                    </option>
+                </select>
+            
+                <label for="Measurement_ID1">Measurement: </label>
+                <select name="Measurement_ID1" id="Measurement_ID1" formControlName="Measurement_ID1">
+                    <option>--Select--</option>
+                    <option *ngFor="let measurement of measurements" [value]="measurement.Measurement_ID">
+                        {{measurement.Amount}} {{measurement.Measurement_Type}}
+                    </option>
+                </select>
+            </div>   
+            <div class="form-group">
+        <h6>Ingredient 2:</h6>
+        
+                <label for="Ingredient_ID2">Name</label>
+                <select name="Ingredient_ID2" id="Ingredient_ID2" formControlName="Ingredient_ID2">
+                    <option>--Select--</option>
+                    <option *ngFor="let ingredient of ingredients" [value]="ingredient.Ingredient_ID">
+                        {{ingredient.Ingredient_Name}}
+                    </option>
+                </select>
+          
+                <label for="Measurement_ID2">Measurement: </label>
+                <select name="Measurement_ID2" id="Measurement_ID2" formControlName="Measurement_ID2">
+                    <option>--Select--</option>
+                    <option *ngFor="let measurement of measurements" [value]="measurement.Measurement_ID">
+                        {{measurement.Amount}} {{measurement.Measurement_Type}}
+                    </option>
+                </select>
+            </div>
+            <div class="text-center">
+            <button type="submit" [disabled]="!form.valid">Save</button>
+            <div *ngIf="isShown">Recipe successfully updated!</div>
+            </div>
+    </form>
+</div>
+</div>

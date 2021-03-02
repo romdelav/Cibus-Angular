@@ -1,0 +1,39 @@
+<section class="p-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10">
+                <div style="padding-left:20%;">
+                    <a class="buttonStyle" [routerLink]="['/update-recipe', recipe.Recipe_ID]">Update Recipe</a>
+                    <br/><br/>
+                    <div class="card">
+                        <img src="../assets/placeholder.jpg" class="card-img-top img-fluid" alt="Not Found">
+                        <div class="card-body">
+                            <h2 class="card-title">{{recipe.Recipe_Name}}</h2>
+                            <h5>{{recipe.Description}}</h5>
+                            <br/><br/>
+                            <div class="card-text">
+                                <h5>Servings: {{recipe.Servings}}</h5>
+                                <br/>
+                                <h5>Ingredients:</h5>
+                                <ul>
+                                    <li *ngFor="let measurementingredient of recipe.MeasurementIngredient">
+                                        <h5>{{measurementingredient.Amount}} {{measurementingredient.Measurement_Type }} {{measurementingredient.Ingredient_Name}}</h5>
+                                    </li>
+                                </ul>
+                                <br/>
+                                <h5>Tags:
+                                    <span class="lead" *ngFor="let category of recipe.Categories">
+                                        &nbsp;<span class="badge badge-warning" style="font-weight:normal">{{category.Category_Name}}</span>&nbsp;
+                                    </span>
+                                </h5>
+                                <br/>
+                                <h5>Instructions: {{recipe.Cooking_Instructions}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<router-outlet></router-outlet>
