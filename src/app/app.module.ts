@@ -15,6 +15,7 @@ import { AddRecipeItemPageComponent } from './add-recipe-item-page.component';
 import { AddIngredientItemPageComponent } from './add-Ingredient-item-page.component';
 import { UpdateRecipeItemPageComponent } from './update-recipe-item-page.component';
 import { UpdateIngredientItemPageComponent } from './update-ingredient-item-page.component';
+import { HomePageComponent } from './home-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
  
 @NgModule({
@@ -27,7 +28,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AddRecipeItemPageComponent,
     AddIngredientItemPageComponent,
     UpdateRecipeItemPageComponent,
-    UpdateIngredientItemPageComponent
+    UpdateIngredientItemPageComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

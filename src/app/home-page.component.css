@@ -1,0 +1,32 @@
+.textStyle {
+    text-align: justify;
+    font-size: 1.5em;
+}
+
+.signUpForm {
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #A8A8A8;
+}
+
+.buttonStyle {
+    text-decoration: none;
+    background-color: #FFC11E;
+    border-radius: 5%;
+    padding: 5px;
+    color: black;
+    font-size: 1.5em;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-shadow: 5px 5px 10px #A8A8A8;
+}
+
+.buttonStyle:hover {
+    background-color: #ffdb81;
+}
+
+.center {
+    float: none;
+    margin: 0 auto;
+}

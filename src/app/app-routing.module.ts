@@ -8,6 +8,7 @@ import { AddRecipeItemPageComponent } from './add-recipe-item-page.component';
 import { AddIngredientItemPageComponent } from './add-Ingredient-item-page.component';
 import { UpdateRecipeItemPageComponent } from './update-recipe-item-page.component';
 import { UpdateIngredientItemPageComponent } from './update-ingredient-item-page.component';
+import { HomePageComponent } from './home-page.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path:'ingredients/:ingredient_ID', component: ShowIngredientItemPageComponent},
   { path:'add-recipe', component: AddRecipeItemPageComponent },
   { path:'add-ingredient', component: AddIngredientItemPageComponent },
-  { path:'', pathMatch:'full', redirectTo: 'all' }
+  { path:'', component: HomePageComponent }
 ];
 
 @NgModule({
