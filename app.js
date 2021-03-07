@@ -135,6 +135,13 @@ app.route('/update-ingredient/:Ingredient_ID')
         stmt.run(Ingredient_Name, Protein, Carbohydrate, Sugar, Fat, Sodium, Calories, Ingredient_ID);
     });
 
+app.route('/ingredients/:Ingredient_ID')
+    .delete((req, res) => {
+        var Ingredient_ID = req.params.Ingredient_ID;
+        var stmt = db.prepare('DELETE FROM Ingredient WHERE Ingredient_ID = ?');
+        stmt.run(Ingredient_ID);
+    })
+
 app.route('/measurements')
     .get((req, res) =>
         res.send(JSON.stringify(getAllMeasurements(), null, 2))
