@@ -19,7 +19,7 @@
                                 <h5>Calories: {{ingredient.Calories}}kcal</h5>
                                 <br/>
                                 <h5>Tags:
-                                    <span class="lead" *ngFor="let category of ingredient.Categories">
+                                    <span *ngFor="let category of ingredient.Categories">
                                         &nbsp;<span class="badge badge-warning" style="font-weight:normal">{{category.Category_Name}}</span>&nbsp;
                                     </span>
                                 </h5>

@@ -1,69 +1,30 @@
-                  :host {
-                     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-                     font-size: 14px;
-                     color: #333;
-                     box-sizing: border-box;
-                     -webkit-font-smoothing: antialiased;
-                     -moz-osx-font-smoothing: grayscale;
-                 }
-                 
-                 body {
-                     font-family: 'Source Sans Pro', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-                 }
-                 
-                 .navbarBackgroundColor {
-                     background-color: #FFC11E;
-                 }
-                 
-                 .cibusImg {
-                     background-position: center bottom;
-                     background-repeat: no-repeat;
-                     background-size: contain;
-                     width: 100%;
-                     height: auto;
-                 }
-                 
-                 .cibusHeader {
-                     color: white;
-                     font-weight: bold;
-                     font-size: 2em;
-                 }
-                 
-                 .navLinkStyle {
-                     color: white;
-                     font-weight: bold;
-                     font-size: 1.5em;
-                 }
-                 
-                 .textStyle {
-                     text-align: justify;
-                     font-size: 1.5em;
-                 }
-                 
-                 .signUpForm {
-                     text-align: center;
-                     border: 1px solid gray;
-                     border-radius: 5px;
-                     box-shadow: 5px 5px 10px #A8A8A8;
-                 }
-                 
-                 .buttonStyle {
-                     text-decoration: none;
-                     background-color: #FFC11E;
-                     border-radius: 5%;
-                     padding: 5px;
-                     color: black;
-                     font-size: 1.5em;
-                     padding-left: 25px;
-                     padding-right: 25px;
-                     box-shadow: 5px 5px 10px #A8A8A8;
-                 }
-                 
-                 .buttonStyle:hover {
-                     background-color: #ffdb81;
-                 }
-                 
-                 .center {
-                     float: none;
-                     margin: 0 auto;
-                 }
+                   :host {
+                      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                      font-size: 14px;
+                      color: #333;
+                      box-sizing: border-box;
+                      -webkit-font-smoothing: antialiased;
+                      -moz-osx-font-smoothing: grayscale;
+                  }
+                  
+                  body {
+                      font-family: 'Source Sans Pro', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+                  }
+                  
+                  .navbarBackgroundColor {
+                      background-color: #FFC11E;
+                  }
+                  
+                  .cibusImg {
+                      background-position: center bottom;
+                      background-repeat: no-repeat;
+                      background-size: contain;
+                      width: 100%;
+                      height: auto;
+                  }
+                  
+                  .navLinkStyle {
+                      color: white;
+                      font-weight: bold;
+                      font-size: 1.5em;
+                  }

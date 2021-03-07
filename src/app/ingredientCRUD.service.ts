@@ -51,7 +51,6 @@ export class IngredientCRUDService {
         );
     }
 
-
     updateIngredient(ingredient_ID: number, ingredient: Ingredient) {
         return this.http.put(`http://localhost:3000/update-ingredient/${ingredient_ID}`, ingredient)
             .pipe(

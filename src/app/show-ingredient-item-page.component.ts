@@ -21,10 +21,16 @@ export class ShowIngredientItemPageComponent implements OnInit {
     ngOnInit() {
         this.ingredient_ID = this.route.snapshot.params['ingredient_ID']
         this.getIngredientByID();
+        this.deleteThisIngredient();
     }
 
     getIngredientByID() {
        this.ingredientCRUD.getIngredient(this.ingredient_ID)
-       .subscribe(data => { this.ingredient = data });  
+            .subscribe(data => { this.ingredient = data });  
+    }
+
+    deleteThisIngredient() {
+        this.ingredientCRUD.deleteIngredient(this.ingredient_ID)
+            .subscribe(data => console.log(data));
     }
 }
