@@ -96,6 +96,7 @@ app.route('/ingredients/:Ingredient_ID')
 
 app.route('/add-ingredient')
     .post((req, res) => {
+        console.log(req.body)
 
         var Ingredient_Name = req.body.Ingredient_Name;
         var Protein = req.body.Protein;
@@ -104,7 +105,7 @@ app.route('/add-ingredient')
         var Fat = req.body.Fat;
         var Sodium = req.body.Sodium;
         var Calories = req.body.Calories;
-        console.log(req.body)
+
 
         var stmt = db.prepare('INSERT INTO Ingredient (Ingredient_Name, Protein, Carbohydrate, Sugar, Fat, Sodium, Calories) VALUES (?, ?, ?, ?, ?, ?, ?)');
         stmt.run(Ingredient_Name, Protein, Carbohydrate, Sugar, Fat, Sodium, Calories);
@@ -146,6 +147,14 @@ app.route('/categories/:Category_ID')
     .get((req, res) =>
         res.send(JSON.stringify(getCategory(req.params.Category_ID)))
     );
+
+app.route('/add-category')
+    .post((req, res) => {
+        var Category_Name = req.body.Category_Name;
+
+        var stmt = db.prepare('INSERT INTO Category (Category_Name) VALUES (?)');
+        stmt.run(Category_Name);
+    })
 
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe').all();
