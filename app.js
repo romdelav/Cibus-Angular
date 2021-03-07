@@ -170,8 +170,6 @@ app.route('/add-category')
         stmt.run(Category_Name);
     })
 
-
-
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe').all();
     return recipes;

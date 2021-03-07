@@ -55,6 +55,13 @@ export class RecipeCRUDService {
             );
     }
 
+    deleteRecipe(recipe_ID: number) {
+        return this.http.delete(`http://localhost:3000/recipes/${recipe_ID}`)
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+
     private handleError(error: HttpErrorResponse) {
         console.error(error.message);
         return throwError('A data error occurred, please try again.');
