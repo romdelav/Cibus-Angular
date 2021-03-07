@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { IngredientCRUDService } from './ingredientCRUD.service';
 import { RecipeCRUDService } from './recipeCRUD.service';
 import { MeasurementCRUDService } from './MeasurementCRUD.service';
+import { CategoryCRUDService } from './categoryCRUD.service';
 import { RecipeListPageComponent } from './recipe-list-page.component';
 import { IngredientListPageComponent } from './ingredient-list-page.component';
 import { ShowRecipeItemPageComponent } from './show-recipe-item-page.component';
@@ -41,7 +42,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   providers: [
     IngredientCRUDService,
     RecipeCRUDService,
-    MeasurementCRUDService
+    MeasurementCRUDService,
+    CategoryCRUDService
   ],
   bootstrap: [AppComponent]
 })
