@@ -137,6 +137,11 @@ app.route('/measurements/:Measurement_ID')
         res.send(JSON.stringify(getMeasurementByID(req.params.Measurement_ID)))
     );
 
+app.route('/categories')
+    .get((req, res) =>
+        res.send(JSON.stringify(getAllCategories(), null, 2))
+    );
+
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe').all();
     return recipes;
@@ -207,4 +212,9 @@ function getMeasurementByID(Measurement_ID) {
 
     return measurement;
 
+}
+
+function getAllCategories() {
+    const row = db.prepare('SELECT * FROM Category').all();
+    return row;
 }
