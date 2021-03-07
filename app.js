@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var cors = require('cors');
-var bodyParser = require("body-parser");
+var bodyParser = require('body-parser');
 
 var dbConnection = path.join(__dirname + '/CibusLLC.db');
 console.log(dbConnection);
@@ -86,6 +86,13 @@ app.route('/update-recipe/:Recipe_ID')
 
     })
 
+app.route('/recipes/:Recipe_ID')
+    .delete((req, res) => {
+        var Recipe_ID = req.params.Recipe_ID;
+        var stmt = db.prepare('DELETE FROM Recipe WHERE Recipe_ID = ?');
+        stmt.run(Recipe_ID);
+    })
+
 app.route('/ingredients')
     .get((req, res) =>
         res.send(JSON.stringify(getAllIngredients(), null, 2)));
@@ -155,6 +162,8 @@ app.route('/add-category')
         var stmt = db.prepare('INSERT INTO Category (Category_Name) VALUES (?)');
         stmt.run(Category_Name);
     })
+
+
 
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe').all();
