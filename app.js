@@ -142,6 +142,11 @@ app.route('/categories')
         res.send(JSON.stringify(getAllCategories(), null, 2))
     );
 
+app.route('/categories/:Category_ID')
+    .get((req, res) =>
+        res.send(JSON.stringify(getCategory(req.params.Category_ID)))
+    );
+
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe').all();
     return recipes;
@@ -198,8 +203,8 @@ function getIngredient(Ingredient_ID) {
 }
 
 function getAllMeasurements() {
-    const row = db.prepare('SELECT * FROM Measurement ORDER BY Measurement_Type, Amount').all();
-    return row;
+    const measurements = db.prepare('SELECT * FROM Measurement ORDER BY Measurement_Type, Amount').all();
+    return measurements;
 }
 
 function getMeasurementByID(Measurement_ID) {
@@ -215,6 +220,16 @@ function getMeasurementByID(Measurement_ID) {
 }
 
 function getAllCategories() {
-    const row = db.prepare('SELECT * FROM Category').all();
-    return row;
+    const categories = db.prepare('SELECT * FROM Category').all();
+    return categories;
+}
+
+function getCategory(Category_ID) {
+    var category = { Category_ID: 0, Category_Name: "" };
+
+    const row = db.prepare(`SELECT * FROM Category WHERE Category_ID = ${Category_ID}`).get();
+    category.Category_ID = row.Category_ID;
+    category.Category_Name = row.Category_Name;
+
+    return category;
 }
