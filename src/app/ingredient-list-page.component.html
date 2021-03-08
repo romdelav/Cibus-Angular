@@ -3,8 +3,8 @@
         <br/><br/>
         <h1 style="padding-left:32%">Ingredient List</h1>
         <br/><br/><br/><br/><br/><br/>
-        <input type="text" name="searchBar" id="searchBar" placeholder="Search by name" [(ngModel)]="Ingredient_Name" (input)="searchByName()" />
-        <br/><br/>
+        <input type="search" class="form-control" style="width: 87%" placeholder="Search by name" [(ngModel)]="Ingredient_Name" (input)="searchByName()" />
+        <br/><br/><br/><br/><br/><br/>
         <a class="addButton" [routerLink]="['/add-ingredient']">Add a new ingredient</a>
         <br/><br/><br/>
         <div class="row">
