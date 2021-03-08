@@ -18,6 +18,7 @@ import { UpdateRecipeItemPageComponent } from './update-recipe-item-page.compone
 import { UpdateIngredientItemPageComponent } from './update-ingredient-item-page.component';
 import { HomePageComponent } from './home-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
  
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [
     IngredientCRUDService,

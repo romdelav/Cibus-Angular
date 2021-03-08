@@ -44,6 +44,13 @@ export class IngredientCRUDService {
 
     }
 
+    getIngredientByName(ingredient_Name: string) {
+        return this.http.post(`http://localhost:3000/ingredients`, ingredient_Name)
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+
     createIngredient(newIngredient: Ingredient) {
         return this.http.post(`http://localhost:3000/add-ingredient`, newIngredient)
         .pipe(

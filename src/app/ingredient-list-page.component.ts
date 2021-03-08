@@ -9,7 +9,8 @@ import { IngredientCRUDService, Ingredient } from './ingredientCRUD.service';
 
 export class IngredientListPageComponent implements OnInit {
 
-    public ingredients: Ingredient[];
+    ingredients: Ingredient[];
+    Ingredient_Name: any;
 
     constructor(
         private ingredientCRUD: IngredientCRUDService
@@ -17,11 +18,25 @@ export class IngredientListPageComponent implements OnInit {
 
     ngOnInit(): void {
         this.getIngredients();
+        this.searchByName();
     }
 
     getIngredients() {
         this.ingredientCRUD.getAllIngredients()
             .subscribe(data => { this.ingredients = data });
     }
-   
+
+    searchByName() {
+        if(this.Ingredient_Name != "") {
+            this.ingredients = this.ingredients.filter(data => {
+                return data.Ingredient_Name.toLocaleLowerCase().match(this.Ingredient_Name.toLocaleLowerCase());
+            })
+        }
+        else if(this.Ingredient_Name == "") {
+            this.ingredients = Object.assign([], this.ingredients)
+            this.ngOnInit();
+        }   
+    }
+
+  
 }
