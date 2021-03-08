@@ -102,6 +102,31 @@ app.route('/ingredients')
     .get((req, res) =>
         res.send(JSON.stringify(getAllIngredients(), null, 2)));
 
+app.route('/ingredients')
+    .post((req, res) => {
+
+        var Ingredient_Name = req.body.Ingredient_Name;
+        var ingredient = { Ingredient_ID: 0, User_ID: 0, Ingredient_Name: "Template", Protein: 0, Carbohydrate: 0, Sugar: 0, Fat: 0, Sodium: 0, Calories: 0, Image_URL: "", Categories: [] };
+
+        const row = db.prepare(`SELECT * FROM Ingredient WHERE Ingredient_Name LIKE %${Ingredient_Name}%`).get();
+        ingredient.Ingredient_ID = row.Ingredient_ID;
+        ingredient.User_ID = row.User_ID;
+        ingredient.Ingredient_Name = row.Ingredient_Name;
+        ingredient.Protein = row.Protein;
+        ingredient.Carbohydrate = row.Carbohydrate;
+        ingredient.Sugar = row.Sugar;
+        ingredient.Fat = row.Fat;
+        ingredient.Sodium = row.Sodium;
+        ingredient.Calories = row.Calories;
+        ingredient.Image_URL = row.Image_URL;
+
+        const categoriesDB = db.prepare('SELECT Ingredient_Category.Ingredient_ID, Category_Name FROM Category JOIN Ingredient_Category ON Category.Category_ID = Ingredient_Category.Category_ID WHERE Ingredient_ID =' + Ingredient_ID).all();
+        var categories = categoriesDB;
+        ingredient.Categories = categories;
+
+        return ingredient;
+    })
+
 app.route('/ingredients/:Ingredient_ID')
     .get((req, res) =>
         res.send(JSON.stringify(getIngredient(req.params.Ingredient_ID), null, 2)));
