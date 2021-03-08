@@ -12,6 +12,7 @@ export class ShowIngredientItemPageComponent implements OnInit {
     
     ingredient_ID: number;
     ingredient: Ingredient;
+    isShown: boolean = false;
 
     constructor(
         private ingredientCRUD: IngredientCRUDService,
