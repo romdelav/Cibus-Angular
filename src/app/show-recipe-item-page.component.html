@@ -5,6 +5,8 @@
                 <div style="padding-left:20%;">
                     <a class="buttonStyle" [routerLink]="['/update-recipe', recipe.Recipe_ID]">Update Recipe</a>
                     <br/><br/>
+                    <a class="buttonStyle" [routerLink]="['/recipes']" (click)="deleteThisRecipe()">Delete Recipe</a>
+                    <br/><br/>
                     <div class="card">
                         <img src="../assets/placeholder.jpg" class="card-img-top img-fluid" alt="Not Found">
                         <div class="card-body">

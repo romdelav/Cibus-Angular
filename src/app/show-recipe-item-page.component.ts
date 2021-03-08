@@ -21,11 +21,17 @@ export class ShowRecipeItemPageComponent implements OnInit {
     ngOnInit() {
         this.recipe_ID = this.route.snapshot.params['recipe_ID']
         this.getRecipeByID();
+        this.deleteThisRecipe();
     }
 
     getRecipeByID() {
        this.recipeCRUD.getRecipe(this.recipe_ID)
        .subscribe(data => { this.recipe = data });  
+    }
+
+    deleteThisRecipe() {
+        this.recipeCRUD.deleteRecipe(this.recipe_ID)
+        .subscribe(data => console.log(data));
     }
 
 }
