@@ -89,8 +89,15 @@ app.route('/update-recipe/:Recipe_ID')
 app.route('/recipes/:Recipe_ID')
     .delete((req, res) => {
         var Recipe_ID = req.params.Recipe_ID;
-        var stmt = db.prepare('DELETE FROM Recipe WHERE Recipe_ID = ?');
-        stmt.run(Recipe_ID);
+
+        var stmt1 = db.prepare('DELETE FROM Recipe WHERE Recipe_ID = ?');
+        stmt1.run(Recipe_ID);
+
+        var stmt2 = db.prepare('DELETE FROM Recipe_Ingredient WHERE Recipe_ID = ?');
+        stmt2.run(Recipe_ID);
+
+        var stmt3 = db.prepare('DELETE FROM Recipe_Category WHERE Recipe_ID = ?');
+        stmt3.run(Recipe_ID);
     })
 
 app.route('/ingredients')
@@ -138,8 +145,15 @@ app.route('/update-ingredient/:Ingredient_ID')
 app.route('/ingredients/:Ingredient_ID')
     .delete((req, res) => {
         var Ingredient_ID = req.params.Ingredient_ID;
-        var stmt = db.prepare('DELETE FROM Ingredient WHERE Ingredient_ID = ?');
-        stmt.run(Ingredient_ID);
+
+        var stmt1 = db.prepare('DELETE FROM Ingredient WHERE Ingredient_ID = ?');
+        stmt1.run(Ingredient_ID);
+
+        var stmt2 = db.prepare('DELETE FROM Recipe_Ingredient WHERE Ingredient_ID = ?');
+        stmt2.run(Ingredient_ID);
+
+        var stmt3 = db.prepare('DELETE FROM Ingredient_Category WHERE Ingredient_ID = ?');
+        stmt3.run(Ingredient_ID);
     })
 
 app.route('/measurements')
