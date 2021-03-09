@@ -17,6 +17,8 @@ export class AddRecipeItemPageComponent implements OnInit {
     ingredients: Ingredient[];
     measurements: Measurement[];
     isShown: boolean = false;
+    isShown1: boolean = false;
+    isShown2: boolean = false;
 
     constructor(
         private recipeCRUD: RecipeCRUDService,
@@ -72,6 +74,14 @@ export class AddRecipeItemPageComponent implements OnInit {
 
     clearForm() {
         this.form.reset();
+    }
+
+    showIngredient1() {
+        this.isShown1 = !this.isShown1;
+    }
+
+    showIngredient2() {
+        this.isShown2 = !this.isShown2;
     }
 
 }
