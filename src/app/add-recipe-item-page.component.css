@@ -30,3 +30,18 @@ form {
     padding: 40px;
     margin: 30px;
 }
+
+.toggleLink {
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 7px;
+    box-shadow: 5px 5px 5px #DCDCDC;
+    border: 1px solid #DCDCDC;
+    transition: background-color 0.5s;
+}
+
+.toggleLink:hover {
+    background-color: #DCDCDC;
+}
