@@ -1,7 +1,8 @@
-h1{
+h1 {
     text-align: center;
 }
-label{
+
+label {
     width: 150px;
     line-height: 26px;
     margin-bottom: 10px;
@@ -9,18 +10,23 @@ label{
 
 input {
     height: 26px;
-  }
-  button{
-    position: relative;
-    background-color: #fdd625d7;
-    border: none;
-    color: rgb(82, 78, 78);
-    padding: 10px 40px;
-    text-decoration: none;
+}
 
-  }
-  form{
-      border: 1px solid black;
-      padding: 40px;
-      margin: 30px;   
-  }
+.buttonStyle {
+    text-decoration: none;
+    background-color: #FFC11E;
+    border-radius: 5%;
+    padding: 5px;
+    color: black;
+    font-size: 1em;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-shadow: 5px 5px 10px #A8A8A8;
+}
+
+form {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 40px;
+    margin: 30px;
+}
