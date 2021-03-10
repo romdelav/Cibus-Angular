@@ -25,10 +25,11 @@ input {
 }
 
 form {
-    border: 1px solid grey;
+    border: 1px solid #DCDCDC;
     border-radius: 5px;
     padding: 40px;
     margin: 30px;
+    box-shadow: 5px 5px 5px #DCDCDC;
 }
 
 .toggleLink {

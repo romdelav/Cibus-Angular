@@ -2,7 +2,6 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var cors = require('cors');
-var bodyParser = require('body-parser');
 
 var dbConnection = path.join(__dirname + '/CibusLLC.db');
 console.log(dbConnection);
@@ -11,8 +10,8 @@ const db = require('better-sqlite3')(dbConnection, { verbose: console.log });
 var port = process.env.PORT || 3000;
 
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.listen(port, () => {
     console.log('App initalized on port ' + port);

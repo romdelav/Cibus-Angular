@@ -3,7 +3,7 @@
         <br/><br/>
         <h1 style="padding-left:32%">Ingredient List</h1>
         <br/><br/><br/><br/><br/><br/>
-        <input type="search" class="form-control" style="width: 87%" placeholder="Search by name" [(ngModel)]="Ingredient_Name" (input)="searchByName()" />
+        <input type="search" class="form-control searchBarStyle" style="width: 87%" placeholder="Search by name" [(ngModel)]="Ingredient_Name" (input)="searchByName()" />
         <br/><br/><br/><br/><br/><br/>
         <a class="addButton" [routerLink]="['/add-ingredient']">Add a new ingredient</a>
         <br/><br/><br/>
@@ -13,7 +13,11 @@
                     <img class="card-img-top" src="../assets/images/placeholder.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ingredient.Ingredient_Name}}</h5>
-                        <a [routerLink]="['/ingredients', ingredient.Ingredient_ID]" class="btn buttonStyle">Details</a>
+                        <span>
+                            <a [routerLink]="['/ingredients', ingredient.Ingredient_ID]" class="btn buttonStyle">Details</a>
+                            &nbsp;&nbsp;&nbsp;
+                            <!--<a [routerLink]="['/ingredients']" class="btn buttonStyle" (click)="deleteThisIngredient()">Delete</a>-->
+                        </span>
                     </div>
                 </div>
                 <br/><br/>

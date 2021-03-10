@@ -33,3 +33,7 @@ section {
     padding-right: 25px;
     box-shadow: 5px 5px 10px #A8A8A8;
 }
+
+.searchBarStyle {
+    box-shadow: 2px 2px 2px #EBEBEB;
+}

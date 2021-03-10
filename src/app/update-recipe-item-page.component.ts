@@ -15,7 +15,7 @@ export class UpdateRecipeItemPageComponent implements OnInit {
     
     form: FormGroup;
     recipe_ID: number;
-    recipe: any;;
+    recipe: any;
     ingredients : Ingredient[];
     measurements: Measurement[];
     isShown: boolean = false;
@@ -39,15 +39,9 @@ export class UpdateRecipeItemPageComponent implements OnInit {
                 Validators.required,
                 Validators.pattern('[\\w\\-\\s\\/]+')
             ])),
-            Description: new FormControl('', Validators.compose([
-                Validators.pattern('[\\w\\-\\s\\/]+')
-            ])),
-            Servings: new FormControl('', Validators.compose([
-                Validators.pattern('^-?[0-9]\\d*(\\.\\d{1,4})?$')
-            ])),
-            Cooking_Instructions: new FormControl('', Validators.compose([
-                Validators.pattern('[\\w\\-\\s\\/]+')
-            ])),
+            Description: new FormControl('', Validators.pattern('[\\w\\-\\s\\/]+')),
+            Servings: new FormControl('', Validators.pattern('^-?[0-9]\\d*(\\.\\d{1,4})?$')),
+            Cooking_Instructions: new FormControl('', Validators.pattern('[\\w\\-\\s\\/]+')),
             Ingredient_ID1: new FormControl(''),
             Measurement_ID1: new FormControl(''),
             Ingredient_ID2: new FormControl(''),

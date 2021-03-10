@@ -11,6 +11,7 @@ export class IngredientListPageComponent implements OnInit {
 
     ingredients: Ingredient[];
     Ingredient_Name: any;
+    Ingredient_ID: number;
 
     constructor(
         private ingredientCRUD: IngredientCRUDService
@@ -19,11 +20,17 @@ export class IngredientListPageComponent implements OnInit {
     ngOnInit(): void {
         this.getIngredients();
         this.searchByName();
+        this.deleteThisIngredient();
     }
 
     getIngredients() {
         this.ingredientCRUD.getAllIngredients()
             .subscribe(data => { this.ingredients = data });
+    }
+
+    deleteThisIngredient() {
+        this.ingredientCRUD.deleteIngredient(this.Ingredient_ID)
+            .subscribe(data => console.log(data));
     }
 
     searchByName() {

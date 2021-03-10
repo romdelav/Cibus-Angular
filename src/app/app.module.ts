@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { IngredientCRUDService } from './ingredientCRUD.service';
 import { RecipeCRUDService } from './recipeCRUD.service';
@@ -18,7 +18,6 @@ import { UpdateRecipeItemPageComponent } from './update-recipe-item-page.compone
 import { UpdateIngredientItemPageComponent } from './update-ingredient-item-page.component';
 import { HomePageComponent } from './home-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
  
 @NgModule({
   declarations: [
