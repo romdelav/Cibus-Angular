@@ -83,7 +83,7 @@ app.route('/update-recipe/:Recipe_ID')
         stmt6.run(Recipe_Name, Ingredient_ID2, Measurement_ID2);
     })
 
-app.route('/recipes/:Recipe_ID')
+app.route('/delete-recipe/:Recipe_ID')
     .delete((req, res) => {
         var Recipe_ID = req.params.Recipe_ID;
 
@@ -139,7 +139,7 @@ app.route('/update-ingredient/:Ingredient_ID')
         stmt.run(Ingredient_Name, Protein, Carbohydrate, Sugar, Fat, Sodium, Calories, Ingredient_ID);
     });
 
-app.route('/ingredients/:Ingredient_ID')
+app.route('/delete-ingredient/:Ingredient_ID')
     .delete((req, res) => {
         var Ingredient_ID = req.params.Ingredient_ID;
 
