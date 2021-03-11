@@ -10,12 +10,13 @@ import { UpdateRecipeItemPageComponent } from './update-recipe-item-page.compone
 import { UpdateIngredientItemPageComponent } from './update-ingredient-item-page.component';
 import { HomePageComponent } from './home-page.component';
 import { DeleteIngredientItemPageComponent } from './delete-ingredient-item-page.component';
-
+import { DeleteRecipeItemPageComponent } from './delete-recipe-item-page.component';
 
 const routes: Routes = [
   { path:'recipes', component: RecipeListPageComponent },
   { path:'recipes/:recipe_ID', component: ShowRecipeItemPageComponent },
   { path:'update-recipe/:recipe_ID', component: UpdateRecipeItemPageComponent },
+  { path:'delete-recipe/:recipe_ID', component: DeleteRecipeItemPageComponent},
   { path:'update-ingredient/:ingredient_ID', component: UpdateIngredientItemPageComponent },
   { path:'delete-ingredient/:ingredient_ID', component: DeleteIngredientItemPageComponent},
   { path:'ingredients', component: IngredientListPageComponent },
