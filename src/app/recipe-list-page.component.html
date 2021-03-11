@@ -3,11 +3,13 @@
         <br/><br/>
         <h1 style="padding-left:32%">Recipe List</h1>
         <br/><br/><br/><br/><br/><br/>
+        <input type="search" class="form-control searchBarStyle" style="width: 87%" placeholder="Search by name" [(ngModel)]="Recipe_Name" (input)="searchByName()" />
+        <br/><br/><br/><br/><br/><br/>
         <a class="addButton" [routerLink]="['/add-recipe']">Add a new recipe</a>
         <br/><br/><br/>
         <div class="row">
             <div *ngFor="let recipe of recipes" style="padding: 2%">
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <img class="card-img-top" src="../assets/images/placeholder.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{recipe.Recipe_Name}}</h5>

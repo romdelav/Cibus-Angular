@@ -11,8 +11,9 @@ import { Router } from '@angular/router';
 
 export class RecipeListPageComponent implements OnInit {
 
-    public recipes: Recipe[];
+    recipes: Recipe[];
     recipe_ID: number;
+    Recipe_Name: any;
     selectedRecipe: string = '';
 
     constructor(
@@ -23,6 +24,7 @@ export class RecipeListPageComponent implements OnInit {
 
     ngOnInit(): void {
         this.getRecipes();
+        this.searchByName();
     }
 
     getRecipes() {
@@ -30,8 +32,20 @@ export class RecipeListPageComponent implements OnInit {
             .subscribe(recipes => { this.recipes = recipes });
     }
 
+    searchByName() {
+        if(this.Recipe_Name != "") {
+            this.recipes = this.recipes.filter(data => {
+                return data.Recipe_Name.toLocaleLowerCase().match(this.Recipe_Name.toLocaleLowerCase());
+            })
+        }
+        else if(this.Recipe_Name == "") {
+            this.recipes = Object.assign([], this.recipes)
+            this.ngOnInit();
+        }   
+    }
+
     selectRecipeHandler (event: any) {
         this.selectedRecipe = event.target.value;
         this.router.navigateByUrl('/recipes/' + this.selectedRecipe);
-        }
+    }
 }
