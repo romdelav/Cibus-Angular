@@ -1,3 +1,4 @@
+<!--
 <section class="p-5">
     <h5>
         <label for="Recipe_Name">Select a recipe:&nbsp;&nbsp;</label>
@@ -12,4 +13,33 @@
 
 
     </h5>
+</section>
+
+-->
+<section>
+    <div class="container">
+        <br/><br/>
+        <h1 style="padding-left:32%">Recipe List</h1>
+        <br/><br/><br/><br/><br/><br/>
+        <a class="addButton" [routerLink]="['/add-recipe']">Add a new recipe</a>
+        <br/><br/><br/>
+        <div class="row">
+            <div *ngFor="let recipe of recipes" style="padding: 2%">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="../assets/images/placeholder.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{recipe.Recipe_Name}}</h5>
+                        <span>
+                            <a [routerLink]="['/recipes', recipe.Recipe_ID]" class="btn buttonStyle">Details</a>
+                            &nbsp;
+                            <a [routerLink]="['/update-recipe', recipe.Recipe_ID]" class="btn buttonStyle">Update</a>
+                            &nbsp;
+                            <a [routerLink]="['/delete-recipe', recipe.Recipe_ID]" class="btn buttonStyle">Delete</a>
+                        </span>
+                    </div>
+                </div>
+                <br/><br/>
+            </div>
+        </div>
+    </div>
 </section>

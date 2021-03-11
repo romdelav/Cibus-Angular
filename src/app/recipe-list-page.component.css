@@ -2,6 +2,14 @@ h5 {
     font-weight: normal;
 }
 
+section {
+    background-color: #FDFDFD;
+}
+
+.card {
+    box-shadow: 10px 10px 10px #EBEBEB;
+}
+
 .buttonStyle {
     text-decoration: none;
     background-color: #FFC11E;
@@ -19,4 +27,16 @@ h5 {
 
 a {
     color: #e9a700
+}
+
+.addButton {
+    text-decoration: none;
+    background-color: #FFC11E;
+    border-radius: 5%;
+    padding: 5px;
+    color: black;
+    font-size: 1.5em;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-shadow: 5px 5px 10px #A8A8A8;
 }
