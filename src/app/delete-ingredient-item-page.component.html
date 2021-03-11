@@ -5,7 +5,12 @@
                 <div style="padding-left:20%">
                     <div style="text-align: center;">
                         <h2>Delete this ingredient?</h2>
-                        <a class="btn buttonStyle" (click)="deleteThisIngredient()">Yes</a>
+                        <span>
+                            <a class="btn buttonStyle" (click)="deleteThisIngredient()">Yes</a>
+                            &nbsp;&nbsp; 
+                            <a class="btn buttonStyle" [routerLink]="['/ingredients']">Go back</a>
+                        </span>
+
                         <div *ngIf="isShown">Ingredient successfully deleted!</div>
                     </div>
 
