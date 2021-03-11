@@ -9,6 +9,7 @@ import { AddIngredientItemPageComponent } from './add-Ingredient-item-page.compo
 import { UpdateRecipeItemPageComponent } from './update-recipe-item-page.component';
 import { UpdateIngredientItemPageComponent } from './update-ingredient-item-page.component';
 import { HomePageComponent } from './home-page.component';
+import { DeleteIngredientItemPageComponent } from './delete-ingredient-item-page.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path:'recipes/:recipe_ID', component: ShowRecipeItemPageComponent },
   { path:'update-recipe/:recipe_ID', component: UpdateRecipeItemPageComponent },
   { path:'update-ingredient/:ingredient_ID', component: UpdateIngredientItemPageComponent },
+  { path:'delete-ingredient/:ingredient_ID', component: DeleteIngredientItemPageComponent},
   { path:'ingredients', component: IngredientListPageComponent },
   { path:'ingredients/:ingredient_ID', component: ShowIngredientItemPageComponent},
   { path:'add-recipe', component: AddRecipeItemPageComponent },

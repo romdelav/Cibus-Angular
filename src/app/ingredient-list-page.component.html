@@ -15,9 +15,10 @@
                         <h5 class="card-title">{{ingredient.Ingredient_Name}}</h5>
                         <span>
                             <a [routerLink]="['/ingredients', ingredient.Ingredient_ID]" class="btn buttonStyle">Details</a>
-                            &nbsp;&nbsp;&nbsp;
-                            <!--<a [routerLink]="['/delete-ingredient', ingredient.Ingredient_ID]" class="btn buttonStyle" ">Delete</a>-->
+                            &nbsp;
                             <a [routerLink]="['/update-ingredient', ingredient.Ingredient_ID]" class="btn buttonStyle">Update</a>
+                            &nbsp;
+                            <a [routerLink]="['/delete-ingredient', ingredient.Ingredient_ID]" class="btn buttonStyle">Delete</a>
                         </span>
                     </div>
                 </div>

@@ -1,0 +1,35 @@
+<section class="p-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10">
+                <div style="padding-left:20%">
+                    <h2 style="text-align: center;">Delete this ingredient?</h2>
+                    <br/><br/>
+                    <div class="card">
+                        <img src="../assets/images/placeholder.jpg" class="card-img-top img-fluid" alt="Not Found">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ingredient.Ingredient_Name}}</h2>
+                            <br/>
+                            <div class="card-text">
+                                <h5>Proteins: {{ingredient.Protein}}g</h5>
+                                <h5>Carbohydrate: {{ingredient.Carbohydrate}}g</h5>
+                                <h5>Sugar: {{ingredient.Sugar}}g</h5>
+                                <h5>Fat: {{ingredient.Fat}}g</h5>
+                                <h5>Sodium: {{ingredient.Sodium}}mg</h5>
+                                <h5>Calories: {{ingredient.Calories}}kcal</h5>
+                                <br/>
+                                <h5>Tags:
+                                    <span *ngFor="let category of ingredient.Categories">
+                                        &nbsp;<span class="badge badge-warning" style="font-weight:normal">{{category.Category_Name}}</span>&nbsp;
+                                    </span>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<a class="buttonStyle" (click)="deleteThisIngredient()" [routerLink]="['/ingredients']">Delete Ingredient</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<router-outlet></router-outlet>
