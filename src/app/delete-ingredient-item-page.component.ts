@@ -11,7 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class DeleteIngredientItemPageComponent implements OnInit {
 
     ingredient_ID: number;
-    ingredient: Ingredient;
+    ingredient: any;
+    isShown: boolean = false;
 
     constructor(
         private ingredientCRUD: IngredientCRUDService,
@@ -26,5 +27,15 @@ export class DeleteIngredientItemPageComponent implements OnInit {
     getIngredientByID() {
        this.ingredientCRUD.getIngredient(this.ingredient_ID)
             .subscribe(data => { this.ingredient = data });  
+    }
+
+    deleteThisIngredient() {
+        this.ingredientCRUD.deleteIngredient(this.ingredient_ID)
+            .subscribe(data => {this.ingredient = data});
+        this.showMessage()
+    }
+
+    showMessage() {
+        this.isShown = !this.isShown;
     }
 }
