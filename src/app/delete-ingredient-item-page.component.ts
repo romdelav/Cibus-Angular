@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IngredientCRUDService, Ingredient } from './ingredientCRUD.service';
+import { IngredientCRUDService } from './ingredientCRUD.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

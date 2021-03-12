@@ -7,8 +7,9 @@
                         <h2>Delete this recipe?</h2>
                         <span>
                             <a class="btn buttonStyle" (click)="deleteThisRecipe()">Yes</a>
+                            &nbsp;&nbsp; 
+                            <a class="btn buttonStyle" [routerLink]="['/ingredients']">Go back</a>
                         </span>
-
                         <div *ngIf="isShown">Recipe successfully deleted!</div>
                     </div>
                     <br/><br/>
@@ -43,3 +44,4 @@
         </div>
     </div>
 </section>
+<router-outlet></router-outlet>
