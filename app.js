@@ -210,7 +210,7 @@ function getRecipe(Recipe_ID) {
 }
 
 function getAllIngredients() {
-    const ingredients = db.prepare('SELECT * FROM Ingredient').all();
+    const ingredients = db.prepare('SELECT * FROM Ingredient ORDER BY Ingredient_Name').all();
     return ingredients;
 }
 
