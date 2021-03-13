@@ -45,6 +45,10 @@ app.route('/salads')
     .get((req, res) =>
         res.send(JSON.stringify(getSalads(), null, 2)));
 
+app.route('/soups')
+    .get((req, res) =>
+        res.send(JSON.stringify(getSoups(), null, 2)));
+
 app.route('/add-recipe')
     .post((req, res) => {
         console.log(req.body)
@@ -231,6 +235,10 @@ function getSalads() {
     return salads;
 }
 
+function getSoups() {
+    const soups = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${13}`).all();
+    return soups;
+}
 
 function getRecipe(Recipe_ID) {
     var recipe = { Recipe_ID: 0, User_ID: 0, Recipe_Name: "Template", Cooking_Instructions: "", Servings: 0, Description: "", Image_URL: "", MeasurementIngredient: [], Categories: [] };
