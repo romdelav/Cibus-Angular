@@ -41,6 +41,10 @@ app.route('/sides')
     .get((req, res) =>
         res.send(JSON.stringify(getSides(), null, 2)));
 
+app.route('/salads')
+    .get((req, res) =>
+        res.send(JSON.stringify(getSalads(), null, 2)));
+
 app.route('/add-recipe')
     .post((req, res) => {
         console.log(req.body)
@@ -221,6 +225,12 @@ function getSides() {
     const sides = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${12}`).all();
     return sides;
 }
+
+function getSalads() {
+    const salads = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${14}`).all();
+    return salads;
+}
+
 
 function getRecipe(Recipe_ID) {
     var recipe = { Recipe_ID: 0, User_ID: 0, Recipe_Name: "Template", Cooking_Instructions: "", Servings: 0, Description: "", Image_URL: "", MeasurementIngredient: [], Categories: [] };
