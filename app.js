@@ -37,6 +37,10 @@ app.route('/meat-recipes')
     .get((req, res) =>
         res.send(JSON.stringify(getMeatRecipes(), null, 2)));
 
+app.route('/sides')
+    .get((req, res) =>
+        res.send(JSON.stringify(getSides(), null, 2)));
+
 app.route('/add-recipe')
     .post((req, res) => {
         console.log(req.body)
@@ -211,6 +215,11 @@ function getVegetarianRecipes() {
 function getMeatRecipes() {
     const meatRecipes = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${1}`).all();
     return meatRecipes;
+}
+
+function getSides() {
+    const sides = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${12}`).all();
+    return sides;
 }
 
 function getRecipe(Recipe_ID) {
