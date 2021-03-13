@@ -25,7 +25,7 @@ export class RecipeListPageComponent implements OnInit {
 
     getRecipes() {
         this.recipeCRUD.getAllRecipes()
-            .subscribe(recipes => { this.recipes = recipes });
+            .subscribe(data => { this.recipes = data });
     }
 
 }

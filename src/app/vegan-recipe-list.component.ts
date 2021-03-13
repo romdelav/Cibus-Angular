@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { RecipeCRUDService,  Recipe } from './recipeCRUD.service'
 
 @Component({
     selector: 'vegan-recipe-list',
@@ -6,4 +7,20 @@ import { Component } from '@angular/core';
     styleUrls: ['./vegan-recipe-list.component.css']
 })
 
-export class VeganRecipeListComponent {}
+export class VeganRecipeListComponent implements OnInit {
+
+    recipes: Recipe[];
+
+    constructor(
+        private recipeCRUD: RecipeCRUDService,
+    ) {}
+
+    ngOnInit() {
+        this.getAllVeganRecipes();
+    }
+
+    getAllVeganRecipes() {
+        this.recipeCRUD.getVeganRecipes()
+            .subscribe(data => { this.recipes = data});
+    }
+}
