@@ -12,6 +12,7 @@ export class IngredientListPageComponent implements OnInit {
     ingredients: Ingredient[];
     Ingredient_Name: any;
     Ingredient_ID: number;
+    term: string;
 
     constructor(
         private ingredientCRUD: IngredientCRUDService
