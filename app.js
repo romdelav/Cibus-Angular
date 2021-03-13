@@ -25,6 +25,10 @@ app.route('/recipes/:Recipe_ID')
     .get((req, res) =>
         res.send(JSON.stringify(getRecipe(req.params.Recipe_ID), null, 2)));
 
+app.route('/vegan-recipes')
+    .get((req, res) =>
+        res.send(JSON.stringify(getVeganRecipes(), 2, null)));
+
 app.route('/add-recipe')
     .post((req, res) => {
         console.log(req.body)
@@ -185,6 +189,11 @@ function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe').all();
     return recipes;
 };
+
+function getVeganRecipes() {
+    const recipe = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${2}`).all();
+    return recipe;
+}
 
 function getRecipe(Recipe_ID) {
     var recipe = { Recipe_ID: 0, User_ID: 0, Recipe_Name: "Template", Cooking_Instructions: "", Servings: 0, Description: "", Image_URL: "", MeasurementIngredient: [], Categories: [] };
