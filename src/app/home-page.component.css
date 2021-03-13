@@ -16,10 +16,10 @@
     border-radius: 5%;
     padding: 5px;
     color: black;
-    font-size: 1.5em;
+    font-size: 1.2em;
     padding-left: 25px;
     padding-right: 25px;
-    box-shadow: 5px 5px 10px #A8A8A8;
+    box-shadow: 4px 4px 4px #DFDFDF;
 }
 
 .buttonStyle:hover {
