@@ -1,0 +1,41 @@
+h5 {
+    font-weight: normal;
+}
+
+.card {
+    box-shadow: 10px 10px 10px #EBEBEB;
+    width: 18rem;
+    height: 22rem;
+}
+
+.buttonStyle {
+    text-decoration: none;
+    background-color: #FFC11E;
+    border-radius: 5%;
+    padding: 5px;
+    color: black;
+    font-size: 1em;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-shadow: 5px 5px 10px #A8A8A8;
+}
+
+.buttonStyle:hover {
+    background-color: #ffdb81;
+}
+
+a {
+    color: #e9a700
+}
+
+.addButton {
+    text-decoration: none;
+    background-color: #FFC11E;
+    border-radius: 5%;
+    padding: 5px;
+    color: black;
+    font-size: 1.5em;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-shadow: 5px 5px 10px #A8A8A8;
+}

@@ -36,6 +36,13 @@ export class RecipeCRUDService {
                 catchError(this.handleError)
             );
     }
+
+    getVegetarianRecipes(): Observable<Recipe[]> {
+        return this.http.get<Recipe[]>('http://localhost:3000/vegetarian-recipes')
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
   
     getRecipe(recipe_ID: number): Observable<Recipe> {
         return this.http.get<Recipe>(`http://localhost:3000/recipes/${recipe_ID}`)
