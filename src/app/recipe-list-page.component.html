@@ -6,6 +6,10 @@
         <div class="form-group">
             <input type="text" class="form-control" style="width:87%" placeholder="Search Here" [(ngModel)]="term">
         </div>
+        <br/>
+        <a [routerLink]="['/vegan-recipes']">
+            <img src="../assets/images/vegan1.png" alt="Not found">
+        </a>
         <br/><br/><br/><br/><br/><br/>
         <a class="addButton" [routerLink]="['/add-recipe']">Add a new recipe</a>
         <br/><br/><br/>

@@ -21,6 +21,7 @@ import { DeleteRecipeItemPageComponent } from './delete-recipe-item-page.compone
 import { HomePageComponent } from './home-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { VeganRecipeListComponent } from './vegan-recipe-list.component'
  
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     UpdateIngredientItemPageComponent,
     DeleteIngredientItemPageComponent,
     DeleteRecipeItemPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    VeganRecipeListComponent
   ],
   imports: [
     BrowserModule,
