@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeCRUDService, Recipe } from './recipeCRUD.service';
-import { Router } from '@angular/router';
+//import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,11 +14,12 @@ export class RecipeListPageComponent implements OnInit {
     recipes: Recipe[];
     recipe_ID: number;
     Recipe_Name: any;
-    selectedRecipe: string = '';
+    term: string;
+    //selectedRecipe: string = '';
 
     constructor(
         private recipeCRUD: RecipeCRUDService,
-        private router: Router
+        //private router: Router
 
     ) {}
 
@@ -43,9 +44,10 @@ export class RecipeListPageComponent implements OnInit {
             this.ngOnInit();
         }   
     }
-
+    /*
     selectRecipeHandler (event: any) {
         this.selectedRecipe = event.target.value;
         this.router.navigateByUrl('/recipes/' + this.selectedRecipe);
     }
+    */
 }

@@ -20,6 +20,7 @@ import { DeleteIngredientItemPageComponent } from './delete-ingredient-item-page
 import { DeleteRecipeItemPageComponent } from './delete-recipe-item-page.component';
 import { HomePageComponent } from './home-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
  
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     ReactiveFormsModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [
     IngredientCRUDService,
