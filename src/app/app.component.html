@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark navbar-expand-md navbarBackgroundColor">
+<nav class="navbar navbar-light navbar-expand-md navbar-color bg-white">
     <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,12 +8,23 @@
                 <a class="nav-link navLinkStyle p-3" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a routerLink="/recipes" routerLinkActive="active" class="nav-link navLinkStyle p-3" href="#">Recipes</a>
+                <a routerLink="/recipes" routerLinkActive="active" class="nav-link navLinkStyle p-3">Recipes</a>
             </li>
             <li class="nav-item">
-                <a routerLink="/ingredients" routerLinkActive="active" class="nav-link navLinkStyle p-3" href="#">Ingredients</a>
+                <a routerLink="/ingredients" routerLinkActive="active" class="nav-link navLinkStyle p-3">Ingredients</a>
             </li>
         </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+                <a routerLink="/sign-up" routerLinkActive="active" class="nav-link navLinkStyle sign-up">SIGN UP</a>
+            </li>
+            &nbsp;&nbsp;&nbsp;
+            <li class="nav-item">
+                <a routerLink="/log-in" routerLinkActive="active" class="nav-link navLinkStyle log-in">LOG IN</a>
+            </li>
+        </ul>
+
+
     </div>
 </nav>
 <img src="../assets/images/Cibus.jpg" alt="Not found" class="cibusImg" />
