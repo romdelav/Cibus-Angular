@@ -14,19 +14,21 @@ import { DeleteRecipeItemPageComponent } from './delete-recipe-item-page.compone
 import { VeganRecipeListComponent } from './vegan-recipe-list.component';
 import { VegetarianRecipeListComponent } from './vegetarian-recipe-list.component';
 import { MeatRecipeListComponent } from './meat-recipe-list.component';
+import { SideListComponent } from './side-list.component';
 
 const routes: Routes = [
   { path:'recipes', component: RecipeListPageComponent },
   { path:'recipes/:recipe_ID', component: ShowRecipeItemPageComponent },
-  { path:'vegan-recipes', component: VeganRecipeListComponent},
-  { path:'vegetarian-recipes', component: VegetarianRecipeListComponent},
-  { path:'meat-recipes', component: MeatRecipeListComponent},
+  { path:'vegan-recipes', component: VeganRecipeListComponent },
+  { path:'vegetarian-recipes', component: VegetarianRecipeListComponent },
+  { path:'meat-recipes', component: MeatRecipeListComponent },
+  { path:'sides', component: SideListComponent },
   { path:'update-recipe/:recipe_ID', component: UpdateRecipeItemPageComponent },
-  { path:'delete-recipe/:recipe_ID', component: DeleteRecipeItemPageComponent},
+  { path:'delete-recipe/:recipe_ID', component: DeleteRecipeItemPageComponent },
   { path:'update-ingredient/:ingredient_ID', component: UpdateIngredientItemPageComponent },
-  { path:'delete-ingredient/:ingredient_ID', component: DeleteIngredientItemPageComponent},
+  { path:'delete-ingredient/:ingredient_ID', component: DeleteIngredientItemPageComponent },
   { path:'ingredients', component: IngredientListPageComponent },
-  { path:'ingredients/:ingredient_ID', component: ShowIngredientItemPageComponent},
+  { path:'ingredients/:ingredient_ID', component: ShowIngredientItemPageComponent },
   { path:'add-recipe', component: AddRecipeItemPageComponent },
   { path:'add-ingredient', component: AddIngredientItemPageComponent },
   { path:'', component: HomePageComponent }

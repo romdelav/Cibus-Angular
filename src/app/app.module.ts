@@ -24,6 +24,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { VeganRecipeListComponent } from './vegan-recipe-list.component'
 import { VegetarianRecipeListComponent } from './vegetarian-recipe-list.component';
 import { MeatRecipeListComponent } from './meat-recipe-list.component';
+import { SideListComponent } from './side-list.component';
  
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MeatRecipeListComponent } from './meat-recipe-list.component';
     HomePageComponent,
     VeganRecipeListComponent,
     VegetarianRecipeListComponent,
-    MeatRecipeListComponent
+    MeatRecipeListComponent,
+    SideListComponent
   ],
   imports: [
     BrowserModule,
