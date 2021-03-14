@@ -13,12 +13,14 @@ import { DeleteIngredientItemPageComponent } from './delete-ingredient-item-page
 import { DeleteRecipeItemPageComponent } from './delete-recipe-item-page.component';
 import { VeganRecipeListComponent } from './vegan-recipe-list.component';
 import { VegetarianRecipeListComponent } from './vegetarian-recipe-list.component';
+import { MeatRecipeListComponent } from './meat-recipe-list.component';
 
 const routes: Routes = [
   { path:'recipes', component: RecipeListPageComponent },
   { path:'recipes/:recipe_ID', component: ShowRecipeItemPageComponent },
   { path:'vegan-recipes', component: VeganRecipeListComponent},
   { path:'vegetarian-recipes', component: VegetarianRecipeListComponent},
+  { path:'meat-recipes', component: MeatRecipeListComponent},
   { path:'update-recipe/:recipe_ID', component: UpdateRecipeItemPageComponent },
   { path:'delete-recipe/:recipe_ID', component: DeleteRecipeItemPageComponent},
   { path:'update-ingredient/:ingredient_ID', component: UpdateIngredientItemPageComponent },

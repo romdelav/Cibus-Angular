@@ -23,6 +23,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { VeganRecipeListComponent } from './vegan-recipe-list.component'
 import { VegetarianRecipeListComponent } from './vegetarian-recipe-list.component';
+import { MeatRecipeListComponent } from './meat-recipe-list.component';
  
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { VegetarianRecipeListComponent } from './vegetarian-recipe-list.componen
     DeleteRecipeItemPageComponent,
     HomePageComponent,
     VeganRecipeListComponent,
-    VegetarianRecipeListComponent
+    VegetarianRecipeListComponent,
+    MeatRecipeListComponent
   ],
   imports: [
     BrowserModule,

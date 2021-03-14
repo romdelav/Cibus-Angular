@@ -1,31 +1,10 @@
 <section>
     <div class="container">
         <br/><br/>
-        <h1 style="padding-left:32%">Recipe List</h1>
+        <h1 style="padding-left:32%">Meats</h1>
         <br/><br/><br/><br/><br/><br/>
-        <div class="form-group">
-            <input type="text" class="form-control" style="width:87%" placeholder="Search Here" [(ngModel)]="term">
-        </div>
-        <br/>
-        <span>
-            <a [routerLink]="['/vegan-recipes']">
-                <img src="../assets/images/vegan.png" alt="Not found">
-            </a>
-            &nbsp;&nbsp;&nbsp;
-            <a [routerLink]="['/vegetarian-recipes']">
-                <img src="../assets/images/vegetarian.jpg" alt="Not Found">
-            </a>
-            &nbsp;&nbsp;&nbsp;
-            <a [routerLink]="['/meat-recipes']">
-                <img src="../assets/images/meat.png" alt="Not Found">
-            </a>
-        </span>
-
-        <br/><br/><br/><br/><br/><br/>
-        <a class="addButton" [routerLink]="['/add-recipe']">Add a new recipe</a>
-        <br/><br/><br/>
         <div class="row">
-            <div *ngFor="let recipe of recipes | filter:term" style="padding: 2%">
+            <div *ngFor="let recipe of recipes" style="padding: 2%">
                 <div class="card">
                     <img class="card-img-top" src="../assets/images/placeholder.jpg" alt="Card image cap">
                     <div class="card-body">
