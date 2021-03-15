@@ -64,6 +64,14 @@ export class RecipeCRUDService {
                 catchError(this.handleError)
             )
     }
+
+    getSoups(): Observable<Recipe[]> {
+        return this.http.get<Recipe[]>('http://localhost:3000/soups')
+            .pipe(
+                catchError(this.handleError)
+            )
+    }
+    
   
     getRecipe(recipe_ID: number): Observable<Recipe> {
         return this.http.get<Recipe>(`http://localhost:3000/recipes/${recipe_ID}`)
