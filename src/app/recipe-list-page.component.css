@@ -25,7 +25,12 @@ h5 {
 }
 
 a {
-    color: #e9a700
+    color: #e9a700;
+}
+
+a:hover img {
+    transform: scale(0.8);
+    transition: 0.5s
 }
 
 .addButton {
