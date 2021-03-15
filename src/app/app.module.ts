@@ -26,6 +26,8 @@ import { VegetarianRecipeListComponent } from './vegetarian-recipe-list.componen
 import { MeatRecipeListComponent } from './meat-recipe-list.component';
 import { SideListComponent } from './side-list.component';
 import { SaladListComponent } from './salad-list.component';
+import { SoupListComponent } from './soup-list.component';
+import { GrainRecipeListComponent } from './grain-recipe-list.component';
  
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { SaladListComponent } from './salad-list.component';
     VegetarianRecipeListComponent,
     MeatRecipeListComponent,
     SideListComponent, 
-    SaladListComponent
+    SaladListComponent,
+    SoupListComponent,
+    GrainRecipeListComponent
   ],
   imports: [
     BrowserModule,

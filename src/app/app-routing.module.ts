@@ -16,6 +16,8 @@ import { VegetarianRecipeListComponent } from './vegetarian-recipe-list.componen
 import { MeatRecipeListComponent } from './meat-recipe-list.component';
 import { SideListComponent } from './side-list.component';
 import { SaladListComponent } from './salad-list.component';
+import { SoupListComponent } from './soup-list.component'
+import { GrainRecipeListComponent } from './grain-recipe-list.component';
 
 const routes: Routes = [
   { path:'recipes', component: RecipeListPageComponent },
@@ -24,7 +26,9 @@ const routes: Routes = [
   { path:'vegetarian-recipes', component: VegetarianRecipeListComponent },
   { path:'meat-recipes', component: MeatRecipeListComponent },
   { path:'sides', component: SideListComponent },
-  { path:'salads', component: SaladListComponent},
+  { path:'salads', component: SaladListComponent }, 
+  { path:'soups', component: SoupListComponent },
+  { path:'grain-recipes', component: GrainRecipeListComponent },
   { path:'update-recipe/:recipe_ID', component: UpdateRecipeItemPageComponent },
   { path:'delete-recipe/:recipe_ID', component: DeleteRecipeItemPageComponent },
   { path:'update-ingredient/:ingredient_ID', component: UpdateIngredientItemPageComponent },
