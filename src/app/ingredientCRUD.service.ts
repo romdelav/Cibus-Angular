@@ -41,7 +41,6 @@ export class IngredientCRUDService {
                 }),
                 catchError(this.handleError)
             );
-
     }
 
     getVegetables(): Observable<Ingredient[]> {
@@ -51,7 +50,12 @@ export class IngredientCRUDService {
             );
     }
 
-    
+    getFruits(): Observable<Ingredient[]> {
+        return this.http.get<Ingredient[]>('http://localhost:3000/fruits')
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
 
     createIngredient(newIngredient: Ingredient) {
         return this.http.post(`http://localhost:3000/add-ingredient`, newIngredient)
