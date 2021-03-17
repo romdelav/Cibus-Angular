@@ -129,7 +129,7 @@ app.route('/ingredients')
     .get((req, res) =>
         res.send(JSON.stringify(getAllIngredients(), null, 2)));
 
-app.route('/meat-ingredients')
+app.route('/meat')
     .get((req, res) =>
         res.send(JSON.stringify(getMeatIngredients(), null, 2)));
 

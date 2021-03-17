@@ -63,6 +63,13 @@ export class IngredientCRUDService {
                 catchError(this.handleError)
             );
     }
+
+    getMeat(): Observable<Ingredient[]> {
+        return this.http.get<Ingredient[]>('http://localhost:3000/meat')
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
     
     createIngredient(newIngredient: Ingredient) {
         return this.http.post(`http://localhost:3000/add-ingredient`, newIngredient)
