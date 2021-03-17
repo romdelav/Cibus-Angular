@@ -57,6 +57,13 @@ export class IngredientCRUDService {
             );
     }
 
+    getGrains(): Observable<Ingredient[]> {
+        return this.http.get<Ingredient[]>('http://localhost:3000/grains')
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+    
     createIngredient(newIngredient: Ingredient) {
         return this.http.post(`http://localhost:3000/add-ingredient`, newIngredient)
         .pipe(
