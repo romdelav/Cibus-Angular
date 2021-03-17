@@ -44,12 +44,14 @@ export class IngredientCRUDService {
 
     }
 
-    getIngredientByName(ingredient_Name: string) {
-        return this.http.post(`http://localhost:3000/ingredients`, ingredient_Name)
+    getVegetables(): Observable<Ingredient[]> {
+        return this.http.get<Ingredient[]>('http://localhost:3000/vegetables')
             .pipe(
                 catchError(this.handleError)
             );
     }
+
+    
 
     createIngredient(newIngredient: Ingredient) {
         return this.http.post(`http://localhost:3000/add-ingredient`, newIngredient)
