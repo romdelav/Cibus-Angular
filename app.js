@@ -129,6 +129,10 @@ app.route('/ingredients')
     .get((req, res) =>
         res.send(JSON.stringify(getAllIngredients(), null, 2)));
 
+app.route('/meat-ingredients')
+    .get((req, res) =>
+        res.send(JSON.stringify(getMeatIngredients(), null, 2)));
+
 app.route('/ingredients/:Ingredient_ID')
     .get((req, res) =>
         res.send(JSON.stringify(getIngredient(req.params.Ingredient_ID), null, 2)));
@@ -297,6 +301,11 @@ function getIngredient(Ingredient_ID) {
     ingredient.Categories = categories;
 
     return ingredient;
+}
+
+function getMeatIngredients() {
+    const meatIngredients = db.prepare(`Select * FROM Ingredient JOIN Ingredient_Category ON Ingredient.Ingredient_ID = Ingredient_Category.Ingredient_ID JOIN Category ON Ingredient_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${1}`).all();
+    return meatIngredients;
 }
 
 function getAllMeasurements() {
