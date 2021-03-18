@@ -6,6 +6,11 @@
         <div class="form-group">
             <input type="text" class="form-control" style="width:87%" placeholder="Find an ingredient" [(ngModel)]="term">
         </div>
+        <span>
+            <a [routerLink]="['/meat']">
+                <img src="../assets/images/meat.png" alt="Not Found" title="meats">
+            </a>
+        </span>
         <br/><br/><br/><br/><br/><br/>
         <a class="addButton" [routerLink]="['/add-ingredient']">Add a new ingredient</a>
         <br/><br/><br/>

@@ -18,6 +18,7 @@ import { SideListComponent } from './side-list.component';
 import { SaladListComponent } from './salad-list.component';
 import { SoupListComponent } from './soup-list.component'
 import { GrainRecipeListComponent } from './grain-recipe-list.component';
+import { MeatIngredientListComponent } from './meat-ingredient-list.component';
 
 const routes: Routes = [
   { path:'recipes', component: RecipeListPageComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path:'update-ingredient/:ingredient_ID', component: UpdateIngredientItemPageComponent },
   { path:'delete-ingredient/:ingredient_ID', component: DeleteIngredientItemPageComponent },
   { path:'ingredients', component: IngredientListPageComponent },
+  { path:'meat', component: MeatIngredientListComponent },
   { path:'ingredients/:ingredient_ID', component: ShowIngredientItemPageComponent },
   { path:'add-recipe', component: AddRecipeItemPageComponent },
   { path:'add-ingredient', component: AddIngredientItemPageComponent },

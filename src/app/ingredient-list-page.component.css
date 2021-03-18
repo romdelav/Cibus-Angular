@@ -37,3 +37,8 @@ section {
 .searchBarStyle {
     box-shadow: 2px 2px 2px #EBEBEB;
 }
+
+a:hover img {
+    transform: scale(0.8);
+    transition: 0.5s
+}
