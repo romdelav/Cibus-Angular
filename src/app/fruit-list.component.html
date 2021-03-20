@@ -1,26 +1,11 @@
 <section>
     <div class="container">
         <br/><br/>
-        <h1 style="padding-left:32%">Ingredient List</h1>
+        <h1 style="padding-left:34%">Fruits</h1>
         <br/><br/><br/><br/><br/><br/>
-        <div class="form-group">
-            <input type="text" class="form-control" style="width:87%" placeholder="Find an ingredient" [(ngModel)]="term">
-        </div>
-        <span>
-            <a [routerLink]="['/meat']">
-                <img src="../assets/images/meat.png" alt="Not Found" title="meats">
-            </a>
-            &nbsp;&nbsp;&nbsp;
-            <a [routerLink]="['/vegetables']">
-                <img src="../assets/images/veggies.jpg" alt="Not Found" title="vegetables">
-            </a>
-        </span>
-        <br/><br/><br/><br/><br/><br/>
-        <a class="addButton" [routerLink]="['/add-ingredient']">Add a new ingredient</a>
-        <br/><br/><br/>
         <div class="row">
-            <div *ngFor="let ingredient of ingredients | filter:term" style="padding: 2%">
-                <div class="card" style="width: 18rem;">
+            <div *ngFor="let ingredient of ingredients" style="padding: 2%">
+                <div class="card">
                     <img class="card-img-top" src="../assets/images/placeholder.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ingredient.Ingredient_Name}}</h5>
