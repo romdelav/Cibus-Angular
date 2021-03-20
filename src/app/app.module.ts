@@ -30,6 +30,7 @@ import { SoupListComponent } from './soup-list.component';
 import { GrainRecipeListComponent } from './grain-recipe-list.component';
 import { MeatIngredientListComponent } from './meat-ingredient-list.component';
 import { VegetableIngredientListComponent } from './vegetable-ingredient-list.component';
+import { FruitListComponent } from './fruit-list.component';
  
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { VegetableIngredientListComponent } from './vegetable-ingredient-list.co
     SoupListComponent,
     GrainRecipeListComponent,
     MeatIngredientListComponent,
-    VegetableIngredientListComponent
+    VegetableIngredientListComponent,
+    FruitListComponent
   ],
   imports: [
     BrowserModule,
