@@ -41,7 +41,7 @@ const routes: Routes = [
   { path:'meat', component: MeatIngredientListComponent },
   { path:'vegetables', component: VegetableIngredientListComponent },
   { path:'fruits', component: FruitListComponent },
-  { path:'/grains', component: GrainIngredientListComponent},
+  { path:'grains', component: GrainIngredientListComponent},
   { path:'ingredients/:ingredient_ID', component: ShowIngredientItemPageComponent },
   { path:'add-recipe', component: AddRecipeItemPageComponent },
   { path:'add-ingredient', component: AddIngredientItemPageComponent },
