@@ -31,3 +31,32 @@
     float: none;
     margin: 0 auto;
 }
+
+.provider-btn {
+    padding: 10px;
+    border: darkgreen 1px solid;
+    font-size: 1.2rem;
+    color: darkgreen
+}
+
+.provider-btn:hover {
+    background-color: #CEF9B4;
+}
+
+.jumbotron-img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: auto;
+    height: 600px;
+    display: block;
+    opacity: 0.9;
+}
+
+section {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+li {
+    list-style-image: url(../assets/images/check.png);
+}
