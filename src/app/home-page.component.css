@@ -60,3 +60,9 @@ section {
 li {
     list-style-image: url(../assets/images/check.png);
 }
+
+@media screen and (max-width: 1350px) {
+    .jumbotron-img {
+        display: none;
+    }
+}
