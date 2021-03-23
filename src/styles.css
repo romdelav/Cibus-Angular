@@ -4,6 +4,12 @@
         font-family: Tahoma, sans-serif
     }
     
+    .card {
+        box-shadow: 10px 10px 10px #EBEBEB;
+        width: 20rem;
+        height: 22rem;
+    }
+    
     .fade-in {
         animation: fadeIn ease 1s;
         -webkit-animation: fadeIn ease 1s;
