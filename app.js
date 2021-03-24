@@ -225,6 +225,11 @@ app.route('/add-category')
         stmt.run(Category_Name);
     })
 
+app.route('/providers')
+    .get((req, res) =>
+        res.send(JSON.stringify(getProviders(), null, 2))
+    );
+
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe').all();
     return recipes;
@@ -365,4 +370,9 @@ function getCategory(Category_ID) {
     category.Category_Name = row.Category_Name;
 
     return category;
+}
+
+function getProviders() {
+    const providers = db.prepare(`SELECT * FROM User JOIN User_Role ON User.User_ID = User_Role.User_ID JOIN Role ON User_Role.Role_ID = Role.Role_ID WHERE Role.Role_ID = ${2}`).all();
+    return providers;
 }
