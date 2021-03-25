@@ -373,6 +373,16 @@ function getCategory(Category_ID) {
 }
 
 function getProviders() {
-    const providers = db.prepare(`SELECT * FROM User JOIN User_Role ON User.User_ID = User_Role.User_ID JOIN Role ON User_Role.Role_ID = Role.Role_ID WHERE Role.Role_ID = ${2}`).all();
+    var providers = { User_ID: 0, First_Name: '', Last_Name: 0, Organization: [] };
+
+    const row = db.prepare(`SELECT * FROM User JOIN User_Role ON User.User_ID = User_Role.User_ID JOIN Role ON User_Role.Role_ID = Role.Role_ID WHERE Role.Role_ID = ${2}`).all();
+    providers.User_ID = row.User_ID;
+    providers.First_Name = row.First_Name;
+    providers.Last_Name = row.Last_Name;
+
+    const organizationDB = db.prepare(`SELECT * From Organization JOIN USER ON User.Organization_ID = Organization.Organization_ID`).all();
+    var organization = organizationDB;
+    providers.Organization = organization;
+
     return providers;
 }
