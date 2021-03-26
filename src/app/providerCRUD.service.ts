@@ -4,23 +4,22 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 export interface Provider {
-    User_ID: number;
-    First_Name: string;
-    Last_Name: string;
-    Organization_ID: number;
-    Role_ID: number;
-    Job_Description: string;
+    Organization_ID: number,
+    Organization_Name: string,
+    User_ID: number,
+    First_Name: string,
+    Last_Name: string
 }
 
 @Injectable({
     providedIn: 'root'
 })
 
-export class RecipeCRUDService {
+export class ProviderCRUDService {
 
     constructor(private http: HttpClient) {}
     
-    getAllProviders(): Observable<Provider[]> {
+    getProviders(): Observable<Provider[]> {
         return this.http.get<Provider[]>('http://localhost:3000/providers')
             .pipe(
                 catchError(this.handleError)
