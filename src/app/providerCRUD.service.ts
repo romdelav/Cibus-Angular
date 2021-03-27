@@ -4,11 +4,10 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 export interface Provider {
-    Organization_ID: number,
-    Organization_Name: string,
-    User_ID: number,
     First_Name: string,
-    Last_Name: string
+    Last_Name: string,
+    Job_Description: string,
+    Organization_Name: string
 }
 
 @Injectable({
