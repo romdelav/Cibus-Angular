@@ -32,6 +32,8 @@ import { MeatIngredientListComponent } from './meat-ingredient-list.component';
 import { VegetableIngredientListComponent } from './vegetable-ingredient-list.component';
 import { FruitListComponent } from './fruit-list.component';
 import { GrainIngredientListComponent } from './grain-ingredient-list.component';
+import { ProviderCRUDService } from './providerCRUD.service';
+import { ProviderListPageComponent } from './provider-list-page.component';
  
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { GrainIngredientListComponent } from './grain-ingredient-list.component'
     MeatIngredientListComponent,
     VegetableIngredientListComponent,
     FruitListComponent,
-    GrainIngredientListComponent
+    GrainIngredientListComponent,
+    ProviderListPageComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,8 @@ import { GrainIngredientListComponent } from './grain-ingredient-list.component'
     IngredientCRUDService,
     RecipeCRUDService,
     MeasurementCRUDService,
-    CategoryCRUDService
+    CategoryCRUDService,
+    ProviderCRUDService
   ],
   bootstrap: [AppComponent]
 })

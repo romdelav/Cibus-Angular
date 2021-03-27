@@ -1,0 +1,19 @@
+<section>
+    <div class="container">
+        <br/><br/>
+        <h1 style="padding-left:32%">Providers</h1>
+        <br/><br/><br/><br/><br/><br/>
+        <div class="row">
+            <div *ngFor="let provider of providers | async" style="padding: 2%">
+                <div class="card">
+                    <img class="card-img-top" src="../assets/images/placeholder.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h2>{{provider.Organization_Name}}</h2>
+                        <h5 class="card-title">{{provider.First}} {{provider.Last_Name}}</h5>
+                    </div>
+                </div>
+                <br/><br/>
+            </div>
+        </div>
+    </div>
+</section>

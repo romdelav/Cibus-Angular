@@ -22,6 +22,7 @@ import { MeatIngredientListComponent } from './meat-ingredient-list.component';
 import { VegetableIngredientListComponent } from './vegetable-ingredient-list.component';
 import { FruitListComponent } from './fruit-list.component';
 import { GrainIngredientListComponent } from './grain-ingredient-list.component';
+import { ProviderListPageComponent } from './provider-list-page.component';
 
 const routes: Routes = [
   { path:'recipes', component: RecipeListPageComponent },
@@ -45,6 +46,7 @@ const routes: Routes = [
   { path:'ingredients/:ingredient_ID', component: ShowIngredientItemPageComponent },
   { path:'add-recipe', component: AddRecipeItemPageComponent },
   { path:'add-ingredient', component: AddIngredientItemPageComponent },
+  { path:'providers', component: ProviderListPageComponent},
   { path:'', component: HomePageComponent }
 ];
 
