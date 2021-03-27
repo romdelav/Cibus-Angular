@@ -10,14 +10,18 @@
                         <img class="card-img-top" src="../assets/images/placeholder.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h2>{{provider.Organization_Name}}</h2>
-                            <h5 class="card-title">{{provider.First_Name}} {{provider.Last_Name}}</h5>
+                            <h5 class="card-title">
+                                {{provider.First_Name}} {{provider.Last_Name}}
+                                <br/><br/> {{provider.Address}}
+                                <br/> {{provider.City}}, {{provider.State}} {{provider.PostCode}}
+                                <br/><br/> {{provider.Phone}}
+                            </h5>
                         </div>
                     </div>
                     <br/>
                     <hr/><br/>
                 </div>
             </div>
-
         </div>
     </div>
 </section>

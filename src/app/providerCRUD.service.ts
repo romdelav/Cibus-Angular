@@ -7,7 +7,12 @@ export interface Provider {
     First_Name: string,
     Last_Name: string,
     Job_Description: string,
-    Organization_Name: string
+    Organization_Name: string,
+    Address: string,
+    City: string,
+    State: string, 
+    PostCode: string,
+    Phone: string
 }
 
 @Injectable({
