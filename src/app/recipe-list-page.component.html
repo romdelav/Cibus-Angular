@@ -1,7 +1,7 @@
 <section>
     <div class="container fade-in">
         <br/><br/>
-        <h1 style="padding-left:32%">All Recipes</h1>
+        <h1 style="text-align: center;">All Recipes</h1>
         <br/><br/><br/><br/><br/><br/>
         <div class="form-group">
             <input type="text" class="form-control" style="width:87%" placeholder="Find a recipe" [(ngModel)]="term">
@@ -40,7 +40,7 @@
         <a class="addButton" [routerLink]="['/add-recipe']">Add a new recipe</a>
         <br/><br/><br/>
         <div class="row">
-            <div *ngFor="let recipe of recipes | filter:term" style="padding: 2%">
+            <div *ngFor="let recipe of recipes | filter:term" style="padding-left: 2%">
                 <div class="card">
                     <img class="card-img-top" src="../assets/images/placeholder.jpg" alt="Card image cap">
                     <div class="card-body" style="text-align: center;">
