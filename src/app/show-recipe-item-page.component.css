@@ -4,6 +4,8 @@ h5 {
 
 .card {
     box-shadow: 10px 10px 10px #EBEBEB;
+    height: 900px;
+    width: 600px;
 }
 
 .buttonStyle {
