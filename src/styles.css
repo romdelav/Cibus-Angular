@@ -26,13 +26,6 @@
         font-family: Tahoma, sans-serif
     }
     
-    .card {
-        text-align: center;
-        box-shadow: 10px 10px 10px #EBEBEB;
-        width: 20rem;
-        height: 23rem;
-    }
-    
     .fade-in {
         animation: fadeIn ease 1s;
         -webkit-animation: fadeIn ease 1s;

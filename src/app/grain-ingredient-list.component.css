@@ -1,3 +1,10 @@
 h5 {
     font-weight: normal;
 }
+
+.card {
+    text-align: center;
+    box-shadow: 10px 10px 10px #EBEBEB;
+    width: 20rem;
+    height: 23rem;
+}

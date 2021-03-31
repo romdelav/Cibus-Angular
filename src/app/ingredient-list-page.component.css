@@ -18,3 +18,10 @@ a:hover img {
     transform: scale(0.8);
     transition: 0.5s
 }
+
+.card {
+    text-align: center;
+    box-shadow: 10px 10px 10px #EBEBEB;
+    width: 20rem;
+    height: 23rem;
+}
