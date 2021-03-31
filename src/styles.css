@@ -5,21 +5,16 @@
         border: 2px solid #ffc739;
         border-radius: 10%;
         padding: 5px;
-        color: black;
         font-size: 1em;
         padding-left: 15px;
         padding-right: 15px;
-        /*box-shadow: 5px 5px 10px #A8A8A8;*/
+        color: black;
     }
     
     .buttonStyle:hover {
         background-color: #ffc739;
         transform: scale(0.9);
         transition: 0.5s
-    }
-    
-    a {
-        color: #ffc739;
     }
     
     a:hover img {

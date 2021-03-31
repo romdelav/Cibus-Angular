@@ -8,10 +8,10 @@
                 <div *ngFor="let provider of providers">
                     <img src="../assets/images/placeholder.jpg " alt="Not found ">
                     <br/><br/>
-                    <h2>{{provider.Organization_Name}}</h2>
+                    <h2>{{provider.First_Name}} {{provider.Last_Name}}</h2>
                     <br/>
                     <h5>
-                        {{provider.First_Name}} {{provider.Last_Name}}
+                        {{provider.Organization_Name}}
                         <br/><br/> {{provider.Address}}
                         <br/> {{provider.City}}, {{provider.State}} {{provider.PostCode}}
                         <br/><br/> {{provider.Phone}}
