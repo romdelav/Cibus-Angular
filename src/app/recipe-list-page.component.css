@@ -8,31 +8,6 @@ h5 {
     height: 22rem;
 }
 
-.buttonStyle {
-    text-decoration: none;
-    background-color: #FFC11E;
-    border-radius: 5%;
-    padding: 5px;
-    color: black;
-    font-size: 1em;
-    padding-left: 15px;
-    padding-right: 15px;
-    box-shadow: 5px 5px 10px #A8A8A8;
-}
-
-.buttonStyle:hover {
-    background-color: #ffdb81;
-}
-
-a {
-    color: #e9a700;
-}
-
-a:hover img {
-    transform: scale(0.8);
-    transition: 0.5s
-}
-
 .addButton {
     text-decoration: none;
     background-color: #FFC11E;

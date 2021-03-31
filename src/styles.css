@@ -1,5 +1,32 @@
     /* You can add global styles to this file, and also import other style files */
     
+    .buttonStyle {
+        text-decoration: none;
+        border: 2px solid #ffc739;
+        border-radius: 10%;
+        padding: 5px;
+        color: black;
+        font-size: 1em;
+        padding-left: 15px;
+        padding-right: 15px;
+        /*box-shadow: 5px 5px 10px #A8A8A8;*/
+    }
+    
+    .buttonStyle:hover {
+        background-color: #ffc739;
+        transform: scale(0.9);
+        transition: 0.5s
+    }
+    
+    a {
+        color: #ffc739;
+    }
+    
+    a:hover img {
+        transform: scale(0.8);
+        transition: 0.5s
+    }
+    
     section {
         font-family: Tahoma, sans-serif
     }
