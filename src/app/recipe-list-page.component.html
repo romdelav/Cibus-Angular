@@ -37,7 +37,9 @@
             </a>
         </span>
         <br/><br/><br/><br/><br/><br/>
-        <a class="addButton" [routerLink]="['/add-recipe']">Add a new recipe</a>
+        <div class="text-style">
+            Can't Find what you're looking for? <a [routerLink]="['/add-recipe']">Add a new recipe</a>
+        </div>
         <br/><br/><br/>
         <div class="row">
             <div *ngFor="let recipe of recipes | filter:term" style="padding-left: 2%">

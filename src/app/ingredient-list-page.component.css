@@ -2,28 +2,6 @@ section {
     background-color: #FDFDFD;
 }
 
-.card {
-    box-shadow: 10px 10px 10px #EBEBEB;
-    width: 20rem;
-    height: 22rem;
-}
-
-.buttonStyle {
-    text-decoration: none;
-    background-color: #FFC11E;
-    border-radius: 5%;
-    padding: 5px;
-    color: black;
-    font-size: 1em;
-    padding-left: 15px;
-    padding-right: 15px;
-    box-shadow: 5px 5px 10px #A8A8A8;
-}
-
-.buttonStyle:hover {
-    background-color: #ffdb81;
-}
-
 .addButton {
     text-decoration: none;
     background-color: #FFC11E;
@@ -34,10 +12,6 @@ section {
     padding-left: 25px;
     padding-right: 25px;
     box-shadow: 5px 5px 10px #A8A8A8;
-}
-
-.searchBarStyle {
-    box-shadow: 2px 2px 2px #EBEBEB;
 }
 
 a:hover img {
