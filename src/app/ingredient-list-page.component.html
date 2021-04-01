@@ -24,7 +24,9 @@
             </a>
         </span>
         <br/><br/><br/><br/><br/><br/>
-        <a class="addButton" [routerLink]="['/add-ingredient']">Add a new ingredient</a>
+        <div class="text-style">
+            Can't Find what you're looking for? <a [routerLink]="['/add-ingredient']" class="add-ingredient-link">Add a new ingredient</a>
+        </div>
         <br/><br/><br/>
         <div class="row">
             <div *ngFor="let ingredient of ingredients | filter:term" style="padding: 2%">
