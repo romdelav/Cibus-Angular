@@ -34,7 +34,7 @@ export class AddRecipeItemPageComponent implements OnInit {
         this.form = new FormGroup({
             Recipe_Name: new FormControl('', Validators.compose([
                 Validators.required,
-                Validators.pattern('[\\w\\-\\s\\/]+')
+                Validators.pattern('^[a-zA-Z \-\']+') 
             ])),
             Servings: new FormControl('', Validators.pattern('^-?[0-9]\\d*(\\.\\d{1,4})?$')),
             Cooking_Instructions: new FormControl('', Validators.pattern('[\\w\\-\\s\\/]+')

@@ -11,22 +11,6 @@
     height: 31rem;
 }
 
-.buttonStyle {
-    text-decoration: none;
-    background-color: #FFC11E;
-    border-radius: 5%;
-    padding: 5px;
-    color: black;
-    font-size: 1.2em;
-    padding-left: 25px;
-    padding-right: 25px;
-    box-shadow: 4px 4px 4px #DFDFDF;
-}
-
-.buttonStyle:hover {
-    background-color: #ffdb81;
-}
-
 .center {
     float: none;
     margin: 0 auto;
