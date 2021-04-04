@@ -34,6 +34,7 @@ import { FruitListComponent } from './fruit-list.component';
 import { GrainIngredientListComponent } from './grain-ingredient-list.component';
 import { ProviderCRUDService } from './providerCRUD.service';
 import { ProviderListPageComponent } from './provider-list-page.component';
+import { FooterComponent } from './footer.component';
  
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { ProviderListPageComponent } from './provider-list-page.component';
     VegetableIngredientListComponent,
     FruitListComponent,
     GrainIngredientListComponent,
-    ProviderListPageComponent
+    ProviderListPageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
