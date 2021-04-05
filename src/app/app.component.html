@@ -1,32 +1,39 @@
+<div class="box yellow">
+    <div class="cibus-text">
+        CIBUS
+    </div>
+</div>
+
 <nav class="navbar navbar-light navbar-expand-md navbar-color bg-white">
     <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link navLinkStyle p-3" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item active nav-link-style" style="padding-left: 60%;">
+                <a class="nav-link p-3" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a routerLink="/recipes" routerLinkActive="active" class="nav-link navLinkStyle p-3">Recipes</a>
+            <li class="nav-item nav-link-style">
+                <a routerLink="/recipes" routerLinkActive="active" class="nav-link p-3">Recipes</a>
             </li>
-            <li class="nav-item">
-                <a routerLink="/ingredients" routerLinkActive="active" class="nav-link navLinkStyle p-3">Ingredients</a>
+            <li class="nav-item nav-link-style">
+                <a routerLink="/ingredients" routerLinkActive="active" class="nav-link p-3">Ingredients</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item ">
-                <a routerLink="/sign-up" routerLinkActive="active" class="nav-link navLinkStyle sign-up">SIGN UP</a>
+            <li class="nav-item nav-link-style">
+                <a routerLink="/sign-up" routerLinkActive="active" class="nav-link sign-up">SIGN UP</a>
             </li>
             &nbsp;&nbsp;&nbsp;
-            <li class="nav-item">
-                <a routerLink="/log-in" routerLinkActive="active" class="nav-link navLinkStyle log-in">LOG IN</a>
+            <li class="nav-item nav-link-style">
+                <a routerLink="/log-in" routerLinkActive="active" class="nav-link log-in">LOG IN</a>
             </li>
         </ul>
     </div>
 </nav>
+
 <div>
-    <img src="../assets/images/Cibus.jpg" alt="Not found" class="cibusImg" />
+    <img src="../assets/images/cibus.jpg" alt="Not found" class="cibus-img" />
 </div>
 
 <router-outlet></router-outlet>
