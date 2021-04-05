@@ -1,15 +1,14 @@
-<div class="box yellow">
-    <div class="cibus-text">
-        CIBUS
-    </div>
-</div>
-
 <nav class="navbar navbar-light navbar-expand-md navbar-color bg-white">
     <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
         <ul class="navbar-nav mr-auto">
+            <div class="box green">
+                <div class="cibus-text">
+                    CIBUS
+                </div>
+            </div>
             <li class="nav-item active nav-link-style padding-left">
                 <a class="nav-link p-3" href="#">Home <span class="sr-only">(current)</span></a>
             </li>

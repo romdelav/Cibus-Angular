@@ -2,19 +2,20 @@
     
     .buttonStyle {
         text-decoration: none;
-        border: 2px solid #ffc739;
-        border-radius: 10%;
+        border: 2px solid rgb(34, 134, 14);
+        border-radius: 5px;
         padding: 5px;
         font-size: 1em;
         padding-left: 15px;
         padding-right: 15px;
-        color: black;
+        color: rgb(34, 134, 14);
     }
     
     .buttonStyle:hover {
-        background-color: #ffc739;
+        background-color: rgb(34, 134, 14);
         transform: scale(0.9);
-        transition: 0.5s
+        transition: 0.5s;
+        color: white;
     }
     
     a:hover img {

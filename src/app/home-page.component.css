@@ -8,23 +8,12 @@
     border: 1px solid gray;
     border-radius: 5px;
     box-shadow: 5px 5px 10px #A8A8A8;
-    height: 31rem;
+    height: 37rem;
 }
 
 .center {
     float: none;
     margin: 0 auto;
-}
-
-.provider-btn {
-    padding: 10px;
-    border: darkgreen 1px solid;
-    font-size: 1.2rem;
-    color: darkgreen
-}
-
-.provider-btn:hover {
-    background-color: #CEF9B4;
 }
 
 .jumbotron-img {
@@ -50,4 +39,15 @@ li {
     .jumbotron-img {
         display: none;
     }
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid grey;
+    height: 40px;
+    box-shadow: 5px 5px 5px #eeeeee;
+}
+
+::placeholder {
+    color: #A8A8A8
 }
