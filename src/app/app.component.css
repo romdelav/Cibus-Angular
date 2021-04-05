@@ -48,18 +48,16 @@ body {
 }
 
 .box {
-    width: 5%;
-    height: 8%;
+    width: 125px;
+    height: 130px;
     position: absolute;
-    display: block;
 }
 
 .yellow {
-    top: 1%;
-    left: 1%;
+    top: 20px;
+    left: 40px;
     background-color: #FFC11E;
     z-index: 3;
-    display: block;
 }
 
 .cibus-text {
@@ -67,5 +65,14 @@ body {
     font-weight: bold;
     color: white;
     text-align: center;
-    padding-top: 25%
+    padding-top: 50%
+}
+
+@media screen and (max-width: 768px) {
+    .box {
+        visibility: hidden;
+    }
+    .yellow {
+        visibility: hidden;
+    }
 }
