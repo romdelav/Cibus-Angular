@@ -70,8 +70,6 @@ input {
 
 .border1 {
     border: 1px solid #dfdfdf;
-    padding-right: 4%;
-    padding-left: 4%;
     padding-top: 1%;
     padding-bottom: 1%;
     box-shadow: 5px 5px 10px #dfdfdf
@@ -80,9 +78,9 @@ input {
 .border2 {
     border: 1px solid #dfdfdf;
     padding: 1%;
-    margin: 1%;
+    margin: 2%;
 }
 
 #reviews .container {
-    max-width: 2000px;
+    max-width: 1500px;
 }

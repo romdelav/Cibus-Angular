@@ -3,11 +3,11 @@ h5 {
 }
 
 .text-style {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .add-recipe-link {
-    color: #ffc739;
+    color: #498025;
 }
 
 .card {
@@ -15,4 +15,10 @@ h5 {
     box-shadow: 10px 10px 10px #EBEBEB;
     width: 20rem;
     height: 23rem;
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        margin-left: 30%
+    }
 }

@@ -1,13 +1,13 @@
+<br/><br/>
+
 <section>
-    <div class="container fade-in">
+    <div class="container fade-in" style="text-align: center;">
         <br/><br/>
-        <h1 style="text-align: center;">All Recipes</h1>
-        <br/><br/><br/><br/><br/><br/>
         <div class="form-group">
-            <input type="text" class="form-control" style="width:87%" placeholder="Find a recipe" [(ngModel)]="term">
+            <input type="text" class="form-control" style="width:91%" placeholder="Find a recipe" [(ngModel)]="term">
         </div>
         <br/>
-        <span>
+        <span style="float: left">
             <a [routerLink]="['/vegan-recipes']" title="vegan">
                 <img src="../assets/images/vegan.png" alt="Not found">
             </a>
@@ -36,11 +36,18 @@
                 <img src="../assets/images/grain.jpg" alt="Not Found">
             </a>
         </span>
-        <br/><br/><br/><br/><br/><br/>
-        <div class="text-style">
+        <br/><br/><br/><br/><br/>
+        <div class="text-style" style="float: left;">
             Can't Find what you're looking for? <a [routerLink]="['/add-recipe']" class="add-recipe-link">Add a new recipe</a>
         </div>
-        <br/><br/><br/>
+    </div>
+</section>
+
+<br/><br/><br/><br/><br/><br/>
+
+<section style="background-color:rgb(253, 253, 253); box-shadow: 0 -4px 4px -4px #d4d4d4">
+    <br/><br/><br/>
+    <div class="container">
         <div class="row">
             <div *ngFor="let recipe of recipes | filter:term" style="padding-left: 2%">
                 <div class="card">
@@ -48,10 +55,8 @@
                     <div class="card-body" style="text-align: center;">
                         <h5 class="card-title">{{recipe.Recipe_Name}}</h5>
                         <span>
-                            <a [routerLink]="['/recipes', recipe.Recipe_ID]" class="btn buttonStyle">Details</a>
-                            &nbsp;
-                            <a [routerLink]="['/update-recipe', recipe.Recipe_ID]" class="btn buttonStyle">Update</a>
-                            &nbsp;
+                            <a [routerLink]="['/recipes', recipe.Recipe_ID]" class="btn buttonStyle">Details</a>&nbsp;
+                            <a [routerLink]="['/update-recipe', recipe.Recipe_ID]" class="btn buttonStyle">Update</a>&nbsp;
                             <a [routerLink]="['/delete-recipe', recipe.Recipe_ID]" class="btn buttonStyle">Delete</a>
                         </span>
                     </div>
@@ -61,5 +66,4 @@
         </div>
     </div>
 </section>
-<br/><br/><br/><br/>
 <footer-component></footer-component>
