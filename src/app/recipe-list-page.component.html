@@ -51,7 +51,7 @@
         <div class="row">
             <div *ngFor="let recipe of recipes | filter:term" style="padding-left: 2%">
                 <div class="card">
-                    <img class="card-img-top" src="../assets/images/placeholder.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="../assets/images/{{recipe.Image_URL}}" alt="Card image cap">
                     <div class="card-body" style="text-align: center;">
                         <h5 class="card-title">{{recipe.Recipe_Name}}</h5>
                         <span>
