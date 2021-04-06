@@ -28,7 +28,6 @@
 section {
     max-width: 100%;
     overflow-x: hidden;
-    color: #585858
 }
 
 li {
@@ -50,4 +49,20 @@ input {
 
 ::placeholder {
     color: #A8A8A8
+}
+
+#dish-pictures {
+    background-color: #F6F6F6;
+    text-align: center;
+    color: black;
+    box-shadow: 0 -4px 4px -4px #d4d4d4, 0 4px 4px -4px #d4d4d4;
+}
+
+.dish {
+    text-align: center;
+    background-color: rgb(67, 133, 54);
+    color: white;
+    padding: 2%;
+    display: inline-block;
+    border-radius: 5px;
 }
