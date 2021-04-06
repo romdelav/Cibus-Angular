@@ -65,4 +65,24 @@ input {
     padding: 2%;
     display: inline-block;
     border-radius: 5px;
+    margin-bottom: 3%
+}
+
+.border1 {
+    border: 1px solid #dfdfdf;
+    padding-right: 4%;
+    padding-left: 4%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    box-shadow: 5px 5px 10px #dfdfdf
+}
+
+.border2 {
+    border: 1px solid #dfdfdf;
+    padding: 1%;
+    margin: 1%;
+}
+
+#reviews .container {
+    max-width: 2000px;
 }
