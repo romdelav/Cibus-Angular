@@ -9,6 +9,11 @@ section {
     height: 23rem;
 }
 
+.card-img-top {
+    width: 100%;
+    Height: auto;
+}
+
 .add-ingredient-link {
     color: #ffc739;
 }

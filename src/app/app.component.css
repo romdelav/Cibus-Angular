@@ -14,10 +14,6 @@ body {
     transition: 0.5s
 }
 
-.nav-link-style:hover {
-    color: #FFC11E;
-}
-
 .sign-up {
     border: 2px solid rgb(67, 133, 54);
     border-radius: 10px;
@@ -32,10 +28,6 @@ body {
     border: 2px solid#c5f3ba;
     padding: 8%;
     display: inline-block;
-}
-
-.sign-up:hover {
-    background-color: #defad7;
 }
 
 .navbar {
