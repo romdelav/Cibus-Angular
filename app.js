@@ -236,7 +236,7 @@ app.route('/provider/:User_ID')
     );
 
 function getAllRecipes() {
-    const recipes = db.prepare('SELECT * FROM Recipe').all();
+    const recipes = db.prepare('SELECT * FROM Recipe ORDER BY Recipe_Name').all();
     return recipes;
 };
 
