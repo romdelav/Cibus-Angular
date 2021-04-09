@@ -22,23 +22,14 @@
             </a>
         </span>
         <br/><br/><br/><br/><br/><br/>
-        <div class="text-style">
-            Can't Find what you're looking for? <a [routerLink]="['/add-ingredient']" class="add-ingredient-link">Add a new ingredient</a>
-        </div>
-        <br/><br/><br/>
+
         <div class="row">
             <div *ngFor="let ingredient of ingredients | filter:term" style="padding: 2%">
                 <div class="card">
                     <img class="card-img-top" src="../assets/images/{{ingredient.Image_URL}}" alt="Card image cap" loading="lazy">
                     <div class="card-body" style="text-align: center;">
                         <h5 class="card-title">{{ingredient.Ingredient_Name}}</h5>
-                        <span>
-                            <a [routerLink]="['/ingredients', ingredient.Ingredient_ID]" class="btn buttonStyle">Details</a>
-                            &nbsp;
-                            <a [routerLink]="['/update-ingredient', ingredient.Ingredient_ID]" class="btn buttonStyle">Update</a>
-                            &nbsp;
-                            <a [routerLink]="['/delete-ingredient', ingredient.Ingredient_ID]" class="btn buttonStyle">Delete</a>
-                        </span>
+                        <a [routerLink]="['/ingredients', ingredient.Ingredient_ID]" class="btn buttonStyle">Details</a>
                     </div>
                 </div>
                 <br/><br/>
