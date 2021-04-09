@@ -6,6 +6,7 @@ import { catchError } from 'rxjs/operators';
 export interface Provider {
     First_Name: string,
     Last_Name: string,
+    Image_URL: string,
     Job_Description: string,
     Organization_Name: string,
     Address: string,

@@ -1,25 +1,32 @@
+<br/><br/><br/><br/>
+
 <section>
-    <div style="padding-left: 20%">
-        <br/><br/>
-        <h1 style="padding-left:35% ">Providers</h1>
-        <br/><br/><br/><br/><br/><br/>
-        <div class="row ">
-            <div class="col-sm-2 col-md-3 col-lg-4">
-                <div *ngFor="let provider of providers">
-                    <img src="../assets/images/placeholder.jpg " alt="Not found" loading="lazy">
-                    <br/><br/>
-                    <h2>{{provider.First_Name}} {{provider.Last_Name}}</h2>
-                    <br/>
-                    <h5>
-                        {{provider.Organization_Name}}
-                        <br/><br/> {{provider.Address}}
-                        <br/> {{provider.City}}, {{provider.State}} {{provider.PostCode}}
-                        <br/><br/> {{provider.Phone}}
-                    </h5>
-                    <br/>
-                    <hr/><br/>
+    <h1 style="text-align: center;">Meet our providers!</h1>
+</section>
+
+<br/><br/><br/><br/><br/><br/>
+
+<section style="background-color:rgb(253, 253, 253); box-shadow: 0 -4px 4px -4px #d4d4d4;">
+    <br/><br/><br/>
+    <div class="container fade-in">
+        <div class="row" style="justify-content: center;">
+            <div *ngFor="let provider of providers" style="margin: 2%;">
+                <div class="card">
+                    <img class="card-img-top" src="../assets/images/{{provider.Image_URL}}" alt="Card image cap" loading="lazy">
+                    <div class="card-body" style="text-align: center;">
+                        <h3 class="card-title">{{provider.First_Name}} {{provider.Last_Name}}</h3>
+                        <h5>
+                            <br/> {{provider.Organization_Name}}
+                            <br/>{{provider.Address}}
+                            <br/> {{provider.City}}, {{provider.State}} {{provider.PostCode}}
+                            <br/>{{provider.Phone}}
+                        </h5>
+                    </div>
                 </div>
+                <br/><br/>
             </div>
         </div>
     </div>
 </section>
+
+<footer-component></footer-component>
