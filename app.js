@@ -241,37 +241,37 @@ function getAllRecipes() {
 };
 
 function getVeganRecipes() {
-    const veganRecipes = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${2}`).all();
+    const veganRecipes = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${2} ORDER BY Recipe_Name`).all();
     return veganRecipes;
 }
 
 function getVegetarianRecipes() {
-    const vegetarianRecipes = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${3}`).all();
+    const vegetarianRecipes = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${3} ORDER BY Recipe_Name`).all();
     return vegetarianRecipes;
 }
 
 function getMeatRecipes() {
-    const meatRecipes = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${1}`).all();
+    const meatRecipes = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${1} ORDER BY Recipe_Name`).all();
     return meatRecipes;
 }
 
 function getSides() {
-    const sides = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${12}`).all();
+    const sides = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${12} ORDER BY Recipe_Name`).all();
     return sides;
 }
 
 function getSalads() {
-    const salads = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${14}`).all();
+    const salads = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${14} ORDER BY Recipe_Name`).all();
     return salads;
 }
 
 function getSoups() {
-    const soups = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${13}`).all();
+    const soups = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${13} ORDER BY Recipe_Name`).all();
     return soups;
 }
 
 function getGrainRecipes() {
-    const grainRecipes = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${5}`).all();
+    const grainRecipes = db.prepare(`Select * FROM Recipe JOIN Recipe_Category ON Recipe.Recipe_ID = Recipe_Category.Recipe_ID JOIN Category ON Recipe_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${5} ORDER BY Recipe_Name`).all();
     return grainRecipes;
 }
 
@@ -326,22 +326,22 @@ function getIngredient(Ingredient_ID) {
 }
 
 function getMeatIngredients() {
-    const meatIngredients = db.prepare(`Select * FROM Ingredient JOIN Ingredient_Category ON Ingredient.Ingredient_ID = Ingredient_Category.Ingredient_ID JOIN Category ON Ingredient_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${1}`).all();
+    const meatIngredients = db.prepare(`Select * FROM Ingredient JOIN Ingredient_Category ON Ingredient.Ingredient_ID = Ingredient_Category.Ingredient_ID JOIN Category ON Ingredient_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${1} ORDER BY Ingredient_Name`).all();
     return meatIngredients;
 }
 
 function getVegetables() {
-    const vegetables = db.prepare(`Select * FROM Ingredient JOIN Ingredient_Category ON Ingredient.Ingredient_ID = Ingredient_Category.Ingredient_ID JOIN Category ON Ingredient_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${6}`).all();
+    const vegetables = db.prepare(`Select * FROM Ingredient JOIN Ingredient_Category ON Ingredient.Ingredient_ID = Ingredient_Category.Ingredient_ID JOIN Category ON Ingredient_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${6} ORDER BY Ingredient_Name`).all();
     return vegetables;
 }
 
 function getFruits() {
-    const fruits = db.prepare(`Select * FROM Ingredient JOIN Ingredient_Category ON Ingredient.Ingredient_ID = Ingredient_Category.Ingredient_ID JOIN Category ON Ingredient_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${7}`).all();
+    const fruits = db.prepare(`Select * FROM Ingredient JOIN Ingredient_Category ON Ingredient.Ingredient_ID = Ingredient_Category.Ingredient_ID JOIN Category ON Ingredient_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${7} ORDER BY Ingredient_Name`).all();
     return fruits;
 }
 
 function getGrainIngredients() {
-    const grainIngredients = db.prepare(`Select * FROM Ingredient JOIN Ingredient_Category ON Ingredient.Ingredient_ID = Ingredient_Category.Ingredient_ID JOIN Category ON Ingredient_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${5}`).all();
+    const grainIngredients = db.prepare(`Select * FROM Ingredient JOIN Ingredient_Category ON Ingredient.Ingredient_ID = Ingredient_Category.Ingredient_ID JOIN Category ON Ingredient_Category.Category_ID = Category.Category_ID WHERE Category.Category_ID = ${5} ORDER BY Ingredient_Name`).all();
     return grainIngredients;
 }
 
