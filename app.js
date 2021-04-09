@@ -378,7 +378,7 @@ function getCategory(Category_ID) {
 }
 
 function getProviders() {
-    const providers = db.prepare(`SELECT First_Name, Last_Name, Image_URL, Job_Description, Organization_Name, Address, City, State, PostCode, Phone FROM User JOIN Organization ON User.Organization_ID = Organization.Organization_ID JOIN User_Address on User.User_ID = User_Address. User_ID JOIN Address ON User_Address.Address_ID = Address.Address_ID JOIN User_Role ON User.User_ID = User_Role.User_ID JOIN Role ON User_Role.Role_ID = Role.Role_ID WHERE Role.Role_ID = ${2}`).all();
+    const providers = db.prepare(`SELECT First_Name, Last_Name, Image_URL, Job_Description, Organization_Name, Address, City, State, PostCode, Phone FROM User JOIN Organization ON User.Organization_ID = Organization.Organization_ID JOIN User_Address on User.User_ID = User_Address. User_ID JOIN Address ON User_Address.Address_ID = Address.Address_ID JOIN User_Role ON User.User_ID = User_Role.User_ID JOIN Role ON User_Role.Role_ID = Role.Role_ID WHERE Role.Role_ID = ${2} ORDER BY Last_Name`).all();
     return providers;
 }
 
