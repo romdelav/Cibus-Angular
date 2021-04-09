@@ -7,3 +7,7 @@ h5 {
     height: 950px;
     width: 600px;
 }
+
+.container {
+    max-width: max-content;
+}

@@ -1,34 +1,32 @@
-<br/><br/>
+<br/><br/><br/><br/><br/>
 
-<section class="p-5">
+<section>
     <div class="container">
-        <div class="row">
+        <div class="row" style="justify-content: center;">
             <div class="col-sm-10">
-                <div style="padding-left:20%;">
-                    <div class="card">
-                        <img src="../assets/images/{{recipe.Image_URL}}" loading="lazy" class="card-img-top img-fluid" alt="Not Found">
-                        <div class="card-body">
-                            <h2 class="card-title" style="text-align: center;">{{recipe.Recipe_Name}}</h2>
-                            <h5 style="text-align: center;">{{recipe.Description}}</h5>
-                            <br/><br/>
-                            <div class="card-text">
-                                <h5>Servings: {{recipe.Servings}}</h5>
-                                <br/>
-                                <h5>Ingredients:</h5>
-                                <ul>
-                                    <li *ngFor="let measurementingredient of recipe.MeasurementIngredient">
-                                        <h5>{{measurementingredient.Amount}} {{measurementingredient.Measurement_Type }} {{measurementingredient.Ingredient_Name}}</h5>
-                                    </li>
-                                </ul>
-                                <br/>
-                                <h5>Tags:
-                                    <span class="lead" *ngFor="let category of recipe.Categories">
+                <div class="card">
+                    <img src="../assets/images/{{recipe.Image_URL}}" loading="lazy" class="card-img-top img-fluid" alt="Not Found">
+                    <div class="card-body">
+                        <h2 class="card-title" style="text-align: center;">{{recipe.Recipe_Name}}</h2>
+                        <h5 style="text-align: center;">{{recipe.Description}}</h5>
+                        <br/><br/>
+                        <div class="card-text">
+                            <h5>Servings: {{recipe.Servings}}</h5>
+                            <br/>
+                            <h5>Ingredients:</h5>
+                            <ul>
+                                <li *ngFor="let measurementingredient of recipe.MeasurementIngredient">
+                                    <h5>{{measurementingredient.Amount}} {{measurementingredient.Measurement_Type }} {{measurementingredient.Ingredient_Name}}</h5>
+                                </li>
+                            </ul>
+                            <br/>
+                            <h5>Tags:
+                                <span class="lead" *ngFor="let category of recipe.Categories">
                                         <span class="badge badge-success" style="font-weight:normal; margin-right:2%">{{category.Category_Name}}</span>
-                                    </span>
-                                </h5>
-                                <br/>
-                                <h5>Instructions: {{recipe.Cooking_Instructions}}</h5>
-                            </div>
+                                </span>
+                            </h5>
+                            <br/>
+                            <h5>Instructions: {{recipe.Cooking_Instructions}}</h5>
                         </div>
                     </div>
                 </div>
@@ -37,7 +35,8 @@
     </div>
 </section>
 
-<br/><br/>
+<br/><br/><br/><br/><br/>
+
 
 <footer-component></footer-component>
 
