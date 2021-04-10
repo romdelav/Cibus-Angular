@@ -21,6 +21,11 @@ body {
     display: inline-block;
 }
 
+.sign-up:hover {
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+
 .log-in {
     background-color: #c5f3ba;
     border-radius: 10px;
@@ -28,6 +33,11 @@ body {
     border: 2px solid#c5f3ba;
     padding: 8%;
     display: inline-block;
+}
+
+.log-in:hover {
+    transform: scale(0.9);
+    transition: 0.5s;
 }
 
 .navbar {
