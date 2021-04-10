@@ -8,6 +8,10 @@ h5 {
     width: 600px;
 }
 
+.card:hover {
+    transform: none;
+}
+
 .container {
     max-width: max-content;
 }
