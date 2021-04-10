@@ -21,11 +21,6 @@ body {
     display: inline-block;
 }
 
-.sign-up:hover {
-    transform: scale(0.9);
-    transition: 0.5s;
-}
-
 .log-in {
     background-color: #c5f3ba;
     border-radius: 10px;
@@ -37,7 +32,12 @@ body {
 
 .log-in:hover {
     transform: scale(0.9);
-    transition: 0.5s;
+    transition: 0.5s
+}
+
+.sign-up:hover {
+    transform: scale(0.9);
+    transition: 0.5s
 }
 
 .navbar {
