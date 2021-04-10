@@ -27,6 +27,11 @@
         font-family: Tahoma, sans-serif
     }
     
+    .card:hover {
+        transform: scale(1.1);
+        transition: 0.7s
+    }
+    
     .fade-in {
         animation: fadeIn ease 1s;
         -webkit-animation: fadeIn ease 1s;
@@ -38,44 +43,54 @@
     @keyframes fadeIn {
         0% {
             opacity: 0;
+            transform: translateX(-50px);
         }
         100% {
             opacity: 1;
+            transform: translateX(0);
         }
     }
     
     @-moz-keyframes fadeIn {
         0% {
             opacity: 0;
+            transform: translateX(-50px);
         }
         100% {
             opacity: 1;
+            transform: translateX(0);
         }
     }
     
     @-webkit-keyframes fadeIn {
         0% {
             opacity: 0;
+            transform: translateX(-50px);
         }
         100% {
             opacity: 1;
+            transform: translateX(0);
         }
     }
     
     @-o-keyframes fadeIn {
         0% {
             opacity: 0;
+            transform: translateX(-50px);
         }
         100% {
             opacity: 1;
+            transform: translateX(0);
         }
     }
     
     @-ms-keyframes fadeIn {
         0% {
             opacity: 0;
+            transform: translateX(-50px);
         }
         100% {
             opacity: 1;
+            transform: translateX(0);
         }
     }

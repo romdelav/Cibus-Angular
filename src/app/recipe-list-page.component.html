@@ -1,7 +1,7 @@
 <br/><br/>
 
 <section id="search">
-    <div class="container fade-in" style="text-align: center;">
+    <div class="container" style="text-align: center;">
         <br/><br/>
         <div class="form-group">
             <input type="text" class="form-control" style="width:91%" placeholder="Find a recipe" [(ngModel)]="term">
@@ -47,7 +47,7 @@
 
 <section style="background-color:rgb(253, 253, 253); box-shadow: 0 -4px 4px -4px #d4d4d4">
     <br/><br/><br/>
-    <div class="container fade-in">
+    <div class="container">
         <div class="row" style="justify-content: center;">
             <div *ngFor="let recipe of recipes | filter:term" style="margin: 2%">
                 <div class="card">
