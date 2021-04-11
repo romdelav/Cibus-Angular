@@ -43,6 +43,13 @@ export class IngredientCRUDService {
             );
     }
 
+    getIngredientsByProvider(user_ID: number): Observable<Ingredient> {
+        return this.http.get<Ingredient>(`http://localhost:3000/providers/${user_ID}`)
+            .pipe(
+                catchError(this.handleError)
+        );
+    }
+
     getVegetables(): Observable<Ingredient[]> {
         return this.http.get<Ingredient[]>('http://localhost:3000/vegetables')
             .pipe(
