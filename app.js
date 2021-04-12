@@ -230,10 +230,11 @@ app.route('/providers')
         res.send(JSON.stringify(getProviders(), null, 2))
     );
 
-app.route('/provider/:User_ID')
+app.route('/lloydarmstrong')
     .get((req, res) =>
-        res.send(JSON.stringify(getProvidersIngredients(req.params.User_ID), null, 2))
+        res.send(JSON.stringify(getLloydArmstrongIngredients(), null, 2))
     );
+
 
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe ORDER BY Recipe_Name').all();
@@ -359,7 +360,6 @@ function getMeasurementByID(Measurement_ID) {
     measurement.Amount = row.Amount;
 
     return measurement;
-
 }
 
 function getAllCategories() {
@@ -382,7 +382,7 @@ function getProviders() {
     return providers;
 }
 
-function getProvidersIngredients(User_ID) {
-    const ingredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${User_ID}`).all();
-    return ingredients
+function getLloydArmstrongIngredients() {
+    const lloydArmstrongIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${39}`).all();
+    return lloydArmstrongIngredients;
 }
