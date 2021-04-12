@@ -235,6 +235,11 @@ app.route('/lloydarmstrong')
         res.send(JSON.stringify(getLloydArmstrongIngredients(), null, 2))
     );
 
+app.route('/fletchercartwright')
+    .get((req, res) =>
+        res.send(JSON.stringify(getFletcherCartwrightIngredients(), null, 2))
+    );
+
 
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe ORDER BY Recipe_Name').all();
@@ -385,4 +390,9 @@ function getProviders() {
 function getLloydArmstrongIngredients() {
     const lloydArmstrongIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${39}`).all();
     return lloydArmstrongIngredients;
+}
+
+function getFletcherCartwrightIngredients() {
+    const fletcherCartwrightIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${13}`).all();
+    return fletcherCartwrightIngredients;
 }
