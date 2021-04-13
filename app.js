@@ -260,6 +260,11 @@ app.route('/abby-dickens')
         res.send(JSON.stringify(getAbbyDickensIngredients(), null, 2))
     );
 
+app.route('/grayce-fahey')
+    .get((req, res) =>
+        res.send(JSON.stringify(getGrayceFaheyIngredients(), null, 2))
+    );
+
 
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe ORDER BY Recipe_Name').all();
@@ -435,4 +440,9 @@ function getElzaCrooksIngredients() {
 function getAbbyDickensIngredients() {
     const abbyDickensIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${6}`).all();
     return abbyDickensIngredients;
+}
+
+function getGrayceFaheyIngredients() {
+    const graceFaheyIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${47}`).all();
+    return graceFaheyIngredients;
 }
