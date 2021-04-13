@@ -1,0 +1,26 @@
+h5 {
+    font-weight: normal;
+}
+
+.text-style {
+    font-size: 1rem;
+}
+
+.card {
+    text-align: center;
+    box-shadow: 10px 10px 10px #EBEBEB;
+    width: 20rem;
+    height: 23rem;
+}
+
+@media screen and (max-width: 768px) {
+    .text-style {
+        margin-top: 5%
+    }
+    #search img {
+        width: 9%;
+        margin-right: 4%;
+        margin-top: 4%;
+        display: inline-block;
+    }
+}
