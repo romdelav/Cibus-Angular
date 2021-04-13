@@ -230,29 +230,34 @@ app.route('/providers')
         res.send(JSON.stringify(getProviders(), null, 2))
     );
 
-app.route('/lloydarmstrong')
+app.route('/lloyd-armstrong')
     .get((req, res) =>
         res.send(JSON.stringify(getLloydArmstrongIngredients(), null, 2))
     );
 
-app.route('/fletchercartwright')
+app.route('/fletcher-cartwright')
     .get((req, res) =>
         res.send(JSON.stringify(getFletcherCartwrightIngredients(), null, 2))
     );
 
-app.route('/marcelinacole')
+app.route('/marcelina-cole')
     .get((req, res) =>
         res.send(JSON.stringify(getMarcelinaColeIngredients(), null, 2))
     );
 
-app.route('/jacquelyncollins')
+app.route('/jacquelyn-collins')
     .get((req, res) =>
         res.send(JSON.stringify(getJacquelynCollinsIngredients(), null, 2))
     );
 
-app.route('/elzacrooks')
+app.route('/elza-crooks')
     .get((req, res) =>
         res.send(JSON.stringify(getElzaCrooksIngredients(), null, 2))
+    );
+
+app.route('/abby-dickens')
+    .get((req, res) =>
+        res.send(JSON.stringify(getAbbyDickensIngredients(), null, 2))
     );
 
 
@@ -425,4 +430,9 @@ function getJacquelynCollinsIngredients() {
 function getElzaCrooksIngredients() {
     const elzaCrooksIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${20}`).all();
     return elzaCrooksIngredients;
+}
+
+function getAbbyDickensIngredients() {
+    const abbyDickensIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${6}`).all();
+    return abbyDickensIngredients;
 }
