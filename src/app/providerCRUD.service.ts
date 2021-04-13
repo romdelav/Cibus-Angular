@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 export interface Provider {
+    User_ID: number,
     First_Name: string,
     Last_Name: string,
     Image_URL: string,

@@ -10,8 +10,6 @@ import { RecipeCRUDService, Recipe } from './recipeCRUD.service';
 export class RecipeListPageComponent implements OnInit {
 
     recipes: Recipe[];
-    recipe_ID: number;
-    Recipe_Name: any;
     term: string;
 
     constructor(

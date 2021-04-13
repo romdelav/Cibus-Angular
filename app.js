@@ -230,100 +230,9 @@ app.route('/providers')
         res.send(JSON.stringify(getProviders(), null, 2))
     );
 
-app.route('/lloyd-armstrong')
+app.route('/providers/:User_ID')
     .get((req, res) =>
-        res.send(JSON.stringify(getLloydArmstrongIngredients(), null, 2))
-    );
-
-app.route('/fletcher-cartwright')
-    .get((req, res) =>
-        res.send(JSON.stringify(getFletcherCartwrightIngredients(), null, 2))
-    );
-
-app.route('/marcelina-cole')
-    .get((req, res) =>
-        res.send(JSON.stringify(getMarcelinaColeIngredients(), null, 2))
-    );
-
-app.route('/jacquelyn-collins')
-    .get((req, res) =>
-        res.send(JSON.stringify(getJacquelynCollinsIngredients(), null, 2))
-    );
-
-app.route('/elza-crooks')
-    .get((req, res) =>
-        res.send(JSON.stringify(getElzaCrooksIngredients(), null, 2))
-    );
-
-app.route('/abby-dickens')
-    .get((req, res) =>
-        res.send(JSON.stringify(getAbbyDickensIngredients(), null, 2))
-    );
-
-app.route('/grayce-fahey')
-    .get((req, res) =>
-        res.send(JSON.stringify(getGrayceFaheyIngredients(), null, 2))
-    );
-
-app.route('/jonathan-gislason')
-    .get((req, res) =>
-        res.send(JSON.stringify(getJonathanGislasonIngredients(), null, 2))
-    );
-
-
-app.route('/meghan-grady')
-    .get((req, res) =>
-        res.send(JSON.stringify(getMeghanGradyIngredients(), null, 2))
-    );
-
-app.route('/westley-hessel')
-    .get((req, res) =>
-        res.send(JSON.stringify(getWestleyHesselIngredients(), null, 2))
-    );
-
-app.route('/barbara-hilpert')
-    .get((req, res) =>
-        res.send(JSON.stringify(getBarbaraHilpertIngredients(), null, 2))
-    );
-
-app.route('/patsy-johns')
-    .get((req, res) =>
-        res.send(JSON.stringify(getPatsyJohnsIngredients(), null, 2))
-    );
-
-app.route('/chris-larkin')
-    .get((req, res) =>
-        res.send(JSON.stringify(getChrisLarkinIngredients(), null, 2))
-    );
-
-app.route('/lyla-legros')
-    .get((req, res) =>
-        res.send(JSON.stringify(getLylaLegrosIngredients(), null, 2))
-    );
-
-app.route('/amari-lubowitz')
-    .get((req, res) =>
-        res.send(JSON.stringify(getAmariLubowitzIngredients(), null, 2))
-    );
-
-app.route('/laverne-muller')
-    .get((req, res) =>
-        res.send(JSON.stringify(getLaverneMullerIngredients(), null, 2))
-    );
-
-app.route('/kayli-parker')
-    .get((req, res) =>
-        res.send(JSON.stringify(getKayliParkerIngredients(), null, 2))
-    );
-
-app.route('/floyd-schroeder')
-    .get((req, res) =>
-        res.send(JSON.stringify(getFloydSchroederIngredients(), null, 2))
-    );
-
-app.route('/trevor-simonis')
-    .get((req, res) =>
-        res.send(JSON.stringify(getTrevorSimonisIngredients(), null, 2))
+        res.send(JSON.stringify(getIngredientsByProvider(req.params.User_ID)))
     );
 
 function getAllRecipes() {
@@ -468,101 +377,11 @@ function getCategory(Category_ID) {
 }
 
 function getProviders() {
-    const providers = db.prepare(`SELECT First_Name, Last_Name, Image_URL, Job_Description, Organization_Name, Address, City, State, PostCode, Phone FROM User JOIN Organization ON User.Organization_ID = Organization.Organization_ID JOIN User_Address on User.User_ID = User_Address. User_ID JOIN Address ON User_Address.Address_ID = Address.Address_ID JOIN User_Role ON User.User_ID = User_Role.User_ID JOIN Role ON User_Role.Role_ID = Role.Role_ID WHERE Role.Role_ID = ${2} ORDER BY Last_Name`).all();
+    const providers = db.prepare(`SELECT User.User_ID, First_Name, Last_Name, Image_URL, Job_Description, Organization_Name, Address, City, State, PostCode, Phone FROM User JOIN Organization ON User.Organization_ID = Organization.Organization_ID JOIN User_Address on User.User_ID = User_Address. User_ID JOIN Address ON User_Address.Address_ID = Address.Address_ID JOIN User_Role ON User.User_ID = User_Role.User_ID JOIN Role ON User_Role.Role_ID = Role.Role_ID WHERE Role.Role_ID = ${2} ORDER BY Last_Name`).all();
     return providers;
 }
 
-function getLloydArmstrongIngredients() {
-    const lloydArmstrongIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${39}`).all();
-    return lloydArmstrongIngredients;
-}
-
-function getFletcherCartwrightIngredients() {
-    const fletcherCartwrightIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${13}`).all();
-    return fletcherCartwrightIngredients;
-}
-
-function getMarcelinaColeIngredients() {
-    const marcelinaColeIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${48}`).all();
-    return marcelinaColeIngredients;
-}
-
-function getJacquelynCollinsIngredients() {
-    const jacquelynCollinsIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${42}`).all();
-    return jacquelynCollinsIngredients;
-}
-
-function getElzaCrooksIngredients() {
-    const elzaCrooksIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${20}`).all();
-    return elzaCrooksIngredients;
-}
-
-function getAbbyDickensIngredients() {
-    const abbyDickensIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${6}`).all();
-    return abbyDickensIngredients;
-}
-
-function getGrayceFaheyIngredients() {
-    const graceFaheyIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${47}`).all();
-    return graceFaheyIngredients;
-}
-
-function getJonathanGislasonIngredients() {
-    const jonathanGislasonIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${36}`).all();
-    return jonathanGislasonIngredients;
-}
-
-function getMeghanGradyIngredients() {
-    const meghanGradyIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${45}`).all();
-    return meghanGradyIngredients;
-}
-
-function getWestleyHesselIngredients() {
-    const westleyHesselIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${35}`).all();
-    return westleyHesselIngredients;
-}
-
-function getBarbaraHilpertIngredients() {
-    const barbaraHilpertIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${41}`).all();
-    return barbaraHilpertIngredients;
-}
-
-function getPatsyJohnsIngredients() {
-    const patsyJohnsIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${19}`).all();
-    return patsyJohnsIngredients;
-}
-
-function getChrisLarkinIngredients() {
-    const chrisLarkinIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${38}`).all();
-    return chrisLarkinIngredients;
-}
-
-function getLylaLegrosIngredients() {
-    const lylaLegrosIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${4}`).all();
-    return lylaLegrosIngredients;
-}
-
-function getAmariLubowitzIngredients() {
-    const amariLubowitzIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${12}`).all();
-    return amariLubowitzIngredients;
-}
-
-function getLaverneMullerIngredients() {
-    const laverneMullerIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${37}`).all();
-    return laverneMullerIngredients;
-}
-
-function getKayliParkerIngredients() {
-    const kayliParkerIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${43}`).all();
-    return kayliParkerIngredients;
-}
-
-function getFloydSchroederIngredients() {
-    const floydShroederIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${46}`).all();
-    return floydShroederIngredients;
-}
-
-function getTrevorSimonisIngredients() {
-    const trevorSimonisIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${17}`).all();
-    return trevorSimonisIngredients;
+function getIngredientsByProvider(User_ID) {
+    const providerIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${User_ID}`).all();
+    return providerIngredients;
 }

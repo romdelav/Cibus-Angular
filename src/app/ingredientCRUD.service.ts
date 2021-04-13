@@ -43,8 +43,8 @@ export class IngredientCRUDService {
             );
     }
 
-    getIngredientsByProvider(user_ID: number): Observable<Ingredient> {
-        return this.http.get<Ingredient>(`http://localhost:3000/providers/${user_ID}`)
+    getIngredientsByProvider(user_ID: number): Observable<Ingredient[]> {
+        return this.http.get<Ingredient[]>(`http://localhost:3000/providers/${user_ID}`)
             .pipe(
                 catchError(this.handleError)
         );
@@ -73,13 +73,6 @@ export class IngredientCRUDService {
 
     getMeat(): Observable<Ingredient[]> {
         return this.http.get<Ingredient[]>('http://localhost:3000/meat')
-            .pipe(
-                catchError(this.handleError)
-            );
-    }
-
-    getLloydArmstrongIngredients(): Observable<Ingredient[]> {
-        return this.http.get<Ingredient[]>('http://localhost:3000/lloyd-armstrong')
             .pipe(
                 catchError(this.handleError)
             );
