@@ -20,7 +20,6 @@ export class IngredientListPageComponent implements OnInit {
 
     ngOnInit(): void {
         this.getIngredients();
-        this.searchByName();
         this.deleteThisIngredient();
     }
 
@@ -33,18 +32,5 @@ export class IngredientListPageComponent implements OnInit {
         this.ingredientCRUD.deleteIngredient(this.Ingredient_ID)
             .subscribe(data => console.log(data));
     }
-
-    searchByName() {
-        if(this.Ingredient_Name != "") {
-            this.ingredients = this.ingredients.filter(data => {
-                return data.Ingredient_Name.toLocaleLowerCase().match(this.Ingredient_Name.toLocaleLowerCase());
-            })
-        }
-        else if(this.Ingredient_Name == "") {
-            this.ingredients = Object.assign([], this.ingredients)
-            this.ngOnInit();
-        }   
-    }
-
   
 }
