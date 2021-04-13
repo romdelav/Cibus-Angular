@@ -301,6 +301,16 @@ app.route('/lyla-legros')
         res.send(JSON.stringify(getLylaLegrosIngredients(), null, 2))
     );
 
+app.route('/amari-lubowitz')
+    .get((req, res) =>
+        res.send(JSON.stringify(getAmariLubowitzIngredients(), null, 2))
+    );
+
+app.route('/laverne-muller')
+    .get((req, res) =>
+        res.send(JSON.stringify(getLaverneMullerIngredients(), null, 2))
+    );
+
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe ORDER BY Recipe_Name').all();
     return recipes;
@@ -515,4 +525,14 @@ function getChrisLarkinIngredients() {
 function getLylaLegrosIngredients() {
     const lylaLegrosIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${4}`).all();
     return lylaLegrosIngredients;
+}
+
+function getAmariLubowitzIngredients() {
+    const amariLubowitzIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${12}`).all();
+    return amariLubowitzIngredients;
+}
+
+function getLaverneMullerIngredients() {
+    const laverneMullerIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${37}`).all();
+    return laverneMullerIngredients;
 }
