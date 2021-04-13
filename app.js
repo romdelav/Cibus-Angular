@@ -245,6 +245,17 @@ app.route('/marcelinacole')
         res.send(JSON.stringify(getMarcelinaColeIngredients(), null, 2))
     );
 
+app.route('/jacquelyncollins')
+    .get((req, res) =>
+        res.send(JSON.stringify(getJacquelynCollinsIngredients(), null, 2))
+    );
+
+app.route('/elzacrooks')
+    .get((req, res) =>
+        res.send(JSON.stringify(getElzaCrooksIngredients(), null, 2))
+    );
+
+
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe ORDER BY Recipe_Name').all();
     return recipes;
@@ -404,4 +415,14 @@ function getFletcherCartwrightIngredients() {
 function getMarcelinaColeIngredients() {
     const marcelinaColeIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${48}`).all();
     return marcelinaColeIngredients;
+}
+
+function getJacquelynCollinsIngredients() {
+    const jacquelynCollinsIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${42}`).all();
+    return jacquelynCollinsIngredients;
+}
+
+function getElzaCrooksIngredients() {
+    const elzaCrooksIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${20}`).all();
+    return elzaCrooksIngredients;
 }
