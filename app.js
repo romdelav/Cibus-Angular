@@ -265,6 +265,21 @@ app.route('/grayce-fahey')
         res.send(JSON.stringify(getGrayceFaheyIngredients(), null, 2))
     );
 
+app.route('/jonathan-gislason')
+    .get((req, res) =>
+        res.send(JSON.stringify(getJonathanGislasonIngredients(), null, 2))
+    );
+
+
+app.route('/meghan-grady')
+    .get((req, res) =>
+        res.send(JSON.stringify(getMeghanGradyIngredients(), null, 2))
+    );
+
+app.route('/westley-hessel')
+    .get((req, res) =>
+        res.send(JSON.stringify(getWestleyHesselIngredients(), null, 2))
+    );
 
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe ORDER BY Recipe_Name').all();
@@ -445,4 +460,19 @@ function getAbbyDickensIngredients() {
 function getGrayceFaheyIngredients() {
     const graceFaheyIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${47}`).all();
     return graceFaheyIngredients;
+}
+
+function getJonathanGislasonIngredients() {
+    const jonathanGislasonIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${36}`).all();
+    return jonathanGislasonIngredients;
+}
+
+function getMeghanGradyIngredients() {
+    const meghanGradyIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${45}`).all();
+    return meghanGradyIngredients;
+}
+
+function getWestleyHesselIngredients() {
+    const westleyHesselIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${35}`).all();
+    return westleyHesselIngredients;
 }
