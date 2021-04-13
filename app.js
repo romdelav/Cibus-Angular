@@ -311,6 +311,21 @@ app.route('/laverne-muller')
         res.send(JSON.stringify(getLaverneMullerIngredients(), null, 2))
     );
 
+app.route('/kayli-parker')
+    .get((req, res) =>
+        res.send(JSON.stringify(getKayliParkerIngredients(), null, 2))
+    );
+
+app.route('/floyd-schroeder')
+    .get((req, res) =>
+        res.send(JSON.stringify(getFloydSchroederIngredients(), null, 2))
+    );
+
+app.route('/trevor-simonis')
+    .get((req, res) =>
+        res.send(JSON.stringify(getTrevorSimonisIngredients(), null, 2))
+    );
+
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe ORDER BY Recipe_Name').all();
     return recipes;
@@ -535,4 +550,19 @@ function getAmariLubowitzIngredients() {
 function getLaverneMullerIngredients() {
     const laverneMullerIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${37}`).all();
     return laverneMullerIngredients;
+}
+
+function getKayliParkerIngredients() {
+    const kayliParkerIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${43}`).all();
+    return kayliParkerIngredients;
+}
+
+function getFloydSchroederIngredients() {
+    const floydShroederIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${46}`).all();
+    return floydShroederIngredients;
+}
+
+function getTrevorSimonisIngredients() {
+    const trevorSimonisIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${17}`).all();
+    return trevorSimonisIngredients;
 }
