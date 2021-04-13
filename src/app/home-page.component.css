@@ -84,3 +84,18 @@ input {
 #reviews .container {
     max-width: 1500px;
 }
+
+.provider-btn {
+    font-size: 1.3rem;
+    background-color: rgb(67, 133, 54);
+    color: white
+}
+
+.provider-btn:hover {
+    transform: scale(0.9);
+    transition: 0.5s;
+    background-color: white;
+    color: rgb(67, 133, 54);
+    border: 2px solid rgb(67, 133, 54);
+    border-radius: 5px;
+}
