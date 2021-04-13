@@ -281,6 +281,11 @@ app.route('/westley-hessel')
         res.send(JSON.stringify(getWestleyHesselIngredients(), null, 2))
     );
 
+app.route('/barbara-hilpert')
+    .get((req, res) =>
+        res.send(JSON.stringify(getBarbaraHilpertIngredients(), null, 2))
+    );
+
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe ORDER BY Recipe_Name').all();
     return recipes;
@@ -475,4 +480,9 @@ function getMeghanGradyIngredients() {
 function getWestleyHesselIngredients() {
     const westleyHesselIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${35}`).all();
     return westleyHesselIngredients;
+}
+
+function getBarbaraHilpertIngredients() {
+    const barbaraHilpertIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${41}`).all();
+    return barbaraHilpertIngredients;
 }
