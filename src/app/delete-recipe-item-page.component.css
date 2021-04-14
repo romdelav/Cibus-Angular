@@ -8,18 +8,24 @@ h5 {
     width: 600px;
 }
 
-.buttonStyle {
-    text-decoration: none;
-    background-color: #FFC11E;
-    border-radius: 5%;
-    padding: 5px;
-    color: black;
-    font-size: 1.5em;
-    padding-left: 25px;
-    padding-right: 25px;
-    box-shadow: 5px 5px 5px #A8A8A8;
+.container {
+    max-width: max-content;
 }
 
-.buttonStyle:hover {
-    background-color: #ffdb81;
+.btns {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.btns:hover {
+    transform: scale(0.9);
+    transition: 0.5s
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 400px;
+        height: 800px;
+        font-size: 0.7rem;
+    }
 }
