@@ -36,6 +36,7 @@ import { ProviderCRUDService } from './providerCRUD.service';
 import { ProviderListPageComponent } from './provider-list-page.component';
 import { FooterComponent } from './footer.component';
 import { IngredientsByProviderComponent } from './ingredients-by-provider.component';
+import { ProvidersByIngredientComponent } from './providers-by-ingredient.component';
 
  
 @NgModule({
@@ -65,7 +66,8 @@ import { IngredientsByProviderComponent } from './ingredients-by-provider.compon
     GrainIngredientListComponent,
     ProviderListPageComponent,
     FooterComponent,
-    IngredientsByProviderComponent
+    IngredientsByProviderComponent,
+    ProvidersByIngredientComponent
   ],
   imports: [
     BrowserModule,

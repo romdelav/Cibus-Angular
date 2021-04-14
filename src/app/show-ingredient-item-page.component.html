@@ -22,7 +22,12 @@
                                         <span class="badge badge-success" style="font-weight:normal; margin-right:2%; padding: 1%">{{category.Category_Name}}</span>
                                 </span>
                             </h5>
+                            <br/>
                         </div>
+                        <div style="text-align:center;">
+                            <a [routerLink]="['/ingredients', ingredient.Ingredient_ID, 'providers']" class="btn buttonStyle">View providers</a>
+                        </div>
+
                     </div>
                 </div>
             </div>

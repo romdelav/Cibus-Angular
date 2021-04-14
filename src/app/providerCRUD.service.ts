@@ -32,6 +32,13 @@ export class ProviderCRUDService {
             );
     }
 
+    getProvidersByIngredient(ingredient_ID: number): Observable<Provider[]> {
+        return this.http.get<Provider[]>(`http://localhost:3000/ingredients/${ingredient_ID}/providers`)
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+
     private handleError(error: HttpErrorResponse) {
         console.error(error.message);
         return throwError('A data error occurred, please try again.');
