@@ -16,15 +16,6 @@
     margin: 0 auto;
 }
 
-.jumbotron-img {
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: auto;
-    height: 600px;
-    display: block;
-    opacity: 0.9;
-}
-
 section {
     max-width: 100%;
     overflow-x: hidden;

@@ -61,6 +61,7 @@ app.route('/add-recipe')
         var Servings = req.body.Servings;
         var Cooking_Instructions = req.body.Cooking_Instructions;
         var Description = req.body.Description;
+        var Image_URL = "placeholder.jpg"
 
         var Ingredient_ID1 = req.body.Ingredient_ID1;
         var Measurement_ID1 = req.body.Measurement_ID1;
@@ -68,8 +69,8 @@ app.route('/add-recipe')
         var Ingredient_ID2 = req.body.Ingredient_ID2;
         var Measurement_ID2 = req.body.Measurement_ID2;
 
-        var stmt1 = db.prepare('INSERT INTO Recipe (Recipe_Name, Servings, Cooking_Instructions, Description) VALUES (?, ?, ?, ?)');
-        stmt1.run(Recipe_Name, Servings, Cooking_Instructions, Description);
+        var stmt1 = db.prepare('INSERT INTO Recipe (Recipe_Name, Servings, Cooking_Instructions, Description, Image_URL) VALUES (?, ?, ?, ?)');
+        stmt1.run(Recipe_Name, Servings, Cooking_Instructions, Description, Image_URL);
 
         var stmt2 = db.prepare('INSERT INTO Recipe_Ingredient (Recipe_ID, Ingredient_ID, Measurement_ID) VALUES ((SELECT Recipe_ID FROM Recipe WHERE Recipe_Name = ?), ?, ?)');
         stmt2.run(Recipe_Name, Ingredient_ID1, Measurement_ID1);

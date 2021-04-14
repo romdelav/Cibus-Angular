@@ -27,11 +27,6 @@
         font-family: Tahoma, sans-serif
     }
     
-    .card:hover {
-        transform: scale(1.1);
-        transition: 0.7s
-    }
-    
     .fade-in {
         animation: fadeIn ease 1s;
         -webkit-animation: fadeIn ease 1s;
