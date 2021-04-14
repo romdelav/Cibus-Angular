@@ -13,7 +13,7 @@ export class IngredientsByProviderComponent implements OnInit {
     
     User_ID: number;
     ingredients: Ingredient[];
-    providers: Provider[];
+    provider: Provider;
 
     constructor(
         private ingredientCRUD: IngredientCRUDService,
@@ -24,17 +24,10 @@ export class IngredientsByProviderComponent implements OnInit {
     ngOnInit() {
         this.User_ID = this.route.snapshot.params['user_ID']
         this.getIngredients();
-        this.getAllProviders();
-
     }
 
     getIngredients() {
        this.ingredientCRUD.getIngredientsByProvider(this.User_ID)
             .subscribe(data => { this.ingredients = data });  
-    }
-
-    getAllProviders() {
-        this.providerCRUD.getProviders()
-            .subscribe(data => { this.providers = data});
     }
 }
