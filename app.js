@@ -236,6 +236,11 @@ app.route('/providers/:User_ID')
         res.send(JSON.stringify(getIngredientsByProvider(req.params.User_ID)))
     );
 
+app.route('/ingredients/:Ingredient_ID/providers')
+    .get((req, res) =>
+        res.send(JSON.stringify(getProvidersByIngredient(req.params.Ingredient_ID)))
+    );
+
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe ORDER BY Recipe_Name').all();
     return recipes;
@@ -385,4 +390,9 @@ function getProviders() {
 function getIngredientsByProvider(User_ID) {
     const providerIngredients = db.prepare(`SELECT * FROM Ingredient WHERE User_ID = ${User_ID}`).all();
     return providerIngredients;
+}
+
+function getProvidersByIngredient(Ingredient_ID) {
+    const ingredientProviders = db.prepare(`SELECT User.User_ID, First_Name, Last_Name, User.Image_URL, Job_Description, Organization_Name, Address, City, State, PostCode, Phone FROM User JOIN Organization ON User.Organization_ID = Organization.Organization_ID JOIN User_Address on User.User_ID = User_Address. User_ID JOIN Address ON User_Address.Address_ID = Address.Address_ID JOIN User_Role ON User.User_ID = User_Role.User_ID JOIN Role ON User_Role.Role_ID = Role.Role_ID JOIN Ingredient ON Ingredient.User_ID = User.User_ID WHERE Role.Role_ID = ${2} AND Ingredient_ID = ${Ingredient_ID}`).all();
+    return ingredientProviders;
 }
