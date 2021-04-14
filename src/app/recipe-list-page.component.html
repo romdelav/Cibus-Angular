@@ -1,44 +1,31 @@
-<br/><br/>
+<br/><br/><br/><br/>
 
 <section id="search">
-    <div class="container" style="text-align: center;">
-        <br/><br/>
-        <div class="form-group">
-            <input type="text" class="form-control" style="width:91%" placeholder="Find a recipe" [(ngModel)]="term">
+    <div class="container container-width">
+        <div class="row">
+            <div class="col-lg-4">
+                <br/>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Find a recipe" [(ngModel)]="term">
+                </div>
+            </div>
+            <div class="col-lg-7" style="margin-top: 1%">
+                <img src="../assets/images/vegan.png" alt="Not found" [routerLink]="['/vegan-recipes']" title="vegan"> &nbsp;&nbsp;&nbsp;
+                <img src="../assets/images/vegetarian.jpg" alt="Not Found" [routerLink]="['/vegetarian-recipes']" title="vegetarian"> &nbsp;&nbsp;&nbsp;
+                <img src="../assets/images/meat.png" alt="Not Found" [routerLink]="['/meat-recipes']" title="meats"> &nbsp;&nbsp;&nbsp;
+                <img src="../assets/images/sides.png" alt="Not Found" [routerLink]="['/sides']" title="sides"> &nbsp;&nbsp;&nbsp;
+                <img src="../assets/images/salads.png" alt="Not Found" [routerLink]="['/salads']" title="salads"> &nbsp;&nbsp;&nbsp;
+                <img src="../assets/images/soup.png" alt="Not Found" [routerLink]="['/soups']" title="soups"> &nbsp;&nbsp;&nbsp;
+                <img src="../assets/images/grain.jpg" alt="Not Found" [routerLink]="['/grain-recipes']" title="grains">
+            </div>
         </div>
         <br/>
-        <span style="float: left">
-            <a [routerLink]="['/vegan-recipes']" title="vegan">
-                <img src="../assets/images/vegan.png" alt="Not found">
-            </a>
-            &nbsp;&nbsp;&nbsp;
-            <a [routerLink]="['/vegetarian-recipes']" title="vegetarian">
-                <img src="../assets/images/vegetarian.jpg" alt="Not Found">
-            </a>
-            &nbsp;&nbsp;&nbsp;
-            <a [routerLink]="['/meat-recipes']">
-                <img src="../assets/images/meat.png" alt="Not Found" title="meats">
-            </a>
-            &nbsp;&nbsp;&nbsp;
-            <a [routerLink]="['/sides']" title="sides">
-                <img src="../assets/images/sides.png" alt="Not Found">
-            </a>
-            &nbsp;&nbsp;&nbsp;
-            <a [routerLink]="['/salads']" title="salads">
-                <img src="../assets/images/salads.png" alt="Not Found">
-            </a>
-            &nbsp;&nbsp;&nbsp;
-            <a [routerLink]="['/soups']" title="soups">
-                <img src="../assets/images/soup.png" alt="Not Found">
-            </a>
-            &nbsp;&nbsp;&nbsp;
-            <a [routerLink]="['/grain-recipes']" title="grains">
-                <img src="../assets/images/grain.jpg" alt="Not Found">
-            </a>
-        </span>
-        <br/><br/><br/><br/><br/>
-        <div class="text-style" style="float: left">
-            Can't find what you're looking for? <a [routerLink]="['/add-recipe']" class="add-recipe-link">Add a new recipe</a>
+        <div class="row">
+            <div class="col">
+                <div class="text-style" style="float: left">
+                    Can't find what you're looking for? <a [routerLink]="['/add-recipe']" class="add-recipe-link">Add a new recipe</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>

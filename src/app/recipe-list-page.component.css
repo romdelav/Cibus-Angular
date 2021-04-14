@@ -17,6 +17,10 @@ h5 {
     height: 23rem;
 }
 
+.container-width {
+    max-width: 1100px;
+}
+
 @media screen and (max-width: 768px) {
     .text-style {
         margin-top: 5%
