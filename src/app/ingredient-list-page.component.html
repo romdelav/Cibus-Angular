@@ -1,28 +1,30 @@
-<section id="search">
-    <div class="container">
-        <br/><br/><br/><br/><br/><br/>
-        <div class="form-group">
-            <input type="text" class="form-control" style="width:87%" placeholder="Find an ingredient" [(ngModel)]="term">
-        </div>
-        <span>
-            <a [routerLink]="['/meat']">
-                <img src="../assets/images/meat.png" alt="Not Found" title="meats">
-            </a>
-            &nbsp;&nbsp;&nbsp;
-            <a [routerLink]="['/vegetables']">
-                <img src="../assets/images/veggies.jpg" alt="Not Found" title="vegetables">
-            </a>
-            &nbsp;&nbsp;&nbsp;
-            <a [routerLink]="['/fruits']">
-                <img src="../assets/images/fruits.png" alt="Not Found" title="fruits">
-            </a>
-            &nbsp;&nbsp;&nbsp;
-            <a [routerLink]="['/grains']">
-                <img src="../assets/images/grain.jpg" alt="Not Found" title="grains">
-            </a>
-        </span>
-        <br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
 
+<section id="search">
+    <div class="container container-width">
+        <div class="row">
+            <div class="col-lg-4">
+                <br/>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Find an ingredient" [(ngModel)]="term">
+                </div>
+            </div>
+            <div class="col-lg-7" style="margin-top: 1%;">
+                <img src="../assets/images/meat.png" alt="Not Found" title="meats" [routerLink]="['/meat']"> &nbsp;&nbsp;&nbsp;
+                <img src="../assets/images/veggies.jpg" alt="Not Found" title="vegetables" [routerLink]="['/vegetables']"> &nbsp;&nbsp;&nbsp;
+                <img src="../assets/images/fruits.png" alt="Not Found" title="fruits" [routerLink]="['/fruits']"> &nbsp;&nbsp;&nbsp;
+                <img src="../assets/images/grain.jpg" alt="Not Found" title="grains" [routerLink]="['/grains']">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br/><br/><br/><br/><br/><br/>
+
+<section>
+    <br/><br/><br/>
+    <div class="container">
         <div class="row" style="justify-content: center;">
             <div *ngFor="let ingredient of ingredients | filter:term" style="margin: 2%">
                 <div class="card">
