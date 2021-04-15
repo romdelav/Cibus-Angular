@@ -37,8 +37,8 @@ import { ProviderListPageComponent } from './provider-list-page.component';
 import { FooterComponent } from './footer.component';
 import { IngredientsByProviderComponent } from './ingredients-by-provider.component';
 import { ProvidersByIngredientComponent } from './providers-by-ingredient.component';
+import { ArticleCRUDService } from './articleCRUD.service';
 
- 
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,7 +83,8 @@ import { ProvidersByIngredientComponent } from './providers-by-ingredient.compon
     RecipeCRUDService,
     MeasurementCRUDService,
     CategoryCRUDService,
-    ProviderCRUDService
+    ProviderCRUDService,
+    ArticleCRUDService
   ],
   bootstrap: [AppComponent]
 })
