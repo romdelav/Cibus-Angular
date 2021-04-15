@@ -4,21 +4,21 @@
     <div class="container">
         <div *ngFor="let article of articles">
             <div class="row">
-                <div class="col-lg-4" style="text-align: right;">
+                <div class="col-lg-5 col-md-6 col-sm-10" style="text-align: right;">
                     <img src="../assets/images/{{article.Image_URL1}}">
                 </div>
-                <div class="col-lg-4" style="text-align: left">
+                <div class="col-lg-4 col-md-6 col-sm-10" style="text-align: left">
                     <br/>
-                    <h2>{{article.Title}}</h2>
+                    <h3>{{article.Title}}</h3>
                     <br/>
-                    <h5>{{article.Summary}}</h5>
+                    <div class="text1">{{article.Summary}}</div>
                     <br/>
-                    <div class="text">
+                    <div class="text2">
                         by {{article.First_Name}} {{article.Last_Name}} | {{article.Date}}
                     </div>
                 </div>
             </div>
-            <br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/>
         </div>
     </div>
 </section>
