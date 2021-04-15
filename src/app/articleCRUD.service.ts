@@ -38,6 +38,13 @@ export class ArticleCRUDService {
             );
     }
 
+    getArticle(article_ID: number): Observable<Article> {
+        return this.http.get<Article>(`http://localhost:3000/blog-articles/${article_ID}`)
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+
     private handleError(error: HttpErrorResponse) {
         console.error(error.message);
         return throwError('A data error occurred, please try again.');
