@@ -1,21 +1,34 @@
-<br/><br/><br/><br/>
+<br/><br/>
 
-<section>
+<header>
+    <div style="text-align:center; color: rgb(19, 83, 6); font-size:3.7rem; font-weight: bold">
+        Cibus blog
+    </div>
+</header>
+
+<br/><br/>
+
+<section style="background-color:rgb(252, 252, 252)">
+    <hr>
+    <br/><br/><br/><br/>
     <div class="container">
         <div *ngFor="let article of articles">
-            <div class="row">
+            <div class="row fade-in">
                 <div class="col-lg-5 col-md-6 col-sm-10" style="text-align: right;">
-                    <img src="../assets/images/{{article.Image_URL1}}">
+                    <a href="#">
+                        <img src="../assets/images/{{article.Image_URL1}}" loading="lazy">
+                    </a>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-10" style="text-align: left">
-                    <br/>
-                    <h3>{{article.Title}}</h3>
-                    <br/>
-                    <div class="text1">{{article.Summary}}</div>
-                    <br/>
-                    <div class="text2">
-                        by {{article.First_Name}} {{article.Last_Name}} | {{article.Date}}
-                    </div>
+                    <a href="#">
+                        <br/>
+                        <h3>{{article.Title}}</h3>
+                        <div class="text1">{{article.Summary}}</div>
+                        <br/>
+                        <div class="text2">
+                            by {{article.First_Name}} {{article.Last_Name}} | {{article.Date}}
+                        </div>
+                    </a>
                 </div>
             </div>
             <br/><br/><br/><br/><br/><br/>
