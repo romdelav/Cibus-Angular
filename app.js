@@ -404,6 +404,6 @@ function getProvidersByIngredient(Ingredient_ID) {
 }
 
 function getBlogArticles() {
-    const blogArticles = db.prepare(`SELECT * FROM Article`).all();
+    const blogArticles = db.prepare(`SELECT Article.Article_ID, Title, Summary, Image_URL1, Reading_Time, Date, User.First_Name, User.Last_Name FROM Article Join User_Article ON Article.Article_ID = User_Article.Article_ID JOIN User ON User_Article.User_ID = User.User_ID`).all();
     return blogArticles;
 }
