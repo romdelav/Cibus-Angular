@@ -1,0 +1,26 @@
+<br/><br/><br/><br/>
+
+<section>
+    <div class="container">
+        <div *ngFor="let article of articles">
+            <div class="row">
+                <div class="col-lg-4" style="text-align: right;">
+                    <img src="../assets/images/{{article.Image_URL1}}">
+                </div>
+                <div class="col-lg-4" style="text-align: left">
+                    <br/>
+                    <h2>{{article.Title}}</h2>
+                    <br/>
+                    <h5>{{article.Summary}}</h5>
+                    <br/>
+                    <div class="text">
+                        by {{article.First_Name}} {{article.Last_Name}} | {{article.Date}}
+                    </div>
+                </div>
+            </div>
+            <br/><br/><br/><br/>
+        </div>
+    </div>
+</section>
+
+<footer-component></footer-component>
