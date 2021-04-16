@@ -39,6 +39,7 @@ import { IngredientsByProviderComponent } from './ingredients-by-provider.compon
 import { ProvidersByIngredientComponent } from './providers-by-ingredient.component';
 import { ArticleCRUDService } from './articleCRUD.service';
 import { BlogArticlesComponent } from './blog-articles.component';
+import { ArticleComponent } from './article.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { BlogArticlesComponent } from './blog-articles.component';
     FooterComponent,
     IngredientsByProviderComponent,
     ProvidersByIngredientComponent,
-    BlogArticlesComponent
+    BlogArticlesComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
