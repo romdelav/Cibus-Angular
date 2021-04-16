@@ -1,31 +1,50 @@
 <br/><br/><br/><br/>
 
 <section>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-5 col-md-6 col-sm-10">
-                <h1>{{article.Title}}</h1>
-                <div style="font-size: 1.2rem">{{article.Summary}}</div>
-                <br/>
-                <div style="color:grey">
-                    by {{article.First_Name}} {{article.Last_Name}}
-                    <br/>{{article.Date}} | {{article.Reading_Time}} min read
-                </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6 col-sm-10">
+            <h1>{{article.Title}}</h1>
+            <div style="font-size: 1.2rem">{{article.Summary}}</div>
+            <br/>
+            <div style="color:grey">
+                by {{article.First_Name}} {{article.Last_Name}}
+                <br/>{{article.Date}} | {{article.Reading_Time}} min read
+            </div>
 
-                <br/><br/>
-                <img src="../assets/images/{{article.Image_URL2}}" loading="lazy">
-                <br/><br/><br/><br/>
-                <div style="font-size: 1.2rem">
-                    {{article.Paragraph1}}
-                    <br/><br/>{{article.Paragraph2}}
-                    <br/><br/>{{article.Paragraph3}}
-                    <br/><br/>{{article.Paragraph4}}
-                    <br/><br/>{{article.Paragraph5}}
-                </div>
+            <br/><br/>
+            <img src="../assets/images/{{article.Image_URL2}}" loading="lazy">
+            <br/><br/><br/><br/>
+            <div style="font-size: 1.2rem">
+                {{article.Paragraph1}}
+                <br/><br/>{{article.Paragraph2}}
+                <br/><br/>{{article.Paragraph3}}
+                <br/><br/>{{article.Paragraph4}}
+                <br/><br/>{{article.Paragraph5}}
             </div>
         </div>
     </div>
 </section>
+
+<br/><br/><br/><br/>
+
+<section>
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6 col-sm-10">
+            <div style="font-weight:600; font-size: 1.5rem;">
+                Comments
+            </div>
+            <br/><br/>
+            <div *ngFor="let comment of article.Comments">
+                <div class="username">
+                    <span style="color:rgb(32, 114, 38); font-weight: bold;">{{comment.Username}}</span>&nbsp;&nbsp;&nbsp;<span style="color:grey"> said on {{comment.Created_At}}</span>
+                </div>
+                <div class="comment">{{comment.Text}}</div>
+                <br/><br/>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <br/><br/><br/><br/><br/><br/>
 

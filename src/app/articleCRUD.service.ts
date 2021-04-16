@@ -20,7 +20,8 @@ export interface Article {
     Paragraph5: string,
     Date: string,
     First_Name: string,
-    Last_Name: string
+    Last_Name: string,
+    Comments: []
 }
 
 @Injectable({
