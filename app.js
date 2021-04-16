@@ -251,8 +251,6 @@ app.route('/blog-articles/:Article_ID')
         res.send(JSON.stringify(getBlogArticle(req.params.Article_ID), null, 2))
     );
 
-
-
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe ORDER BY Recipe_Name').all();
     return recipes;
@@ -415,6 +413,48 @@ function getBlogArticles() {
 }
 
 function getBlogArticle(Article_ID) {
-    const blogArticle = db.prepare(`SELECT Article.Article_ID, Title, Summary, Image_URL1, Image_URL2, Image_URL3, Image_URL4, Image_URL5, Paragraph1, Paragraph2, Paragraph3, Paragraph4, Paragraph5, Reading_Time, Date, User.First_Name, User.Last_Name FROM Article Join User_Article ON Article.Article_ID = User_Article.Article_ID JOIN User ON User_Article.User_ID = User.User_ID WHERE Article.Article_ID = ${Article_ID}`).get();
+    var blogArticle = {
+        Article_ID: 0,
+        Title: "",
+        Summary: "",
+        Image_URL1: "",
+        Image_URL2: "",
+        Image_URL3: "",
+        Image_URL4: "",
+        Image_URL5: "",
+        Paragraph1: "",
+        Paragraph2: "",
+        Paragraph3: "",
+        Paragraph4: "",
+        Paragraph5: "",
+        Reading_Time: 0,
+        Date: "",
+        First_Name: "",
+        Last_Name: "",
+        Comments: []
+    };
+    const row = db.prepare(`SELECT Article.Article_ID, Title, Summary, Image_URL1, Image_URL2, Image_URL3, Image_URL4, Image_URL5, Paragraph1, Paragraph2, Paragraph3, Paragraph4, Paragraph5, Reading_Time, Date, User.First_Name, User.Last_Name FROM Article Join User_Article ON Article.Article_ID = User_Article.Article_ID JOIN User ON User_Article.User_ID = User.User_ID WHERE Article.Article_ID = ${Article_ID}`).get();
+    blogArticle.Article_ID = row.Article_ID;
+    blogArticle.Title = row.Title;
+    blogArticle.Summary = row.Summary;
+    blogArticle.Image_URL1 = row.Image_URL1;
+    blogArticle.Image_URL2 = row.Image_URL2;
+    blogArticle.Image_URL3 = row.Image_URL3;
+    blogArticle.Image_URL4 = row.Image_URL4;
+    blogArticle.Image_URL5 = row.Image_URL5;
+    blogArticle.Paragraph1 = row.Paragraph1;
+    blogArticle.Paragraph2 = row.Paragraph2;
+    blogArticle.Paragraph3 = row.Paragraph3;
+    blogArticle.Paragraph4 = row.Paragraph4;
+    blogArticle.Paragraph5 = row.Paragraph5;
+    blogArticle.Reading_Time = row.Reading_Time;
+    blogArticle.Date = row.Date;
+    blogArticle.First_Name = row.First_Name;
+    blogArticle.Last_Name = row.Last_Name;
+
+    const commentsDB = db.prepare(`SELECT Comment.Comment_ID, Comment.Username, Comment.Text, Comment.Created_At FROM Comment JOIN Comment_Article ON Comment.Comment_ID = Comment_Article.Comment_ID JOIN Article on Comment_Article.Article_ID = Article.Article_ID WHERE Article.Article_ID = ${Article_ID}`).all();
+    var comments = commentsDB;
+    blogArticle.Comments = comments;
+
     return blogArticle;
 }
