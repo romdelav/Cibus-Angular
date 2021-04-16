@@ -1,0 +1,17 @@
+.container {
+    text-align: justify;
+    max-width: max-content
+}
+
+.border {
+    border: 1px solid black
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-weight: bold
+}
