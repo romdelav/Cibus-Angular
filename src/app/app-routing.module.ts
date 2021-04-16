@@ -26,6 +26,7 @@ import { ProviderListPageComponent } from './provider-list-page.component';
 import { IngredientsByProviderComponent } from './ingredients-by-provider.component';
 import { ProvidersByIngredientComponent } from './providers-by-ingredient.component';
 import { BlogArticlesComponent } from './blog-articles.component';
+import { ArticleComponent } from './article.component';
 
 const routes: Routes = [
   { path:'recipes', component: RecipeListPageComponent },
@@ -53,6 +54,7 @@ const routes: Routes = [
   { path:'providers/:user_ID', component: IngredientsByProviderComponent },
   { path:'ingredients/:ingredient_ID/providers', component: ProvidersByIngredientComponent },
   { path:'blog-articles', component: BlogArticlesComponent },
+  { path:'blog-articles/:article_ID', component: ArticleComponent },
   { path:'', component: HomePageComponent }
 ];
 
