@@ -72,8 +72,14 @@ input {
     margin: 2%;
 }
 
+#reviews {
+    background-color: rgb(250, 250, 250);
+    box-shadow: 0 -4px 4px -4px #d4d4d4, 0 4px 4px -4px #d4d4d4;
+}
+
 #reviews .container {
     max-width: 1500px;
+    background-color: white;
 }
 
 .provider-btn {
