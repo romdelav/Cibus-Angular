@@ -446,8 +446,10 @@ function getBlogArticle(Article_ID) {
         Date: "",
         First_Name: "",
         Last_Name: "",
+        Comment_Count: 0,
         Comments: []
     };
+
     const row = db.prepare(`SELECT Article.Article_ID, Title, Summary, Image_URL1, Image_URL2, Image_URL3, Image_URL4, Image_URL5, Paragraph1, Paragraph2, Paragraph3, Paragraph4, Paragraph5, Reading_Time, Date, User.First_Name, User.Last_Name FROM Article Join User_Article ON Article.Article_ID = User_Article.Article_ID JOIN User ON User_Article.User_ID = User.User_ID WHERE Article.Article_ID = ${Article_ID}`).get();
     blogArticle.Article_ID = row.Article_ID;
     blogArticle.Title = row.Title;
@@ -466,6 +468,10 @@ function getBlogArticle(Article_ID) {
     blogArticle.Date = row.Date;
     blogArticle.First_Name = row.First_Name;
     blogArticle.Last_Name = row.Last_Name;
+
+    const commentsCount = db.prepare(`SELECT COUNT(Comment_ID) AS COUNT FROM Comment_Article WHERE Comment_Article.Article_ID = ${Article_ID}`).get();
+    var count = commentsCount;
+    blogArticle.Comment_Count = count;
 
     const commentsDB = db.prepare(`SELECT Comment.Comment_ID, Comment.Username, Comment.Text, Comment.Created_At FROM Comment JOIN Comment_Article ON Comment.Comment_ID = Comment_Article.Comment_ID JOIN Article on Comment_Article.Article_ID = Article.Article_ID WHERE Article.Article_ID = ${Article_ID}`).all();
     var comments = commentsDB;

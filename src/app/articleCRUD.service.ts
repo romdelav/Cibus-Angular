@@ -21,6 +21,7 @@ export interface Article {
     Date: string,
     First_Name: string,
     Last_Name: string,
+    Comment_Count: any,
     Comments: []
 }
 
