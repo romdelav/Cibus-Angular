@@ -18,8 +18,8 @@ h1 {
 
 .username {
     border: 1px solid rgb(220, 220, 220);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
     width: 600px;
     padding: 2%;
     background-color: rgb(245, 245, 245)
@@ -27,8 +27,8 @@ h1 {
 
 .comment {
     border: 1px solid rgb(224, 224, 224);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     width: 600px;
     padding: 2%;
 }
