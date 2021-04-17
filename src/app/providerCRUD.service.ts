@@ -39,6 +39,13 @@ export class ProviderCRUDService {
             );
     }
 
+    getProvidersByState(state: string): Observable<Provider[]> {
+        return this.http.get<Provider[]>(`http://localhost:3000/providers/${state}`)
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+
     private handleError(error: HttpErrorResponse) {
         console.error(error.message);
         return throwError('A data error occurred, please try again.');
