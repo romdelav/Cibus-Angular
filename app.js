@@ -224,7 +224,7 @@ app.route('/add-category')
 
         var stmt = db.prepare('INSERT INTO Category (Category_Name) VALUES (?)');
         stmt.run(Category_Name);
-    })
+    });
 
 app.route('/providers')
     .get((req, res) =>
@@ -250,6 +250,21 @@ app.route('/blog-articles/:Article_ID')
     .get((req, res) =>
         res.send(JSON.stringify(getBlogArticle(req.params.Article_ID), null, 2))
     );
+
+app.route('/blog-articles/:Article_ID')
+    .post((req, res) => {
+        console.log(req.body)
+
+        var Username = req.body.Username;
+        var Text = req.body.Text;
+        var Article_ID = req.params.Article_ID;
+
+        var stmt1 = db.prepare('INSERT INTO Comment (Username, Text, Created_At) VALUES (?, ?, ?)');
+        stmt1.run(Username, Text, Date('now'));
+
+        var stmt2 = db.prepare('INSERT INTO Comment_Article (Comment_ID, Article_ID) VALUES ((SELECT Comment_ID FROM Comment WHERE Text = ?), ?)');
+        stmt2.run(Text, Article_ID);
+    });
 
 function getAllRecipes() {
     const recipes = db.prepare('SELECT * FROM Recipe ORDER BY Recipe_Name').all();
