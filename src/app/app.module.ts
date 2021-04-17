@@ -40,6 +40,7 @@ import { ProvidersByIngredientComponent } from './providers-by-ingredient.compon
 import { ArticleCRUDService } from './articleCRUD.service';
 import { BlogArticlesComponent } from './blog-articles.component';
 import { ArticleComponent } from './article.component';
+import { CommentCRUDService } from './commentCRUD.service';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { ArticleComponent } from './article.component';
     MeasurementCRUDService,
     CategoryCRUDService,
     ProviderCRUDService,
-    ArticleCRUDService
+    ArticleCRUDService,
+    CommentCRUDService
   ],
   bootstrap: [AppComponent]
 })
