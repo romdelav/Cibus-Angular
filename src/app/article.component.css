@@ -3,8 +3,20 @@
 }
 
 .border {
-    border: 1px solid black;
-    width: 600px
+    border: 1px solid grey;
+    padding: 5%;
+    border-radius: 5px;
+    width: 600px;
+    box-shadow: 10px 10px 10px #EBEBEB;
+}
+
+#add-comment #Username {
+    width: 383px;
+}
+
+#add-comment #Text {
+    width: 475px;
+    height: 200px;
 }
 
 img {
@@ -17,12 +29,14 @@ h1 {
 }
 
 .username {
-    border: 1px solid rgb(220, 220, 220);
+    border-right: 1px solid rgb(220, 220, 220);
+    border-left: 1px solid rgb(220, 220, 220);
+    border-top: 1px solid rgb(220, 220, 220);
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     width: 600px;
     padding: 2%;
-    background-color: rgb(245, 245, 245)
+    background-color: rgb(245, 245, 245);
 }
 
 .comment {
@@ -31,6 +45,10 @@ h1 {
     border-bottom-right-radius: 3px;
     width: 600px;
     padding: 2%;
+}
+
+hr {
+    border-top: 2px solid rgb(180, 180, 180)
 }
 
 @media screen and (max-width: 850px) {
