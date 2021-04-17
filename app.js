@@ -260,7 +260,7 @@ app.route('/blog-articles/:Article_ID')
         var Article_ID = req.params.Article_ID;
 
         var stmt1 = db.prepare('INSERT INTO Comment (Username, Text, Created_At) VALUES (?, ?, ?)');
-        stmt1.run(Username, Text, Date('now'));
+        stmt1.run(Username, Text, Date());
 
         var stmt2 = db.prepare('INSERT INTO Comment_Article (Comment_ID, Article_ID) VALUES ((SELECT Comment_ID FROM Comment WHERE Text = ?), ?)');
         stmt2.run(Text, Article_ID);
