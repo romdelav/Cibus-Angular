@@ -62,4 +62,13 @@ hr {
         margin-left: 5%;
         margin-right: 5%;
     }
+    .border {
+        width: 320px;
+    }
+    #add-comment #Username {
+        width: 285px;
+    }
+    #add-comment #Text {
+        width: 285px;
+    }
 }
