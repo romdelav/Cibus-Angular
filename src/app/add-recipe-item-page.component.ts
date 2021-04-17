@@ -75,13 +75,4 @@ export class AddRecipeItemPageComponent implements OnInit {
     clearForm() {
         this.form.reset();
     }
-
-    showIngredient1() {
-        this.isShown1 = !this.isShown1;
-    }
-
-    showIngredient2() {
-        this.isShown2 = !this.isShown2;
-    }
-
 }
