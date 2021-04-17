@@ -29,11 +29,11 @@ export class ArticleComponent implements OnInit {
         this.form = new FormGroup({
             Username: new FormControl('', Validators.compose([
                 Validators.required,
-                Validators.pattern('^[a-zA-Z \-\']+')
+                Validators.pattern('^[\.a-zA-Z0-9,!? ]*$')
             ])),
             Text: new FormControl('', Validators.compose([
                 Validators.required,
-                Validators.pattern('^[a-zA-Z \-\']+')
+                Validators.pattern('^[\.a-zA-Z0-9,!? ]*$')
             ]))
         });
     }
