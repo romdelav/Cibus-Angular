@@ -20,17 +20,10 @@ export class IngredientListPageComponent implements OnInit {
 
     ngOnInit(): void {
         this.getIngredients();
-        this.deleteThisIngredient();
     }
 
     getIngredients() {
         this.ingredientCRUD.getAllIngredients()
             .subscribe(data => { this.ingredients = data });
     }
-
-    deleteThisIngredient() {
-        this.ingredientCRUD.deleteIngredient(this.Ingredient_ID)
-            .subscribe(data => console.log(data));
-    }
-  
 }
