@@ -236,11 +236,6 @@ app.route('/providers/:User_ID')
         res.send(JSON.stringify(getIngredientsByProvider(req.params.User_ID), null, 2))
     );
 
-app.route('/providers/:State')
-    .get((req, res) =>
-        res.send(JSON.stringify(getProvidersByState(req.params.State), null, 2))
-    );
-
 app.route('/ingredients/:Ingredient_ID/providers')
     .get((req, res) =>
         res.send(JSON.stringify(getProvidersByIngredient(req.params.Ingredient_ID), null, 2))
@@ -254,9 +249,7 @@ app.route('/blog-articles')
 app.route('/blog-articles/:Article_ID')
     .get((req, res) =>
         res.send(JSON.stringify(getBlogArticle(req.params.Article_ID), null, 2))
-    );
-
-app.route('/blog-articles/:Article_ID')
+    )
     .post((req, res) => {
         console.log(req.body)
 
@@ -265,7 +258,7 @@ app.route('/blog-articles/:Article_ID')
         var Article_ID = req.params.Article_ID;
 
         var stmt1 = db.prepare('INSERT INTO Comment (Username, Text, Created_At) VALUES (?, ?, ?)');
-        stmt1.run(Username, Text, Date());
+        stmt1.run(Username, Text, Date('now'));
 
         var stmt2 = db.prepare('INSERT INTO Comment_Article (Comment_ID, Article_ID) VALUES ((SELECT Comment_ID FROM Comment WHERE Text = ?), ?)');
         stmt2.run(Text, Article_ID);
@@ -425,11 +418,6 @@ function getIngredientsByProvider(User_ID) {
 function getProvidersByIngredient(Ingredient_ID) {
     const ingredientProviders = db.prepare(`SELECT User.User_ID, First_Name, Last_Name, User.Image_URL, Job_Description, Organization_Name, Address, City, State, PostCode, Phone FROM User JOIN Organization ON User.Organization_ID = Organization.Organization_ID JOIN User_Address on User.User_ID = User_Address. User_ID JOIN Address ON User_Address.Address_ID = Address.Address_ID JOIN User_Role ON User.User_ID = User_Role.User_ID JOIN Role ON User_Role.Role_ID = Role.Role_ID JOIN Ingredient ON Ingredient.User_ID = User.User_ID WHERE Role.Role_ID = ${2} AND Ingredient_ID = ${Ingredient_ID}`).all();
     return ingredientProviders;
-}
-
-function getProvidersByState(State) {
-    const providersByState = db.prepare(`SELECT User.User_ID, First_Name, Last_Name, Image_URL, Job_Description, Organization_Name, Address, City, State, PostCode, Phone FROM User JOIN Organization ON User.Organization_ID = Organization.Organization_ID JOIN User_Address on User.User_ID = User_Address. User_ID JOIN Address ON User_Address.Address_ID = Address.Address_ID JOIN User_Role ON User.User_ID = User_Role.User_ID JOIN Role ON User_Role.Role_ID = Role.Role_ID WHERE Role.Role_ID = ${2} AND Address.State = ${State} ORDER BY Last_Name`).all();
-    return providersByState;
 }
 
 function getBlogArticles() {

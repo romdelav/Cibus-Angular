@@ -45,7 +45,8 @@ export class ArticleComponent implements OnInit {
     
     onSubmit(newComment) {
         this.commentCRUD.addComment(this.article_ID, newComment)
-          .subscribe() 
+          .subscribe()
+
     }
     
 }

@@ -2,7 +2,7 @@
     text-align: justify;
 }
 
-.border {
+.add-comment-box {
     border: 1px solid grey;
     padding: 5%;
     border-radius: 5px;
@@ -29,20 +29,20 @@ h1 {
 }
 
 .username {
-    border-right: 1px solid rgb(220, 220, 220);
-    border-left: 1px solid rgb(220, 220, 220);
-    border-top: 1px solid rgb(220, 220, 220);
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-right: 1px solid rgb(206, 206, 206);
+    border-left: 1px solid rgb(206, 206, 206);
+    border-top: 1px solid rgb(206, 206, 206);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     width: 600px;
     padding: 2%;
     background-color: rgb(245, 245, 245);
 }
 
 .comment {
-    border: 1px solid rgb(224, 224, 224);
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border: 1px solid rgb(206, 206, 206);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     width: 600px;
     padding: 2%;
 }
@@ -62,7 +62,7 @@ hr {
         margin-left: 5%;
         margin-right: 5%;
     }
-    .border {
+    .add-comment-box {
         width: 320px;
     }
     #add-comment #Username {
