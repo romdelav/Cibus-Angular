@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProviderCRUDService,  Provider } from './providerCRUD.service'
 
 @Component({
@@ -13,6 +14,7 @@ export class ProviderListPageComponent implements OnInit {
 
     constructor(
         private providerCRUD: ProviderCRUDService,
+        private router: Router
     ) {}
 
     ngOnInit() {
