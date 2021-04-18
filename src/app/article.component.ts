@@ -14,17 +14,23 @@ export class ArticleComponent implements OnInit {
     
     article_ID: number;
     article: Article;
+    created_At: Date;
+    nowFormatted: any;
     form: FormGroup;
+    interval: any;
 
     constructor(
         private articleCRUD: ArticleCRUDService,
         private commentCRUD: CommentCRUDService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
     ) {}
 
     ngOnInit() {
         this.article_ID = this.route.snapshot.params['article_ID']
         this.getArticleByID();
+        this.interval = setInterval(() => { 
+            this.getArticleByID(); 
+        }, 1000);
 
         this.form = new FormGroup({
             Username: new FormControl('', Validators.compose([
@@ -36,6 +42,7 @@ export class ArticleComponent implements OnInit {
                 Validators.pattern('^[\.a-zA-Z0-9,!? ]*$')
             ]))
         });
+
     }
 
     getArticleByID() {
@@ -45,8 +52,12 @@ export class ArticleComponent implements OnInit {
     
     onSubmit(newComment) {
         this.commentCRUD.addComment(this.article_ID, newComment)
-          .subscribe()
+        .subscribe()
+        this.clearForm();
+    }
 
+    clearForm() {
+        this.form.reset();
     }
     
 }

@@ -90,7 +90,7 @@ import { CommentCRUDService } from './commentCRUD.service';
     CategoryCRUDService,
     ProviderCRUDService,
     ArticleCRUDService,
-    CommentCRUDService
+    CommentCRUDService,
   ],
   bootstrap: [AppComponent]
 })
