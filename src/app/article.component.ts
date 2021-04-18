@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleCRUDService, Article } from './articleCRUD.service';
-import { CommentCRUDService, Comment } from './commentCRUD.service';
+import { CommentCRUDService } from './commentCRUD.service';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
     selector: 'article-page',
     templateUrl: './article.component.html',
-    styleUrls: ['./article.component.css']
+    styleUrls: ['./article.component.css'],
 })
 
 export class ArticleComponent implements OnInit {
@@ -19,7 +19,7 @@ export class ArticleComponent implements OnInit {
     constructor(
         private articleCRUD: ArticleCRUDService,
         private commentCRUD: CommentCRUDService,
-        private route: ActivatedRoute,
+        private route: ActivatedRoute
     ) {}
 
     ngOnInit() {
