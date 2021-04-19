@@ -58,14 +58,14 @@
             <br/>
             <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="add-comment-box">
                 <div class="form-group">
-                    <label for="Username" style="margin-right: 3%">Username:</label>
+                    <label form="Username" style="margin-right: 3%">Username <span style="color:rgb(32, 114, 38); font-weight: bold" title="Username required">*</span></label>
                     <input type="text" name="Username" id="Username" formControlName="Username">
                     <div *ngIf="form.get('Username').hasError('pattern')" class="error">
                         Username has invalid characters
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea type="text" name="Text" id="Text" formControlName="Text" placeholder="Type your comment"></textarea>
+                    <textarea type="text" name="Text" id="Text" formControlName="Text" placeholder="Type your comment" style="padding:2%"></textarea>
                     <div *ngIf="form.get('Text').hasError('pattern')" class="error">
                         Comment has invalid characters
                     </div>

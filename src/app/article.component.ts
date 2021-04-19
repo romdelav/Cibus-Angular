@@ -30,7 +30,7 @@ export class ArticleComponent implements OnInit {
         this.getArticleByID();
         this.interval = setInterval(() => { 
             this.getArticleByID(); 
-        }, 1000);
+        }, 500);
 
         this.form = new FormGroup({
             Username: new FormControl('', Validators.compose([

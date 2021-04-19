@@ -8,7 +8,6 @@ export interface Comment {
     Username: string,
     Text: string,
     Created_At: any,
-   
 }
 
 @Injectable({
