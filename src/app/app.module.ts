@@ -41,6 +41,7 @@ import { ArticleCRUDService } from './articleCRUD.service';
 import { BlogArticlesComponent } from './blog-articles.component';
 import { ArticleComponent } from './article.component';
 import { CommentCRUDService } from './commentCRUD.service';
+import { TechnicalInformationComponent } from './technical-information.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { CommentCRUDService } from './commentCRUD.service';
     IngredientsByProviderComponent,
     ProvidersByIngredientComponent,
     BlogArticlesComponent,
-    ArticleComponent
+    ArticleComponent,
+    TechnicalInformationComponent
   ],
   imports: [
     BrowserModule,
