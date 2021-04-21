@@ -11,8 +11,8 @@
 
 <section>
     <br/><br/><br/><br/>
-    <div class="container">
-        <div class="row margin-left">
+    <div class="container fade-in">
+        <div class="row">
             <div class="col-lg-10 col-md-6 col-sm-12" style="text-align: left; font-weight:bold; font-size: 1.5rem">
                 The latest
                 <hr style="border-top: 2px solid black;">
@@ -20,7 +20,7 @@
         </div>
         <br/><br/>
         <div *ngFor="let article of articles">
-            <div class="row fade-in">
+            <div class="row">
                 <div class="col-lg-5 col-md-6 col-sm-10" style="text-align: right">
                     <a [routerLink]="['/blog-articles', article.Article_ID]">
                         <img src="../assets/images/{{article.Image_URL1}}" loading="lazy">
