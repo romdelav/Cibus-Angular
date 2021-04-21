@@ -265,7 +265,7 @@ app.route('/blog-articles/:Article_ID')
     });
 
 function getAllRecipes() {
-    const recipes = db.prepare('SELECT * FROM Recipe ORDER BY Recipe_Name').all();
+    const recipes = db.prepare(`SELECT * FROM Recipe WHERE IsVisible = ${1} ORDER BY Recipe_Name`).all();
     return recipes;
 };
 
