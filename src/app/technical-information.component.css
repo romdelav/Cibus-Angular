@@ -7,12 +7,12 @@ img {
     width: 150px;
     height: 175px;
     border: none;
-    margin-bottom: 15%;
+    margin-bottom: 10%;
     margin-left: 3%;
     margin-right: 3%;
 }
 
 .card:hover {
-    transform: scale(1.2);
+    transform: scale(0.8);
     transition: 0.5s
 }
