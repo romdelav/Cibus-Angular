@@ -11,6 +11,7 @@ export interface Recipe {
     Cooking_Instructions: string,
     Description: string,
     Image_URL: string,
+    IsVisible: number,
     MeasurementIngredient: [],
     Categories: []
 }
