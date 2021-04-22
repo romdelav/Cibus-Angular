@@ -11,8 +11,3 @@ img {
     margin-left: 3%;
     margin-right: 3%;
 }
-
-.card:hover {
-    transform: scale(0.8);
-    transition: 0.5s
-}
