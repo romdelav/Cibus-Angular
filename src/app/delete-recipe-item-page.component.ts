@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipeCRUDService } from './recipeCRUD.service';
+import { RecipeCRUDService, Recipe } from './recipeCRUD.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -29,8 +29,8 @@ export class DeleteRecipeItemPageComponent implements OnInit {
             .subscribe(data => { this.recipe = data });  
     }
 
-    deleteThisRecipe() {
-        this.recipeCRUD.deleteRecipe(this.recipe_ID)
+    deleteThisRecipe(recipe: Recipe) {
+        this.recipeCRUD.deleteRecipe(this.recipe_ID, recipe)
             .subscribe(data => {this.recipe = data});
         this.showMessage()
     }
