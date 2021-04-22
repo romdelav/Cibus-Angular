@@ -10,13 +10,10 @@
                     <img class="card-img-top" src="../assets/images/{{ingredient.Image_URL}}" alt="Card image cap" loading="lazy">
                     <div class="card-body">
                         <h5 class="card-title">{{ingredient.Ingredient_Name}}</h5>
-                        <span>
-                            <a [routerLink]="['/ingredients', ingredient.Ingredient_ID]" class="btn buttonStyle">Details</a>
-                            &nbsp;
-                            <a [routerLink]="['/update-ingredient', ingredient.Ingredient_ID]" class="btn buttonStyle">Update</a>
-                            &nbsp;
-                            <a [routerLink]="['/delete-ingredient', ingredient.Ingredient_ID]" class="btn buttonStyle">Delete</a>
-                        </span>
+
+                        <a [routerLink]="['/ingredients', ingredient.Ingredient_ID]" class="btn buttonStyle">Details</a>
+
+
                     </div>
                 </div>
                 <br/><br/>
@@ -24,3 +21,5 @@
         </div>
     </div>
 </section>
+
+<footer-component></footer-component>

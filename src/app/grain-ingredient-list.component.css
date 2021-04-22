@@ -8,3 +8,10 @@ h5 {
     width: 20rem;
     height: 23rem;
 }
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 250px;
+        height: 325px;
+    }
+}
