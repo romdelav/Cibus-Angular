@@ -105,8 +105,8 @@ export class RecipeCRUDService {
             );
     }
 
-    deleteRecipe(recipe_ID: number) {
-        return this.http.delete(`http://localhost:3000/delete-recipe/${recipe_ID}`)
+    deleteRecipe(recipe_ID: number, recipe: Recipe) {
+        return this.http.put(`http://localhost:3000/delete-recipe/${recipe_ID}`, recipe)
             .pipe(
                 catchError(this.handleError)
             );
