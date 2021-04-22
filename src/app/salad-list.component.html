@@ -8,7 +8,7 @@
             <div *ngFor="let recipe of recipes" style="margin: 2%">
                 <div class="card">
                     <img class="card-img-top" src="../assets/images/{{recipe.Image_URL}}" alt="Card image cap" loading="lazy">
-                    <div class="card-body">
+                    <div class="card-body" style="text-align:center;">
                         <h5 class="card-title">{{recipe.Recipe_Name}}</h5>
                         <span>
                             <a [routerLink]="['/recipes', recipe.Recipe_ID]" class="btn buttonStyle">Details</a>
@@ -24,3 +24,4 @@
         </div>
     </div>
 </section>
+<footer-component></footer-component>
