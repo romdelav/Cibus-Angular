@@ -24,8 +24,8 @@ h5 {
 
 @media screen and (max-width: 768px) {
     .card {
-        width: 400px;
-        height: 800px;
+        width: 250px;
+        height: 850px;
         font-size: 0.7rem;
     }
 }
