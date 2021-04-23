@@ -1,4 +1,4 @@
-<section id="search" style="background-color:rgb(250, 250, 250); box-shadow: 0 -4px 4px -4px #d4d4d4, 0 4px 4px -4px #d4d4d4;">
+<section id="search" style="box-shadow: 0 -4px 4px -4px #d4d4d4, 0 4px 4px -4px #d4d4d4;">
     <br/><br/><br/><br/>
     <div class="container container-width">
         <div class="row">
@@ -9,13 +9,13 @@
                 </div>
             </div>
             <div class="col-lg-7" style="margin-top: 1%">
-                <img src="../assets/images/vegan.png" alt="Not found" [routerLink]="['/vegan-recipes']" title="vegan"> &nbsp;&nbsp;&nbsp;
-                <img src="../assets/images/vegetarian.jpg" alt="Not Found" [routerLink]="['/vegetarian-recipes']" title="vegetarian"> &nbsp;&nbsp;&nbsp;
-                <img src="../assets/images/meat.png" alt="Not Found" [routerLink]="['/meat-recipes']" title="meats"> &nbsp;&nbsp;&nbsp;
-                <img src="../assets/images/sides.png" alt="Not Found" [routerLink]="['/sides']" title="sides"> &nbsp;&nbsp;&nbsp;
-                <img src="../assets/images/salads.png" alt="Not Found" [routerLink]="['/salads']" title="salads"> &nbsp;&nbsp;&nbsp;
-                <img src="../assets/images/soup.png" alt="Not Found" [routerLink]="['/soups']" title="soups"> &nbsp;&nbsp;&nbsp;
-                <img src="../assets/images/grain.jpg" alt="Not Found" [routerLink]="['/grain-recipes']" title="grains">
+                <img src="../assets/images/vegan.png" alt="Not found" [routerLink]="['/vegan-recipes']" title="vegan" style="padding-left:2%; padding-right:2%; padding-bottom:2%">
+                <img src="../assets/images/vegetarian.jpg" alt="Not Found" [routerLink]="['/vegetarian-recipes']" title="vegetarian" style="padding-left:2%; padding-right:2%; padding-bottom:2%">
+                <img src="../assets/images/meat.png" alt="Not Found" [routerLink]="['/meat-recipes']" title="meats" style="padding-left:2%; padding-right:2%; padding-bottom:2%">
+                <img src="../assets/images/sides.png" alt="Not Found" [routerLink]="['/sides']" title="sides" style="padding-left:2%; padding-right:2%; padding-bottom:2%">
+                <img src="../assets/images/salads.png" alt="Not Found" [routerLink]="['/salads']" title="salads" style="padding-left:2%; padding-right:2%; padding-bottom:2%">
+                <img src="../assets/images/soup.png" alt="Not Found" [routerLink]="['/soups']" title="soups" style="padding-left:2%; padding-right:2%; padding-bottom:2%">
+                <img src="../assets/images/grain.jpg" alt="Not Found" [routerLink]="['/grain-recipes']" title="grains" style="padding-left:2%; padding-right:2%; padding-bottom:2%">
             </div>
         </div>
         <br/>
@@ -30,20 +30,20 @@
     <br/><br/><br/><br/>
 </section>
 
-<section>
+<section id="list" style="background-color:rgb(250, 250, 250); box-shadow: 0 -4px 4px -4px #d4d4d4">
     <br/><br/><br/>
-    <div class="container">
-        <div class="row" style="justify-content: center;">
-            <div *ngFor="let recipe of recipes | filter:term" style="margin: 2%">
-                <div class="card">
-                    <img class="card-img-top" src="../assets/images/{{recipe.Image_URL}}" alt="Card image cap" loading="lazy">
-                    <div class="card-body" style="text-align: center;">
-                        <h5 class="card-title">{{recipe.Recipe_Name}}</h5>
+    <div class="container ">
+        <div class="row " style="justify-content: center; ">
+            <div *ngFor="let recipe of recipes | filter:term " style="margin: 2% ">
+                <div class="card ">
+                    <img class="card-img-top " src="../assets/images/{{recipe.Image_URL}} " alt="Card image cap " loading="lazy ">
+                    <div class="card-body " style="text-align: center; ">
+                        <h5 class="card-title ">{{recipe.Recipe_Name}}</h5>
                         <span>
-                            <a [routerLink]="['/recipes', recipe.Recipe_ID]" class="btn buttonStyle">Details</a>&nbsp;
-                            <a [routerLink]="['/update-recipe', recipe.Recipe_ID]" class="btn buttonStyle">Update</a>&nbsp;
-                            <a [routerLink]="['/delete-recipe', recipe.Recipe_ID]" class="btn buttonStyle">Delete</a>
-                        </span>
+                                <a [routerLink]="[ '/recipes', recipe.Recipe_ID] " class="btn buttonStyle ">Details</a>&nbsp;
+                                <a [routerLink]="[ '/update-recipe', recipe.Recipe_ID] " class="btn buttonStyle ">Update</a>&nbsp;
+                                <a [routerLink]="[ '/delete-recipe', recipe.Recipe_ID] " class="btn buttonStyle ">Delete</a>
+                            </span>
                     </div>
                 </div>
                 <br/><br/>
