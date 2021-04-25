@@ -14,20 +14,28 @@ export class ProvidersByIngredientComponent implements OnInit {
     user_ID: number;
     providers: Provider[];
     ingredient_ID: number;
+    ingredient: Ingredient;
 
     constructor(
         private providerCRUD: ProviderCRUDService,
+        private ingredientCRUD: IngredientCRUDService,
         private route: ActivatedRoute
     ) {}
 
     ngOnInit() {
         this.ingredient_ID = this.route.snapshot.params['ingredient_ID']
         this.getProvidersByIng();
+        this.getIngredientByID();
 
     }
 
     getProvidersByIng() {
        this.providerCRUD.getProvidersByIngredient(this.ingredient_ID)
             .subscribe(data => { this.providers = data });  
+    }
+
+    getIngredientByID() {
+        this.ingredientCRUD.getIngredient(this.ingredient_ID)
+            .subscribe(data => this.ingredient = data)
     }
 }

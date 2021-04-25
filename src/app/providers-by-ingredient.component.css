@@ -13,6 +13,26 @@ img {
     box-shadow: 10px 10px 10px #EBEBEB;
 }
 
+.go-back {
+    background-color: rgb(34, 134, 14);
+    color: white;
+}
+
+.go-back:hover {
+    transform: scale(0.9);
+    transition: 0.5s
+}
+
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    padding: 4px;
+}
+
 @media screen and (max-width: 768px) {
     .card {
         width: 250px;
