@@ -9,6 +9,10 @@ h5 {
     height: 25rem;
 }
 
+.container {
+    max-width: 1210px;
+}
+
 @media screen and (max-width: 768px) {
     .card {
         width: 250px;
