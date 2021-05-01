@@ -28,6 +28,11 @@ h1 {
     font-weight: bold
 }
 
+section {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .username {
     border-right: 1px solid rgb(206, 206, 206);
     border-left: 1px solid rgb(206, 206, 206);
