@@ -9,6 +9,16 @@ h5 {
     height: 23rem;
 }
 
+.top {
+    background-color: rgb(34, 134, 14);
+    color: white;
+}
+
+.top:hover {
+    transform: scale(0.9);
+    transition: 0.5s
+}
+
 @media screen and (max-width: 768px) {
     .card {
         width: 250px;
