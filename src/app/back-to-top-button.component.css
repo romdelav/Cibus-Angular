@@ -1,0 +1,9 @@
+.top {
+    background-color: rgb(34, 134, 14);
+    color: white;
+}
+
+.top:hover {
+    transform: scale(0.9);
+    transition: 0.5s
+}

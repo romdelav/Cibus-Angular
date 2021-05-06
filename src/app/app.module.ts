@@ -42,6 +42,7 @@ import { BlogArticlesComponent } from './blog-articles.component';
 import { ArticleComponent } from './article.component';
 import { CommentCRUDService } from './commentCRUD.service';
 import { TechnicalInformationComponent } from './technical-information.component';
+import { BackToTopButton } from './back-to-top-button.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { TechnicalInformationComponent } from './technical-information.component
     ProvidersByIngredientComponent,
     BlogArticlesComponent,
     ArticleComponent,
-    TechnicalInformationComponent
+    TechnicalInformationComponent,
+    BackToTopButton
   ],
   imports: [
     BrowserModule,
