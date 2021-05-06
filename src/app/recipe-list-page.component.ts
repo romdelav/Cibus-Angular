@@ -25,9 +25,4 @@ export class RecipeListPageComponent implements OnInit {
         this.recipeCRUD.getAllRecipes()
             .subscribe(data => { this.recipes = data });
     }
-
-    topFunction() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    } 
 }

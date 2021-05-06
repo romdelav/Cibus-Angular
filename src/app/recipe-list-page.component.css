@@ -21,16 +21,6 @@ h5 {
     max-width: 1210px;
 }
 
-.top {
-    background-color: rgb(34, 134, 14);
-    color: white;
-}
-
-.top:hover {
-    transform: scale(0.9);
-    transition: 0.5s
-}
-
 @media screen and (max-width: 768px) {
     .text-style {
         margin-top: 5%
