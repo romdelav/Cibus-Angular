@@ -90,6 +90,10 @@ input {
     top: 10%;
 }
 
+input {
+    text-align: center;
+}
+
 @media screen and (max-width: 1000px) {
     #blog {
         height: 300px;
