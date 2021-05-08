@@ -14,8 +14,6 @@ export class ArticleComponent implements OnInit {
     
     article_ID: number;
     article: Article;
-    created_At: Date;
-    nowFormatted: any;
     form: FormGroup;
     interval: any;
 
