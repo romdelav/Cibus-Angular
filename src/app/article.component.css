@@ -62,24 +62,46 @@ hr {
     border-top: 2px solid rgb(180, 180, 180)
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (min-width: 450px) and (max-width: 690px) {
     .comment {
-        width: 320px;
+        width: 450px;
     }
     .username {
-        width: 320px
+        width: 450px
     }
     .row {
         margin-left: 5%;
         margin-right: 5%;
     }
     .add-comment-box {
-        width: 320px;
+        width: 450px;
     }
     #add-comment #Username {
-        width: 285px;
+        width: 270px;
     }
     #add-comment #Text {
-        width: 285px;
+        width: 380px;
+    }
+}
+
+@media screen and (max-width: 449px) {
+    .comment {
+        width: 250px;
+    }
+    .username {
+        width: 250px
+    }
+    .row {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .add-comment-box {
+        width: 250px;
+    }
+    #add-comment #Username {
+        width: 220px;
+    }
+    #add-comment #Text {
+        width: 220px;
     }
 }
