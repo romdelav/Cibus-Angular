@@ -7,31 +7,51 @@
 <div class="container h-100">
     <div class="row h-100 justify-content-center align-items-center">
         <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
-            <div class="form-group">
-                <label for="Recipe_Name">Recipe Name </label>
-                <input type="text" name="Recipe_Name" id="Recipe_Name" formControlName="Recipe_Name">
-                <div *ngIf="form.get('Recipe_Name').hasError('pattern')" class="error">
-                    Recipe Name has invalid characters
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="Description">Description </label>
-                <input type="text" name="Description" id="Description" formControlName="Description">
-                <div *ngIf="form.get('Description').hasError('pattern')" class="error">
-                    Description has invalid characters
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="Servings">Servings </label>
-                <input type="text" name="Servings" id="Servings" formControlName="Servings">
-            </div>
-            <div class="form-group">
-                <label for="Cooking_Instructions">Cooking Instructions </label>
-                <input type="text" name="Cooking_Instructions" id="Cooking_Instructions" formControlName="Cooking_Instructions">
-                <div *ngIf="form.get('Cooking_Instructions').hasError('pattern')" class="error">
-                    Instructions have invalid characters
-                </div>
-            </div>
+            <ngb-accordion #acc="ngbAccordion">
+                <ngb-panel class="plain" id="toggle-1" title="Name">
+                    <ng-template ngbPanelContent>
+                        <div class="form-group">
+                            <input type="text" name="Recipe_Name" id="Recipe_Name" formControlName="Recipe_Name">
+                            <div *ngIf="form.get('Recipe_Name').hasError('pattern')" class="error">
+                                Recipe Name has invalid characters
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+            <ngb-accordion #acc="ngbAccordion">
+                <ngb-panel class="plain" id="toggle-1" title="Description">
+                    <ng-template ngbPanelContent>
+                        <div class="form-group">
+                            <input type="text" name="Description" id="Description" formControlName="Description">
+                            <div *ngIf="form.get('Description').hasError('pattern')" class="error">
+                                Description has invalid characters
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+            <ngb-accordion #acc="ngbAccordion">
+                <ngb-panel class="plain" id="toggle-1" title="Servings">
+                    <ng-template ngbPanelContent>
+                        <div class="form-group">
+                            <input type="text" name="Servings" id="Servings" formControlName="Servings">
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+            <ngb-accordion #acc="ngbAccordion">
+                <ngb-panel class="plain" id="toggle-1" title="Instructions">
+                    <ng-template ngbPanelContent>
+                        <div class="form-group">
+                            <textarea name="Cooking_Instructions" id="Cooking_Instructions" formControlName="Cooking_Instructions"></textarea>
+                            <div *ngIf="form.get('Cooking_Instructions').hasError('pattern')" class="error">
+                                Instructions have invalid characters
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
             <ngb-accordion #acc="ngbAccordion">
                 <ngb-panel class="plain" id="toggle-1" title="Ingredient 1">
                     <ng-template ngbPanelContent>
